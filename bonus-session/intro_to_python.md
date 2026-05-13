@@ -4,7 +4,7 @@
 
 - Close/open Jupyter lab file explorer: `ctrl+b`
 - Save `.py`/notebook file: `ctrl+s`
-- Run cell in notebook: `shift_enter`  or use toolbar ('play' or 'fast-forward' buttons)
+- Run cell in notebook: `shift+enter`  or use toolbar ('play' or 'fast-forward' buttons)
 - Jupyter notebook 'command' mode: `esc`
 - Add cell above `esc` `a`
 - Add cell below `esc` `b`
@@ -32,12 +32,13 @@
 ## How Python works
 - Python is an interpreted language - the Python interpreter reads your code and executes it line-by-line.
 - A `.py` file is plain text instructions (in Python) for the interpreter.
-- If Python a syntax issue, it stops execution before the program starts.
-- If syntax is good, but something else goes wrong while the program is running, you have a runtime error.
+- **Syntax errors**: Python encounters a syntax issue, it stops execution before the program starts.
+- **Runtime errors**: syntax is good, but something else goes wrong while the program is running.
 
 ## Python documentation
-- Python has built-in functions - core functionality always avalible
-- Python standard library has a wider array of stuff (may need to be imported) - but still part of Python itself
-- Example doc page: [print](https://docs.python.org/3.10/library/functions.html#print)
-- Check the Python version number
-- Go slow, read multiple times & experiment
+- Python has built-in functions - core functionality always avalible.
+- Python standard library has a wider array of stuff (may need to be imported) - but still part of Python itself.
+- Main Python documentation page: (https://docs.python.org/3)
+- Example doc page: [print statement](https://docs.python.org/3.10/library/functions.html#print)
+- Check the Python version number.
+- Go slow, read multiple times & experiment. Look up terms that are unfamiliar.
