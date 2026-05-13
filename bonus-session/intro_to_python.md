@@ -11,7 +11,7 @@
 - Delete cell `esc` `dd`
 - Change a cell to markdown `esc` `m`
 
-## Useful linux commands
+## Useful Linux commands
 
 - List directory contents: `ls -lh`
 - Make directory `mkdir directory_name`
