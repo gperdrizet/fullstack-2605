@@ -9,6 +9,7 @@
 - Add cell above `esc` `a`
 - Add cell below `esc` `b`
 - Delete cell `esc` `dd`
+- Change a cell to markdown `esc` `m`
 
 ## Useful linux commands
 
