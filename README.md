@@ -12,7 +12,9 @@ The course site is built with [MkDocs](https://www.mkdocs.org/) using the [Mater
 
 ```
 docs/
-├── index.md                          # homepage: notebook table
+├── index.md                          # homepage
+├── notebooks.md                      # notebook table
+├── datasets.md                       # dataset table
 ├── assets/
 │   └── logo.png                      # Fullstack Academy logo
 ├── stylesheets/
@@ -24,6 +26,23 @@ docs/
     ├── dev-tools-install-guide.md
     └── dev-container-guide.md
 ```
+
+## Datasets and Git LFS
+
+Dataset files in `data/` are stored with [Git LFS](https://git-lfs.com/). Install Git LFS before cloning so the files are downloaded correctly:
+
+```bash
+# Install (Ubuntu/Debian)
+sudo apt install git-lfs
+
+# Install (macOS)
+brew install git-lfs
+
+# Enable in your Git install (once per machine)
+git lfs install
+```
+
+If you already cloned the repo without Git LFS, run `git lfs pull` to fetch the data files.
 
 ## Local development
 
