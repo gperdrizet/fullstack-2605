@@ -1,0 +1,13 @@
+---
+title: 'Resources'
+---
+
+{{< include resources/documentation_links.md >}}
+
+---
+
+{{< include resources/linux_commands.md >}}
+
+---
+
+{{< include resources/notebook_shortcuts.md >}}

@@ -1,7 +1,10 @@
-.github
 .venv
 .vscode
 recordings/
+
+# Quarto build output
+_site/
+.quarto/
 
 # Unit 1
 lesson-04-activity-solution.ipynb
