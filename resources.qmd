@@ -2,12 +2,16 @@
 title: 'Resources'
 ---
 
-{{< include resources/documentation_links.md >}}
+{{< include resources/documentation-links.md >}}
 
 ---
 
-{{< include resources/linux_commands.md >}}
+{{< include resources/linux-commands.md >}}
 
 ---
 
-{{< include resources/notebook_shortcuts.md >}}
+{{< include resources/notebook-shortcuts.md >}}
+
+---
+
+{{< include resources/dev-tools-install-guide.md >}}
