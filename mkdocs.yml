@@ -30,6 +30,7 @@ nav:
   - Home: index.md
   - Notebooks: notebooks.md
   - Resources:
+    - Datasets: resources/datasets.md
     - Documentation links: resources/documentation-links.md
     - Linux commands: resources/linux-commands.md
     - Notebook shortcuts: resources/notebook-shortcuts.md
