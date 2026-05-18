@@ -6,6 +6,9 @@ repo_name: gperdrizet/fullstack-2605
 extra_css:
   - stylesheets/extra.css
 
+extra_javascript:
+  - javascripts/download.js
+
 markdown_extensions:
   - attr_list
 
