@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('a.download-link').forEach(function (link) {
+  document.querySelectorAll('a[href*="raw.githubusercontent.com"]').forEach(function (link) {
     link.addEventListener('click', function (e) {
       e.preventDefault();
       var url = this.href;
