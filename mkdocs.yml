@@ -1,0 +1,19 @@
+site_name: Fullstack Academy AI/ML cohort 2605
+site_url: https://gperdrizet.github.io/fullstack-2605/
+repo_url: https://github.com/gperdrizet/fullstack-2605
+repo_name: gperdrizet/fullstack-2605
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+
+nav:
+  - Home: index.md
+  - Resources:
+    - Documentation links: resources/documentation-links.md
+    - Linux commands: resources/linux-commands.md
+    - Notebook shortcuts: resources/notebook-shortcuts.md
+    - Dev tools install guide: resources/dev-tools-install-guide.md

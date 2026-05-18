@@ -2,9 +2,8 @@
 .vscode
 recordings/
 
-# Quarto build output
-_site/
-.quarto/
+# MkDocs build output
+site/
 
 # Unit 1
 lesson-04-activity-solution.ipynb

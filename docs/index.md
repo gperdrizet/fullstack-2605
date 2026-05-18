@@ -1,6 +1,4 @@
----
-title: 'Course materials'
----
+# Course materials
 
 Welcome to the course materials for Fullstack Academy AI/ML cohort 2605.
 

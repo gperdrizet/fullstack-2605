@@ -12,15 +12,12 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-
-      - name: Render and publish
-        uses: quarto-dev/quarto-actions/publish@v2
+      - uses: actions/setup-python@v5
         with:
-          target: gh-pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          python-version: '3.x'
+
+      - run: pip install mkdocs-material
+
+      - run: mkdocs gh-deploy --force
