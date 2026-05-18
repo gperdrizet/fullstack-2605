@@ -11,6 +11,8 @@ extra_javascript:
 
 markdown_extensions:
   - attr_list
+  - pymdownx.snippets:
+      base_path: [docs]
 
 theme:
   name: material
