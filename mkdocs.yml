@@ -20,6 +20,7 @@ theme:
 
 nav:
   - Home: index.md
+  - Notebooks: notebooks.md
   - Resources:
     - Documentation links: resources/documentation-links.md
     - Linux commands: resources/linux-commands.md

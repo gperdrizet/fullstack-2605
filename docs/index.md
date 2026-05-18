@@ -1,21 +1,5 @@
-# Course materials
+# Welcome
 
-Welcome to the course materials for Fullstack Academy AI/ML cohort 2605.
+This is the course materials site for Fullstack Academy AI/ML cohort 2605.
 
-## How to download a notebook
-
-1. Click a notebook link in the table below to open it on GitHub.
-2. Click the **Download raw file** button (the down-arrow icon ↓) in the top-right corner.
-3. Open the downloaded `.ipynb` file in VS Code.
-
-## Unit 1: Python fundamentals
-
-| Lesson | Topic | Type | Notebook |
-|--------|-------|------|----------|
-| Bonus session | Introduction to Python | Demo | [intro-to-python.ipynb](https://github.com/gperdrizet/fullstack-2605/blob/main/bonus-session/intro-to-python.ipynb) |
-| Lesson 4 | String methods, file I/O, and error handling | Demo | [lesson-04-demo.ipynb](https://github.com/gperdrizet/fullstack-2605/blob/main/unit-1/lesson-4/lesson-04-demo.ipynb) |
-| Lesson 4 | String methods, file I/O, and error handling | Activity | [lesson-04-activity.ipynb](https://github.com/gperdrizet/fullstack-2605/blob/main/unit-1/lesson-4/lesson-04-activity.ipynb) |
-| Lesson 5 | Loops and conditionals | Demo | [lesson-05-demo.ipynb](https://github.com/gperdrizet/fullstack-2605/blob/main/unit-1/lesson-5/lesson-05-demo.ipynb) |
-| Lesson 5 | Loops and conditionals | Activity | [lesson-05-activity.ipynb](https://github.com/gperdrizet/fullstack-2605/blob/main/unit-1/lesson-5/lesson-05-activity.ipynb) |
-| Lesson 6 | Functions | Demo | [lesson-06-demo.ipynb](https://github.com/gperdrizet/fullstack-2605/blob/main/unit-1/lesson-6/lesson-06-demo.ipynb) |
-| Lesson 6 | Functions | Activity | [lesson-06-activity.ipynb](https://github.com/gperdrizet/fullstack-2605/blob/main/unit-1/lesson-6/lesson-06-activity.ipynb) |
+Use the **Notebooks** page to find and download activity and demo notebooks for each lesson. Use the **Resources** section for reference guides covering tools, commands, and environment setup.
