@@ -3,12 +3,18 @@ site_url: https://gperdrizet.github.io/fullstack-2605/
 repo_url: https://github.com/gperdrizet/fullstack-2605
 repo_name: gperdrizet/fullstack-2605
 
+extra_css:
+  - stylesheets/extra.css
+
 theme:
   name: material
   features:
     - navigation.instant
     - navigation.tracking
     - navigation.top
+  palette:
+    primary: custom
+    accent: custom
 
 nav:
   - Home: index.md
