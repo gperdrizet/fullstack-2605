@@ -164,8 +164,6 @@ code --version
 
 All three should return version numbers.
 
-## 4. Create your repo from template, clone, and open in dev container
-
 Use the course template repository URL below. This contains a dev container configuration for the course environment.
 
 Template repository:
