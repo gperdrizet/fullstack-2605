@@ -39,7 +39,25 @@ Use string methods like .split(); they break a sentence into parts.
 Use string methods like .split() — they break a sentence into parts.
 ```
 
-### 3. Single quotes in Python strings and docstrings
+### 3. File and directory naming
+
+Use lowercase words separated by hyphens (kebab-case) for all file and directory names.
+
+**Correct:**
+```
+intro-to-python.ipynb
+lesson-04-activity.ipynb
+bonus-session/
+```
+
+**Incorrect:**
+```
+intro_to_python.ipynb
+lesson_04_activity.ipynb
+bonus_session/
+```
+
+### 4. Single quotes in Python strings and docstrings
 
 Use single quotes for all Python string literals and triple-single-quotes for docstrings. Use double quotes only when the string itself contains a single quote and escaping would reduce readability.
 

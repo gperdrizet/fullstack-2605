@@ -14,7 +14,7 @@ Welcome to the course materials for Fullstack Academy AI/ML cohort 2605.
 
 | Lesson | Topic | Type | Notebook |
 |--------|-------|------|----------|
-| Bonus session | Introduction to Python | Demo | [intro_to_python.ipynb](https://github.com/gperdrizet/fullstack-2605/blob/main/bonus-session/intro_to_python.ipynb) |
+| Bonus session | Introduction to Python | Demo | [intro-to-python.ipynb](https://github.com/gperdrizet/fullstack-2605/blob/main/bonus-session/intro-to-python.ipynb) |
 | Lesson 4 | String methods, file I/O, and error handling | Demo | [lesson-04-demo.ipynb](https://github.com/gperdrizet/fullstack-2605/blob/main/unit-1/lesson-4/lesson-04-demo.ipynb) |
 | Lesson 4 | String methods, file I/O, and error handling | Activity | [lesson-04-activity.ipynb](https://github.com/gperdrizet/fullstack-2605/blob/main/unit-1/lesson-4/lesson-04-activity.ipynb) |
 | Lesson 5 | Loops and conditionals | Demo | [lesson-05-demo.ipynb](https://github.com/gperdrizet/fullstack-2605/blob/main/unit-1/lesson-5/lesson-05-demo.ipynb) |
