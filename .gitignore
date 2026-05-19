@@ -6,9 +6,6 @@ recordings/
 site/
 
 # Unit 1
-lesson-04-activity-solution.ipynb
-lesson-05-activity-solution.ipynb
-lesson-06-activity-solution.ipynb
 student_data.json
 student_data.pkl
 
