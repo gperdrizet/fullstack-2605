@@ -3,6 +3,9 @@ site_url: https://gperdrizet.github.io/fullstack-2605/
 repo_url: https://github.com/gperdrizet/fullstack-2605
 repo_name: gperdrizet/fullstack-2605
 
+hooks:
+  - hooks.py
+
 extra_css:
   - stylesheets/extra.css
 
@@ -30,6 +33,7 @@ nav:
   - Home: index.md
   - Notebooks: notebooks.md
   - Datasets: datasets.md
+  - Changelog: changelog.md
   - Resources:
     - Documentation links: resources/documentation-links.md
     - Linux commands: resources/linux-commands.md
