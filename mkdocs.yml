@@ -33,10 +33,10 @@ nav:
   - Home: index.md
   - Notebooks: notebooks.md
   - Datasets: datasets.md
-  - Changelog: changelog.md
   - Resources:
     - Documentation links: resources/documentation-links.md
     - Linux commands: resources/linux-commands.md
     - Notebook shortcuts: resources/notebook-shortcuts.md
     - Dev tools install guide: resources/dev-tools-install-guide.md
     - Dev container setup guide: resources/dev-container-guide.md
+  - Changelog: changelog.md
