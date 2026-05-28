@@ -1,3 +1,9 @@
 ipykernel
+matplotlib
 mkdocs-material
 nbdime
+pandas
+plotly
+pywaffle
+seaborn
+squarify
