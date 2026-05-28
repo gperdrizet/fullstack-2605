@@ -4,10 +4,12 @@ from pathlib import Path
 
 def on_pre_build(config):
     '''Generate docs/changelog.md from git log before each build.'''
+    repo_root = Path(__file__).parent
     result = subprocess.run(
         ['git', 'log', '--pretty=format:%ad|%s', '--date=short'],
         capture_output=True,
-        text=True
+        text=True,
+        cwd=repo_root
     )
 
     lines = []
