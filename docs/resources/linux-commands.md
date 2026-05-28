@@ -16,3 +16,5 @@ Open the terminal in Jupyter lab under File > New > Terminal.
 | Clear terminal contents | `clear` |
 | Find the binary for a command | `which program_name` |
 | Get Python version | `python --version` |
+| Get memory use summary | `free -h` |
+| See per-process resource utilization | `top` or `htop` | **Note**: `htop` has a more user friendly interface but may not be avalible on all systems.
