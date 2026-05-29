@@ -9,3 +9,4 @@
 ## Data science
 1. [Official Numpy 1.23 docs](https://numpy.org/doc/1.23). **Note**: Vocareum has 1.23 installed, other environments may have newer versions.
 2. [Official Pandas 3.0 docs](https://pandas.pydata.org/docs/). **Note** Vocareum has 1.5, most environments will/should have a newer version.
+3. [Official Matplotlib 3.6 docs](https://matplotlib.org/3.6.3/index.html)
