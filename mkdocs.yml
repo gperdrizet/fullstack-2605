@@ -35,6 +35,7 @@ nav:
   - Datasets: datasets.md
   - Resources:
     - Documentation links: resources/documentation-links.md
+    - Plotting overview: resources/plotting-overview.md
     - Statistics overview: resources/statistics-overview.md
     - Linux commands: resources/linux-commands.md
     - Notebook shortcuts: resources/notebook-shortcuts.md
