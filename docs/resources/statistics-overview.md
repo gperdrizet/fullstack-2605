@@ -4,25 +4,6 @@ This guide summarizes the core ideas from the statistics overview resource: desc
 
 The statistical testing section below is adapted from the source repo's Jekyll templates and keeps the same high-level guidance: use the quick guide first, then refer to the complete table for edge cases and more specific scenarios.
 
-## Table of contents
-
-1. [Common descriptive statistics](#1-common-descriptive-statistics)
-	- [Measures of central tendency, spread, and shape](#11-measures-of-central-tendency-spread-and-shape)
-	- [Interpretation guidelines](#12-interpretation-guidelines)
-	- [Choosing the right statistic](#13-choosing-the-right-statistic)
-2. [Common probability distributions](#2-common-probability-distributions)
-	- [Discrete distributions](#21-discrete-distributions)
-	- [Continuous distributions](#22-continuous-distributions)
-3. [Statistical test selection guide](#3-statistical-test-selection-guide)
-	- [Most common/useful tests](#31-most-commonuseful-tests)
-	  - [Student's t-test](#311-students-t-test)
-	  - [ANOVA (also known as the F-test)](#312-anova-also-known-as-the-f-test)
-	  - [Mann-Whitney U test](#313-mann-whitney-u-test)
-	  - [Kruskal-Wallis test (also known as ANOVA on ranks)](#314-kruskal-wallis-test-also-known-as-anova-on-ranks)
-	- [Assumption checklist](#35-assumption-checklist)
-	- [Complete test table](#36-complete-test-table)
-	- [Multiple testing correction](#37-multiple-testing-correction)
-
 ## 1. Common descriptive statistics
 
 Descriptive statistics summarize the center, spread, and shape of a dataset.

@@ -2,27 +2,6 @@
 
 Data visualization is essential for exploring, understanding, and communicating insights from data. This guide covers common plot types, their purposes, and when to use them.
 
-## Table of contents
-1. [Plot selection guide](#1-plot-selection-guide)
-   - [By analysis goal](#11-by-analysis-goal)
-   - [By data type combination](#12-by-data-type-combination)
-2. [Best practices](#2-best-practices)
-   - [General guidelines](#21-general-guidelines)
-   - [Common mistakes to avoid](#22-common-mistakes-to-avoid)
-3. [Common plot types by data type and purpose](#3-common-plot-types-by-data-type-and-purpose)
-   - [Univariate plots (single variable)](#31-univariate-plots-single-variable)
-   - [Bivariate plots (two variables)](#32-bivariate-plots-two-variables)
-   - [Multivariate plots (three or more variables)](#33-multivariate-plots-three-or-more-variables)
-   - [Specialized statistical plots](#34-specialized-statistical-plots)
-   - [Time series plots](#35-time-series-plots)
-4. [Additional resources](#4-additional-resources)
-   - [Python visualization libraries](#41-python-visualization-libraries)
-   - [Recommended reading](#42-recommended-reading)
-   - [Python plotting resources](#43-python-plotting-resources)
-   - [Color palettes](#44-color-palettes)
-
----
-
 ## 1. Plot selection guide
 
 ### 1.1. By analysis goal
