@@ -1,0 +1,1825 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://gperdrizet.github.io/fullstack-2605/resources/plotting-overview/">
+      
+      
+        <link rel="prev" href="../documentation-links/">
+      
+      
+        <link rel="next" href="../statistics-overview/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Plotting overview - Fullstack Academy AI/ML cohort 2605</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#plotting-overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Fullstack Academy AI/ML cohort 2605" class="md-header__button md-logo" aria-label="Fullstack Academy AI/ML cohort 2605" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Fullstack Academy AI/ML cohort 2605
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Plotting overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/gperdrizet/fullstack-2605" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gperdrizet/fullstack-2605
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Fullstack Academy AI/ML cohort 2605" class="md-nav__button md-logo" aria-label="Fullstack Academy AI/ML cohort 2605" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Fullstack Academy AI/ML cohort 2605
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/gperdrizet/fullstack-2605" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gperdrizet/fullstack-2605
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notebooks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datasets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Datasets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation-links/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation links
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plotting overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plotting overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-plot-selection-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Plot selection guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Plot selection guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-by-analysis-goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. By analysis goal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-by-data-type-combination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. By data type combination
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Best practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Best practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-general-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. General guidelines
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-common-mistakes-to-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Common mistakes to avoid
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-common-plot-types-by-data-type-and-purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Common plot types by data type and purpose
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Common plot types by data type and purpose">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-univariate-plots-single-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Univariate plots (single variable)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-bivariate-plots-two-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Bivariate plots (two variables)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-multivariate-plots-three-or-more-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Multivariate plots (three or more variables)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-specialized-statistical-plots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4. Specialized statistical plots
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-time-series-plots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5. Time series plots
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-additional-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Additional resources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Additional resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-python-visualization-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. Python visualization libraries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-recommended-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. Recommended reading
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-python-plotting-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3. Python plotting resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-color-palettes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4. Color palettes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../statistics-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Statistics overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebook-shortcuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notebook shortcuts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev-tools-install-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dev tools install guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev-container-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dev container setup guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-plot-selection-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Plot selection guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Plot selection guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-by-analysis-goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. By analysis goal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-by-data-type-combination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. By data type combination
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Best practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Best practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-general-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. General guidelines
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-common-mistakes-to-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Common mistakes to avoid
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-common-plot-types-by-data-type-and-purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Common plot types by data type and purpose
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Common plot types by data type and purpose">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-univariate-plots-single-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Univariate plots (single variable)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-bivariate-plots-two-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Bivariate plots (two variables)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-multivariate-plots-three-or-more-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Multivariate plots (three or more variables)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-specialized-statistical-plots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4. Specialized statistical plots
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-time-series-plots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5. Time series plots
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-additional-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Additional resources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Additional resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-python-visualization-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. Python visualization libraries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-recommended-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. Recommended reading
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-python-plotting-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3. Python plotting resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-color-palettes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4. Color palettes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="plotting-overview">Plotting overview</h1>
+<p>Data visualization is essential for exploring, understanding, and communicating insights from data. This guide covers common plot types, their purposes, and when to use them.</p>
+<h2 id="table-of-contents">Table of contents</h2>
+<ol>
+<li><a href="#1-plot-selection-guide">Plot selection guide</a></li>
+<li><a href="#11-by-analysis-goal">By analysis goal</a></li>
+<li><a href="#12-by-data-type-combination">By data type combination</a></li>
+<li><a href="#2-best-practices">Best practices</a></li>
+<li><a href="#21-general-guidelines">General guidelines</a></li>
+<li><a href="#22-common-mistakes-to-avoid">Common mistakes to avoid</a></li>
+<li><a href="#3-common-plot-types-by-data-type-and-purpose">Common plot types by data type and purpose</a></li>
+<li><a href="#31-univariate-plots-single-variable">Univariate plots (single variable)</a></li>
+<li><a href="#32-bivariate-plots-two-variables">Bivariate plots (two variables)</a></li>
+<li><a href="#33-multivariate-plots-three-or-more-variables">Multivariate plots (three or more variables)</a></li>
+<li><a href="#34-specialized-statistical-plots">Specialized statistical plots</a></li>
+<li><a href="#35-time-series-plots">Time series plots</a></li>
+<li><a href="#4-additional-resources">Additional resources</a></li>
+<li><a href="#41-python-visualization-libraries">Python visualization libraries</a></li>
+<li><a href="#42-recommended-reading">Recommended reading</a></li>
+<li><a href="#43-python-plotting-resources">Python plotting resources</a></li>
+<li><a href="#44-color-palettes">Color palettes</a></li>
+</ol>
+<hr />
+<h2 id="1-plot-selection-guide">1. Plot selection guide</h2>
+<h3 id="11-by-analysis-goal">1.1. By analysis goal</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Goal</strong></th>
+<th><strong>Recommended plot types</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Understand distribution of single variable</strong></td>
+<td>Histogram, Box plot, Violin plot, Density plot</td>
+</tr>
+<tr>
+<td><strong>Compare groups</strong></td>
+<td>Box plot, Violin plot, Bar chart, Strip plot</td>
+</tr>
+<tr>
+<td><strong>Find relationships between variables</strong></td>
+<td>Scatter plot, Line plot, Regression plot, Heatmap</td>
+</tr>
+<tr>
+<td><strong>Show composition</strong></td>
+<td>Pie chart, Stacked bar chart, Area plot</td>
+</tr>
+<tr>
+<td><strong>Analyze time series</strong></td>
+<td>Line plot, Area plot, Seasonal plot</td>
+</tr>
+<tr>
+<td><strong>Detect outliers</strong></td>
+<td>Box plot, Scatter plot, Strip plot</td>
+</tr>
+<tr>
+<td><strong>Explore multivariate data</strong></td>
+<td>Pair plot, Correlation heatmap, Facet grid</td>
+</tr>
+<tr>
+<td><strong>Check statistical assumptions</strong></td>
+<td>Q-Q plot, Residual plot, Histogram</td>
+</tr>
+<tr>
+<td><strong>Show uncertainty</strong></td>
+<td>Error bars, Confidence bands, Violin plots</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12-by-data-type-combination">1.2. By data type combination</h3>
+<table>
+  <thead>
+    <tr>
+      <th><strong>X Variable</strong></th>
+      <th><strong>Y Variable</strong></th>
+      <th><strong>Z Variable (optional)</strong></th>
+      <th><strong>Recommended Plots</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="3"><strong>Categorical</strong></td>
+      <td><strong>None</strong></td>
+      <td>None</td>
+      <td>Bar chart, Pie chart, Count plot</td>
+    </tr>
+    <tr>
+      <td><strong>Continuous</strong></td>
+      <td>None</td>
+      <td>Box plot, Violin plot, Bar chart, Strip plot</td>
+    </tr>
+    <tr>
+      <td><strong>Categorical</strong></td>
+      <td>None</td>
+      <td>Heatmap, Stacked bar chart, Grouped bar chart</td>
+    </tr>
+    <tr>
+      <td rowspan="4"><strong>Continuous</strong></td>
+      <td><strong>None</strong></td>
+      <td>None</td>
+      <td>Histogram, Box plot, Violin plot, Density plot</td>
+    </tr>
+    <tr>
+      <td rowspan="3"><strong>Continuous</strong></td>
+      <td>None</td>
+      <td>Scatter plot, Line plot, Hexbin, 2D density</td>
+    </tr>
+    <tr>
+      <td>Continuous</td>
+      <td>3D scatter, Bubble chart, Contour plot</td>
+    </tr>
+    <tr>
+      <td>Categorical</td>
+      <td>Scatter with hue, Facet grid</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+<h2 id="2-best-practices">2. Best practices</h2>
+<h3 id="21-general-guidelines">2.1. General guidelines</h3>
+<ol>
+<li><strong>Choose the right plot for your data type and message</strong></li>
+<li>Match plot type to data structure (categorical vs continuous)</li>
+<li>
+<p>Consider what you want to communicate</p>
+</li>
+<li>
+<p><strong>Keep it simple</strong></p>
+</li>
+<li>Avoid unnecessary 3D effects</li>
+<li>Remove chart junk (excessive gridlines, decorations)</li>
+<li>
+<p>Use appropriate aspect ratios</p>
+</li>
+<li>
+<p><strong>Use color effectively</strong></p>
+</li>
+<li>Use color to encode information, not just for decoration</li>
+<li>Ensure accessibility (colorblind-friendly palettes)</li>
+<li>
+<p>Maintain consistency across related plots</p>
+</li>
+<li>
+<p><strong>Label clearly</strong></p>
+</li>
+<li>Always include axis labels with units</li>
+<li>Add informative titles</li>
+<li>Include legends when needed</li>
+<li>
+<p>Annotate important points</p>
+</li>
+<li>
+<p><strong>Consider your audience</strong></p>
+</li>
+<li>Technical vs general audience</li>
+<li>Level of detail appropriate for context</li>
+<li>Medium of presentation (paper, screen, presentation)</li>
+</ol>
+<h3 id="22-common-mistakes-to-avoid">2.2. Common mistakes to avoid</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Mistake</strong></th>
+<th><strong>Problem</strong></th>
+<th><strong>Solution</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Starting y-axis at non-zero</strong></td>
+<td>Exaggerates differences</td>
+<td>Start at zero for bar charts; flexible for line plots</td>
+</tr>
+<tr>
+<td><strong>Too many categories</strong></td>
+<td>Cluttered, hard to read</td>
+<td>Limit to 7-10 categories; consider grouping or filtering</td>
+</tr>
+<tr>
+<td><strong>3D when 2D suffices</strong></td>
+<td>Distorts perception, hard to read</td>
+<td>Use 2D alternatives with color or size</td>
+</tr>
+<tr>
+<td><strong>Pie charts with many slices</strong></td>
+<td>Hard to compare angles</td>
+<td>Use bar chart instead</td>
+</tr>
+<tr>
+<td><strong>Dual y-axes</strong></td>
+<td>Can be misleading</td>
+<td>Use separate plots or normalize scales</td>
+</tr>
+<tr>
+<td><strong>Missing error bars</strong></td>
+<td>Unclear uncertainty</td>
+<td>Add error bars or confidence intervals</td>
+</tr>
+<tr>
+<td><strong>Poor color choices</strong></td>
+<td>Not colorblind-safe, poor contrast</td>
+<td>Use established palettes (ColorBrewer, Seaborn)</td>
+</tr>
+<tr>
+<td><strong>Overplotting</strong></td>
+<td>Too many overlapping points</td>
+<td>Use transparency, jitter, hexbin, or sample data</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-common-plot-types-by-data-type-and-purpose">3. Common plot types by data type and purpose</h2>
+<h3 id="31-univariate-plots-single-variable">3.1. Univariate plots (single variable)</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Plot Type</strong></th>
+<th><strong>Example</strong></th>
+<th><strong>Data Type</strong></th>
+<th><strong>Purpose</strong></th>
+<th><strong>Key Features</strong></th>
+<th><strong>Python Implementation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Histogram</strong></td>
+<td><a href="../../assets/plot_examples/histogram.png"><img alt="Histogram" src="../../assets/plot_examples/histogram.png" /></a></td>
+<td>Continuous</td>
+<td>Show distribution and frequency of values</td>
+<td>Bins group continuous data; bar heights show frequency</td>
+<td><code>plt.hist(data, bins=30)</code> or <code>sns.histplot(data)</code></td>
+</tr>
+<tr>
+<td><strong>Box Plot (Box-and-Whisker)</strong></td>
+<td><a href="../../assets/plot_examples/boxplot.png"><img alt="Box Plot" src="../../assets/plot_examples/boxplot.png" /></a></td>
+<td>Continuous</td>
+<td>Display distribution summary (quartiles, median, outliers)</td>
+<td>Shows Q1, median, Q3, whiskers (1.5×IQR), and outliers as points</td>
+<td><code>plt.boxplot(data)</code> or <code>sns.boxplot(data)</code></td>
+</tr>
+<tr>
+<td><strong>Violin Plot</strong></td>
+<td><a href="../../assets/plot_examples/violinplot.png"><img alt="Violin Plot" src="../../assets/plot_examples/violinplot.png" /></a></td>
+<td>Continuous</td>
+<td>Combination of box plot and density plot</td>
+<td>Wider sections indicate higher density; includes median marker</td>
+<td><code>sns.violinplot(x=data)</code></td>
+</tr>
+<tr>
+<td><strong>Density Plot (KDE)</strong></td>
+<td><a href="../../assets/plot_examples/densityplot.png"><img alt="Density Plot" src="../../assets/plot_examples/densityplot.png" /></a></td>
+<td>Continuous</td>
+<td>Smooth estimate of probability density function</td>
+<td>Smooth curve showing probability density</td>
+<td><code>sns.kdeplot(data)</code> or <code>data.plot(kind='kde')</code></td>
+</tr>
+<tr>
+<td><strong>Bar Chart</strong></td>
+<td><a href="../../assets/plot_examples/barchart.png"><img alt="Bar Chart" src="../../assets/plot_examples/barchart.png" /></a></td>
+<td>Categorical</td>
+<td>Compare frequencies or values across categories</td>
+<td>Each bar represents a category; height shows value/count</td>
+<td><code>plt.bar(categories, values)</code> or <code>sns.barplot(x, y)</code></td>
+</tr>
+<tr>
+<td><strong>Count Plot</strong></td>
+<td><a href="../../assets/plot_examples/countplot.png"><img alt="Count Plot" src="../../assets/plot_examples/countplot.png" /></a></td>
+<td>Categorical</td>
+<td>Show frequency of categorical values</td>
+<td>Specialized bar chart for counts</td>
+<td><code>sns.countplot(x=category)</code></td>
+</tr>
+<tr>
+<td><strong>Pie Chart</strong></td>
+<td><a href="../../assets/plot_examples/piechart.png"><img alt="Pie Chart" src="../../assets/plot_examples/piechart.png" /></a></td>
+<td>Categorical</td>
+<td>Show proportions of a whole</td>
+<td>Circular chart divided into slices; each slice represents proportion</td>
+<td><code>plt.pie(values, labels=labels)</code></td>
+</tr>
+<tr>
+<td><strong>Strip Plot</strong></td>
+<td><a href="../../assets/plot_examples/stripplot.png"><img alt="Strip Plot" src="../../assets/plot_examples/stripplot.png" /></a></td>
+<td>Continuous (grouped by category)</td>
+<td>Show individual data points along one axis</td>
+<td>Points plotted along axis; shows each individual value</td>
+<td><code>sns.stripplot(x=category, y=values)</code></td>
+</tr>
+<tr>
+<td><strong>Swarm Plot</strong></td>
+<td><a href="../../assets/plot_examples/swarmplot.png"><img alt="Swarm Plot" src="../../assets/plot_examples/swarmplot.png" /></a></td>
+<td>Continuous (grouped by category)</td>
+<td>Like strip plot but points don't overlap</td>
+<td>Non-overlapping points; good for seeing density</td>
+<td><code>sns.swarmplot(x=category, y=values)</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="32-bivariate-plots-two-variables">3.2. Bivariate plots (two variables)</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Plot Type</strong></th>
+<th><strong>Example</strong></th>
+<th><strong>X-axis Type</strong></th>
+<th><strong>Y-axis Type</strong></th>
+<th><strong>Purpose</strong></th>
+<th><strong>Key Features</strong></th>
+<th><strong>Python Implementation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Scatter Plot</strong></td>
+<td><a href="../../assets/plot_examples/scatterplot.png"><img alt="Scatter Plot" src="../../assets/plot_examples/scatterplot.png" /></a></td>
+<td>Continuous</td>
+<td>Continuous</td>
+<td>Show relationship between two continuous variables</td>
+<td>Each point represents one observation</td>
+<td><code>plt.scatter(x, y)</code> or <code>sns.scatterplot(x, y)</code></td>
+</tr>
+<tr>
+<td><strong>Line Plot</strong></td>
+<td><a href="../../assets/plot_examples/lineplot.png"><img alt="Line Plot" src="../../assets/plot_examples/lineplot.png" /></a></td>
+<td>Continuous/Time</td>
+<td>Continuous</td>
+<td>Show trends over continuous variable (often time)</td>
+<td>Points connected by lines</td>
+<td><code>plt.plot(x, y)</code> or <code>data.plot()</code></td>
+</tr>
+<tr>
+<td><strong>Bar Chart</strong></td>
+<td><a href="../../assets/plot_examples/barchart.png"><img alt="Bar Chart" src="../../assets/plot_examples/barchart.png" /></a></td>
+<td>Categorical</td>
+<td>Continuous</td>
+<td>Compare continuous values across categories</td>
+<td>Bars represent values for each category</td>
+<td><code>plt.bar(categories, values)</code> or <code>sns.barplot(x, y)</code></td>
+</tr>
+<tr>
+<td><strong>Box Plot (Grouped)</strong></td>
+<td><a href="../../assets/plot_examples/grouped_boxplot.png"><img alt="Grouped Box Plot" src="../../assets/plot_examples/grouped_boxplot.png" /></a></td>
+<td>Categorical</td>
+<td>Continuous</td>
+<td>Compare distributions across categories</td>
+<td>Multiple box plots side by side</td>
+<td><code>sns.boxplot(x=category, y=values)</code></td>
+</tr>
+<tr>
+<td><strong>Violin Plot (Grouped)</strong></td>
+<td><a href="../../assets/plot_examples/grouped_violinplot.png"><img alt="Grouped Violin Plot" src="../../assets/plot_examples/grouped_violinplot.png" /></a></td>
+<td>Categorical</td>
+<td>Continuous</td>
+<td>Compare distribution shapes across categories</td>
+<td>Multiple violin plots side by side</td>
+<td><code>sns.violinplot(x=category, y=values)</code></td>
+</tr>
+<tr>
+<td><strong>Heatmap</strong></td>
+<td><a href="../../assets/plot_examples/heatmap.png"><img alt="Heatmap" src="../../assets/plot_examples/heatmap.png" /></a></td>
+<td>Categorical/Discrete</td>
+<td>Categorical/Discrete</td>
+<td>Show magnitude of values in two-dimensional space</td>
+<td>Color intensity represents value magnitude</td>
+<td><code>sns.heatmap(data, annot=True)</code></td>
+</tr>
+<tr>
+<td><strong>Hexbin Plot</strong></td>
+<td><a href="../../assets/plot_examples/hexbinplot.png"><img alt="Hexbin Plot" src="../../assets/plot_examples/hexbinplot.png" /></a></td>
+<td>Continuous</td>
+<td>Continuous</td>
+<td>Show density of points in 2D space</td>
+<td>Hexagonal bins; color shows point density</td>
+<td><code>plt.hexbin(x, y, gridsize=30)</code></td>
+</tr>
+<tr>
+<td><strong>2D Density Plot</strong></td>
+<td><a href="../../assets/plot_examples/density2d.png"><img alt="2D Density Plot" src="../../assets/plot_examples/density2d.png" /></a></td>
+<td>Continuous</td>
+<td>Continuous</td>
+<td>Show probability density in 2D space</td>
+<td>Contour lines or color gradients show density</td>
+<td><code>sns.kdeplot(x=x, y=y)</code></td>
+</tr>
+<tr>
+<td><strong>Joint Plot</strong></td>
+<td><a href="../../assets/plot_examples/jointplot.png"><img alt="Joint Plot" src="../../assets/plot_examples/jointplot.png" /></a></td>
+<td>Continuous</td>
+<td>Continuous</td>
+<td>Combine scatter plot with marginal distributions</td>
+<td>Central scatter with histograms/KDEs on margins</td>
+<td><code>sns.jointplot(x=x, y=y)</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="33-multivariate-plots-three-or-more-variables">3.3. Multivariate plots (three or more variables)</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Plot Type</strong></th>
+<th><strong>Example</strong></th>
+<th><strong>Purpose</strong></th>
+<th><strong>Key Features</strong></th>
+<th><strong>Python Implementation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pair Plot (Scatter Matrix)</strong></td>
+<td><a href="../../assets/plot_examples/pairplot.png"><img alt="Pair Plot" src="../../assets/plot_examples/pairplot.png" /></a></td>
+<td>Show all pairwise relationships in dataset</td>
+<td>Grid of scatter plots; diagonal shows distributions</td>
+<td><code>sns.pairplot(dataframe)</code></td>
+</tr>
+<tr>
+<td><strong>3D Scatter Plot</strong></td>
+<td><a href="../../assets/plot_examples/scatter3d.png"><img alt="3D Scatter Plot" src="../../assets/plot_examples/scatter3d.png" /></a></td>
+<td>Show relationship between three continuous variables</td>
+<td>Points plotted in 3D space</td>
+<td><code>from mpl_toolkits.mplot3d import Axes3D</code> then <code>ax.scatter3D(x, y, z)</code></td>
+</tr>
+<tr>
+<td><strong>Bubble Chart</strong></td>
+<td><a href="../../assets/plot_examples/bubblechart.png"><img alt="Bubble Chart" src="../../assets/plot_examples/bubblechart.png" /></a></td>
+<td>Show three continuous variables (x, y, size)</td>
+<td>Like scatter plot but point size represents third variable</td>
+<td><code>plt.scatter(x, y, s=sizes)</code></td>
+</tr>
+<tr>
+<td><strong>Facet Grid (Small Multiples)</strong></td>
+<td><a href="../../assets/plot_examples/facetgrid.png"><img alt="Facet Grid" src="../../assets/plot_examples/facetgrid.png" /></a></td>
+<td>Show subsets of data in separate subplots</td>
+<td>Multiple plots arranged in grid</td>
+<td><code>sns.FacetGrid(data, col='category').map(plt.scatter, 'x', 'y')</code></td>
+</tr>
+<tr>
+<td><strong>Parallel Coordinates</strong></td>
+<td><a href="../../assets/plot_examples/parallelcoordinates.png"><img alt="Parallel Coordinates" src="../../assets/plot_examples/parallelcoordinates.png" /></a></td>
+<td>Compare multiple variables across observations</td>
+<td>Lines connect values across parallel axes</td>
+<td><code>pd.plotting.parallel_coordinates(df, 'class_column')</code></td>
+</tr>
+<tr>
+<td><strong>Correlation Heatmap</strong></td>
+<td><a href="../../assets/plot_examples/correlation_heatmap.png"><img alt="Correlation Heatmap" src="../../assets/plot_examples/correlation_heatmap.png" /></a></td>
+<td>Show correlation between all variable pairs</td>
+<td>Color-coded correlation matrix</td>
+<td><code>sns.heatmap(df.corr(), annot=True)</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="34-specialized-statistical-plots">3.4. Specialized statistical plots</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Plot Type</strong></th>
+<th><strong>Example</strong></th>
+<th><strong>Purpose</strong></th>
+<th><strong>Key Features</strong></th>
+<th><strong>Python Implementation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Q-Q Plot (Quantile-Quantile)</strong></td>
+<td><a href="../../assets/plot_examples/qqplot.png"><img alt="Q-Q Plot" src="../../assets/plot_examples/qqplot.png" /></a></td>
+<td>Test if data follows theoretical distribution</td>
+<td>Points should follow diagonal line if normally distributed</td>
+<td><code>stats.probplot(data, dist="norm", plot=plt)</code></td>
+</tr>
+<tr>
+<td><strong>Residual Plot</strong></td>
+<td><a href="../../assets/plot_examples/residualplot.png"><img alt="Residual Plot" src="../../assets/plot_examples/residualplot.png" /></a></td>
+<td>Diagnose regression model fit</td>
+<td>Plot residuals vs fitted values; should show random pattern</td>
+<td><code>sns.residplot(x=predictions, y=residuals)</code></td>
+</tr>
+<tr>
+<td><strong>ROC Curve</strong></td>
+<td><a href="../../assets/plot_examples/roc_curve.png"><img alt="ROC Curve" src="../../assets/plot_examples/roc_curve.png" /></a></td>
+<td>Evaluate binary classifier performance</td>
+<td>Plots True Positive Rate vs False Positive Rate</td>
+<td><code>from sklearn.metrics import roc_curve</code> then <code>plt.plot(fpr, tpr)</code></td>
+</tr>
+<tr>
+<td><strong>Confusion Matrix</strong></td>
+<td><a href="../../assets/plot_examples/confusion_matrix.png"><img alt="Confusion Matrix" src="../../assets/plot_examples/confusion_matrix.png" /></a></td>
+<td>Show classification results</td>
+<td>Matrix showing predicted vs actual classes</td>
+<td><code>sns.heatmap(confusion_matrix, annot=True, fmt='d')</code></td>
+</tr>
+<tr>
+<td><strong>Error Bars</strong></td>
+<td><a href="../../assets/plot_examples/errorbars.png"><img alt="Error Bars" src="../../assets/plot_examples/errorbars.png" /></a></td>
+<td>Show uncertainty or variability</td>
+<td>Bars extend from points to show range</td>
+<td><code>plt.errorbar(x, y, yerr=errors)</code></td>
+</tr>
+<tr>
+<td><strong>Regression Plot</strong></td>
+<td><a href="../../assets/plot_examples/regressionplot.png"><img alt="Regression Plot" src="../../assets/plot_examples/regressionplot.png" /></a></td>
+<td>Show linear relationship and confidence interval</td>
+<td>Scatter plot with fitted line and confidence band</td>
+<td><code>sns.regplot(x=x, y=y)</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="35-time-series-plots">3.5. Time series plots</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Plot Type</strong></th>
+<th><strong>Example</strong></th>
+<th><strong>Purpose</strong></th>
+<th><strong>Key Features</strong></th>
+<th><strong>Python Implementation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Line Plot</strong></td>
+<td><a href="../../assets/plot_examples/timeseries_line.png"><img alt="Time Series Line Plot" src="../../assets/plot_examples/timeseries_line.png" /></a></td>
+<td>Show values changing over time</td>
+<td>X-axis is time; y-axis is value</td>
+<td><code>plt.plot(dates, values)</code> or <code>data.plot()</code></td>
+</tr>
+<tr>
+<td><strong>Area Plot</strong></td>
+<td><a href="../../assets/plot_examples/areaplot.png"><img alt="Area Plot" src="../../assets/plot_examples/areaplot.png" /></a></td>
+<td>Show cumulative totals over time</td>
+<td>Filled area under line(s)</td>
+<td><code>data.plot.area()</code> or <code>plt.fill_between(x, y)</code></td>
+</tr>
+<tr>
+<td><strong>Stacked Area Plot</strong></td>
+<td><a href="../../assets/plot_examples/stacked_area.png"><img alt="Stacked Area Plot" src="../../assets/plot_examples/stacked_area.png" /></a></td>
+<td>Show multiple time series composition</td>
+<td>Multiple series stacked on top of each other</td>
+<td><code>data.plot.area(stacked=True)</code></td>
+</tr>
+<tr>
+<td><strong>Seasonal Plot</strong></td>
+<td><a href="../../assets/plot_examples/seasonalplot.png"><img alt="Seasonal Plot" src="../../assets/plot_examples/seasonalplot.png" /></a></td>
+<td>Show patterns that repeat over time</td>
+<td>Multiple lines for each season/cycle</td>
+<td>Manually create with groupby and plot</td>
+</tr>
+<tr>
+<td><strong>Autocorrelation Plot</strong></td>
+<td><a href="../../assets/plot_examples/autocorrelation.png"><img alt="Autocorrelation Plot" src="../../assets/plot_examples/autocorrelation.png" /></a></td>
+<td>Show correlation of series with lagged versions</td>
+<td>Correlation at different lag values</td>
+<td><code>pd.plotting.autocorrelation_plot(data)</code></td>
+</tr>
+<tr>
+<td><strong>Lag Plot</strong></td>
+<td><a href="../../assets/plot_examples/lagplot.png"><img alt="Lag Plot" src="../../assets/plot_examples/lagplot.png" /></a></td>
+<td>Check for randomness in time series</td>
+<td>Current value vs lagged value</td>
+<td><code>pd.plotting.lag_plot(data)</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-additional-resources">4. Additional resources</h2>
+<h3 id="41-python-visualization-libraries">4.1. Python visualization libraries</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Library</strong></th>
+<th><strong>Strengths</strong></th>
+<th><strong>Best For</strong></th>
+<th><strong>Import Statement</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Matplotlib</strong></td>
+<td>Highly customizable, fine control</td>
+<td>Publication-quality plots, custom visualizations</td>
+<td><code>import matplotlib.pyplot as plt</code></td>
+</tr>
+<tr>
+<td><strong>Seaborn</strong></td>
+<td>Beautiful defaults, statistical plots</td>
+<td>Exploratory data analysis, statistical visualization</td>
+<td><code>import seaborn as sns</code></td>
+</tr>
+<tr>
+<td><strong>Pandas</strong></td>
+<td>Integrated with DataFrames</td>
+<td>Quick exploration, simple plots</td>
+<td>Built-in: <code>df.plot()</code></td>
+</tr>
+<tr>
+<td><strong>Plotly</strong></td>
+<td>Interactive plots, 3D support</td>
+<td>Dashboards, web applications, interactive exploration</td>
+<td><code>import plotly.express as px</code></td>
+</tr>
+<tr>
+<td><strong>Bokeh</strong></td>
+<td>Interactive web-ready plots</td>
+<td>Interactive dashboards, streaming data</td>
+<td><code>from bokeh.plotting import figure</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-recommended-reading">4.2. Recommended reading</h3>
+<ul>
+<li><a href="https://www.edwardtufte.com/tufte/books_vdqi" target="_blank"><strong>"The Visual Display of Quantitative Information"</strong></a> by Edward Tufte</li>
+<li><a href="https://clauswilke.com/dataviz/" target="_blank"><strong>"Fundamentals of Data Visualization"</strong></a> by Claus O. Wilke</li>
+<li><a href="https://www.storytellingwithdata.com/" target="_blank"><strong>"Storytelling with Data"</strong></a> by Cole Nussbaumer Knaflic</li>
+</ul>
+<h3 id="43-python-plotting-resources">4.3. Python plotting resources</h3>
+<ul>
+<li><a href="https://colorbrewer2.org/" target="_blank"><strong>ColorBrewer</strong></a>: Color schemes for maps and data visualization</li>
+<li><a href="https://seaborn.pydata.org/examples/index.html" target="_blank"><strong>Seaborn Gallery</strong></a>: Examples of statistical plots</li>
+<li><a href="https://matplotlib.org/stable/gallery/index.html" target="_blank"><strong>Matplotlib Gallery</strong></a>: Comprehensive plot examples</li>
+<li><a href="https://www.python-graph-gallery.com/" target="_blank"><strong>Python Graph Gallery</strong></a>: Collection of plot types with code</li>
+</ul>
+<h3 id="44-color-palettes">4.4. Color palettes</h3>
+<pre><code class="language-python"># Colorblind-friendly palettes
+sns.color_palette(&quot;colorblind&quot;)
+sns.color_palette(&quot;Set2&quot;)
+
+# Diverging (for correlation matrices)
+sns.color_palette(&quot;RdBu_r&quot;, as_cmap=True)
+sns.color_palette(&quot;coolwarm&quot;, as_cmap=True)
+
+# Sequential (for heatmaps)
+sns.color_palette(&quot;YlOrRd&quot;, as_cmap=True)
+sns.color_palette(&quot;viridis&quot;, as_cmap=True)
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/download.js"></script>
+      
+    
+  </body>
+</html>
