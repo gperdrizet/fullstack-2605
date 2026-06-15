@@ -507,6 +507,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="1.2. Interpretation guidelines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#central-tendency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Central tendency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spread" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spread
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shape" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shape
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -514,6 +553,17 @@
     <span class="md-ellipsis">
       
         1.3. Choosing the right statistic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-important-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4. Important notes
       
     </span>
   </a>
@@ -533,34 +583,6 @@
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="2. Common probability distributions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-discrete-distributions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2.1. Discrete distributions
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-continuous-distributions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2.2. Continuous distributions
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -899,6 +921,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="1.2. Interpretation guidelines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#central-tendency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Central tendency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spread" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spread
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shape" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shape
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -906,6 +967,17 @@
     <span class="md-ellipsis">
       
         1.3. Choosing the right statistic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-important-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4. Important notes
       
     </span>
   </a>
@@ -925,34 +997,6 @@
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="2. Common probability distributions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-discrete-distributions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2.1. Discrete distributions
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-continuous-distributions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2.2. Continuous distributions
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1102,155 +1146,269 @@
 <p>This guide summarizes the core ideas from the statistics overview resource: descriptive statistics, common probability distributions, and how to choose a statistical test.</p>
 <p>The statistical testing section below is adapted from the source repo's Jekyll templates and keeps the same high-level guidance: use the quick guide first, then refer to the complete table for edge cases and more specific scenarios.</p>
 <h2 id="1-common-descriptive-statistics">1. Common descriptive statistics</h2>
-<p>Descriptive statistics summarize the center, spread, and shape of a dataset.</p>
+<p>Descriptive statistics summarize and describe the main features of a dataset. They are divided into three main categories based on what aspect of the data they measure.</p>
 <h3 id="11-measures-of-central-tendency-spread-and-shape">1.1. Measures of central tendency, spread, and shape</h3>
 <table>
-<thead>
-<tr>
-<th>Category</th>
-<th>Statistic</th>
-<th>When to use</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Central tendency</td>
-<td>Mean</td>
-<td>Symmetric data without strong outliers</td>
-</tr>
-<tr>
-<td>Central tendency</td>
-<td>Median</td>
-<td>Skewed data or data with outliers</td>
-</tr>
-<tr>
-<td>Central tendency</td>
-<td>Mode</td>
-<td>Categorical data or multimodal distributions</td>
-</tr>
-<tr>
-<td>Spread</td>
-<td>Range</td>
-<td>Quick estimate of spread</td>
-</tr>
-<tr>
-<td>Spread</td>
-<td>Variance and standard deviation</td>
-<td>General variability measures</td>
-</tr>
-<tr>
-<td>Spread</td>
-<td>Interquartile range (IQR)</td>
-<td>Robust spread measure for skewed data</td>
-</tr>
-<tr>
-<td>Spread</td>
-<td>Coefficient of variation</td>
-<td>Compare variability across different scales</td>
-</tr>
-<tr>
-<td>Shape</td>
-<td>Skewness</td>
-<td>Assess asymmetry</td>
-</tr>
-<tr>
-<td>Shape</td>
-<td>Kurtosis</td>
-<td>Assess tail heaviness and outlier tendency</td>
-</tr>
-</tbody>
+    <thead>
+        <tr>
+            <th><strong>Category</strong></th>
+            <th><strong>Statistic</strong></th>
+            <th><strong>Description</strong></th>
+            <th><strong>Formula / Calculation</strong></th>
+            <th><strong>When to use</strong></th>
+            <th><strong>Python implementation</strong></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="4"><strong>Central tendency</strong></td>
+            <td><strong>Mean (μ or x̄)</strong></td>
+            <td>Average of all values; sum divided by count</td>
+            <td>μ = Σx / n</td>
+            <td>Symmetric distributions without outliers</td>
+            <td><code>np.mean(data)</code> or <code>data.mean()</code></td>
+        </tr>
+        <tr>
+            <td><strong>Median</strong></td>
+            <td>Middle value when data is ordered; 50th percentile</td>
+            <td>Middle value or average of two middle values</td>
+            <td>Skewed distributions or data with outliers</td>
+            <td><code>np.median(data)</code> or <code>data.median()</code></td>
+        </tr>
+        <tr>
+            <td><strong>Mode</strong></td>
+            <td>Most frequently occurring value(s)</td>
+            <td>Value with highest frequency</td>
+            <td>Categorical data or multimodal distributions</td>
+            <td><code>statistics.mode(data)</code> or <code>data.mode()</code></td>
+        </tr>
+        <tr>
+            <td><strong>Trimmed mean</strong></td>
+            <td>Mean after removing extreme values (for example top/bottom 5%)</td>
+            <td>Mean of remaining values after trimming</td>
+            <td>Data with outliers but want mean-like measure</td>
+            <td><code>scipy.stats.trim_mean(data, 0.05)</code></td>
+        </tr>
+        <tr>
+            <td rowspan="6"><strong>Spread</strong></td>
+            <td><strong>Range</strong></td>
+            <td>Difference between maximum and minimum values</td>
+            <td>Range = max - min</td>
+            <td>Quick measure of spread; sensitive to outliers</td>
+            <td><code>np.ptp(data)</code> or <code>max(data) - min(data)</code></td>
+        </tr>
+        <tr>
+            <td><strong>Variance (σ² or s²)</strong></td>
+            <td>Average squared deviation from the mean</td>
+            <td>σ² = Σ(x - μ)² / n</td>
+            <td>Understanding variability; basis for other stats</td>
+            <td><code>np.var(data)</code> or <code>data.var()</code></td>
+        </tr>
+        <tr>
+            <td><strong>Standard deviation (σ or s)</strong></td>
+            <td>Square root of variance; typical distance from mean</td>
+            <td>σ = √(Σ(x - μ)² / n)</td>
+            <td>Most common spread measure; same units as data</td>
+            <td><code>np.std(data)</code> or <code>data.std()</code></td>
+        </tr>
+        <tr>
+            <td><strong>Interquartile range (IQR)</strong></td>
+            <td>Difference between 75th and 25th percentiles</td>
+            <td>IQR = Q3 - Q1</td>
+            <td>Robust to outliers; used in boxplots</td>
+            <td><code>scipy.stats.iqr(data)</code> or <code>data.quantile(0.75) - data.quantile(0.25)</code></td>
+        </tr>
+        <tr>
+            <td><strong>Mean absolute deviation (MAD)</strong></td>
+            <td>Average absolute deviation from the mean</td>
+            <td>MAD = Σ|x - μ| / n</td>
+            <td>Less sensitive to outliers than variance</td>
+            <td><code>np.mean(np.abs(data - np.mean(data)))</code></td>
+        </tr>
+        <tr>
+            <td><strong>Coefficient of variation (CV)</strong></td>
+            <td>Relative standard deviation (standardized measure)</td>
+            <td>CV = (σ / μ) × 100%</td>
+            <td>Comparing variability across different scales</td>
+            <td><code>(np.std(data) / np.mean(data)) * 100</code></td>
+        </tr>
+        <tr>
+            <td rowspan="2"><strong>Shape</strong></td>
+            <td><strong>Skewness</strong></td>
+            <td>Measure of asymmetry in the distribution</td>
+            <td>Positive: right tail; Negative: left tail; 0: symmetric</td>
+            <td>Assessing distribution symmetry</td>
+            <td><code>scipy.stats.skew(data)</code> or <code>data.skew()</code></td>
+        </tr>
+        <tr>
+            <td><strong>Kurtosis</strong></td>
+            <td>Measure of tailedness (outlier propensity)</td>
+            <td>Positive: heavy tails; Negative: light tails; 0: normal</td>
+            <td>Identifying presence of outliers</td>
+            <td><code>scipy.stats.kurtosis(data)</code> or <code>data.kurtosis()</code></td>
+        </tr>
+    </tbody>
 </table>
+
 <h3 id="12-interpretation-guidelines">1.2. Interpretation guidelines</h3>
+<h4 id="central-tendency">Central tendency</h4>
 <ul>
-<li>Mean, median, and mode are often close for symmetric distributions.</li>
-<li>A right-skewed distribution usually has mean greater than median.</li>
-<li>A left-skewed distribution usually has mean less than median.</li>
-<li>High variance or standard deviation means values are more spread out.</li>
-<li>IQR is useful when outliers would distort the mean and standard deviation.</li>
+<li><strong>Mean = Median = Mode</strong>: Perfectly symmetric distribution</li>
+<li><strong>Mean &gt; Median</strong>: Right-skewed (positive skew) distribution</li>
+<li><strong>Mean &lt; Median</strong>: Left-skewed (negative skew) distribution</li>
+</ul>
+<h4 id="spread">Spread</h4>
+<ul>
+<li><strong>Low variance/SD</strong>: Data points cluster closely around the mean</li>
+<li><strong>High variance/SD</strong>: Data points are widely dispersed</li>
+<li><strong>IQR</strong>: Contains the middle 50% of the data</li>
+<li><strong>CV &lt; 15%</strong>: Low variability; CV &gt; 30%: High variability</li>
+</ul>
+<h4 id="shape">Shape</h4>
+<ul>
+<li>
+<p><strong>Skewness</strong>:</p>
+<ul>
+<li>Between -0.5 and 0.5: Approximately symmetric</li>
+<li>Between -1 and -0.5 or 0.5 and 1: Moderately skewed</li>
+<li>Less than -1 or greater than 1: Highly skewed</li>
+</ul>
+</li>
+<li>
+<p><strong>Kurtosis</strong> (Excess Kurtosis):</p>
+<ul>
+<li>Approximately 0: Normal distribution</li>
+<li>Greater than 0: Heavy tails, more outliers</li>
+<li>Less than 0: Light tails, fewer outliers</li>
+</ul>
+</li>
 </ul>
 <h3 id="13-choosing-the-right-statistic">1.3. Choosing the right statistic</h3>
 <ol>
-<li>Use mean and standard deviation for symmetric data without strong outliers.</li>
-<li>Use median and IQR for skewed data or data with outliers.</li>
-<li>Use coefficient of variation when comparing spread across different units or scales.</li>
-<li>Use skewness and kurtosis when you need a more detailed view of distribution shape.</li>
+<li><strong>For symmetric data without outliers</strong>: Use mean and standard deviation</li>
+<li><strong>For skewed data or data with outliers</strong>: Use median and IQR</li>
+<li><strong>For comparing variability across different scales</strong>: Use coefficient of variation</li>
+<li><strong>For understanding distribution shape</strong>: Calculate skewness and kurtosis</li>
+<li><strong>For categorical data</strong>: Use mode and frequency tables</li>
 </ol>
+<h3 id="14-important-notes">1.4. Important notes</h3>
+<ul>
+<li>Always visualize your data (histograms, boxplots, Q-Q plots) before choosing statistics</li>
+<li>Report multiple measures to give a complete picture of your data</li>
+<li>Consider the context and purpose of your analysis when selecting statistics</li>
+<li>Remember that descriptive statistics can be misleading without understanding the underlying distribution</li>
+</ul>
 <h2 id="2-common-probability-distributions">2. Common probability distributions</h2>
-<p>Probability distributions describe how likely different outcomes are in a random process.</p>
-<h3 id="21-discrete-distributions">2.1. Discrete distributions</h3>
+<p>Probability distributions describe the likelihood of different outcomes in a random process. They are fundamental to statistical inference, hypothesis testing, and predictive modeling.</p>
 <table>
-<thead>
-<tr>
-<th>Distribution</th>
-<th>Typical use</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Bernoulli</td>
-<td>A single yes/no outcome</td>
-</tr>
-<tr>
-<td>Binomial</td>
-<td>Number of successes in repeated independent trials</td>
-</tr>
-<tr>
-<td>Poisson</td>
-<td>Count of events in a fixed interval</td>
-</tr>
-<tr>
-<td>Geometric</td>
-<td>Number of trials until the first success</td>
-</tr>
-</tbody>
+    <thead>
+        <tr>
+            <th><strong>Type</strong></th>
+            <th><strong>Distribution</strong></th>
+            <th><strong>Parameters</strong></th>
+            <th><strong>Description</strong></th>
+            <th><strong>Python implementation</strong></th>
+            <th><strong>Distribution shape</strong></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="4"><strong>Discrete</strong></td>
+            <td><strong>Bernoulli</strong></td>
+            <td>p (probability of success)</td>
+            <td>Single trial with two outcomes (success/failure)</td>
+            <td><code>stats.bernoulli.pmf(k, p)</code></td>
+            <td><a href="../assets/distribution_plots/bernoulli.png" target="_blank"><img src="../assets/distribution_plots/bernoulli.png" alt="Bernoulli"></a></td>
+        </tr>
+        <tr>
+            <td><strong>Binomial</strong></td>
+            <td>n (trials), p (probability)</td>
+            <td>Number of successes in n independent Bernoulli trials</td>
+            <td><code>stats.binom.pmf(k, n, p)</code></td>
+            <td><a href="../assets/distribution_plots/binomial.png" target="_blank"><img src="../assets/distribution_plots/binomial.png" alt="Binomial"></a></td>
+        </tr>
+        <tr>
+            <td><strong>Poisson</strong></td>
+            <td>λ (lambda, rate)</td>
+            <td>Number of events in fixed time/space interval</td>
+            <td><code>stats.poisson.pmf(k, mu)</code></td>
+            <td><a href="../assets/distribution_plots/poisson.png" target="_blank"><img src="../assets/distribution_plots/poisson.png" alt="Poisson"></a></td>
+        </tr>
+        <tr>
+            <td><strong>Geometric</strong></td>
+            <td>p (probability of success)</td>
+            <td>Number of trials until first success</td>
+            <td><code>stats.geom.pmf(k, p)</code></td>
+            <td><a href="../assets/distribution_plots/geometric.png" target="_blank"><img src="../assets/distribution_plots/geometric.png" alt="Geometric"></a></td>
+        </tr>
+
+        <tr>
+            <td rowspan="9"><strong>Continuous</strong></td>
+            <td><strong>Uniform</strong></td>
+            <td>a (min), b (max)</td>
+            <td>All values in interval [a, b] equally likely</td>
+            <td><code>stats.uniform.pdf(x, a, b-a)</code></td>
+            <td><a href="../assets/distribution_plots/uniform.png" target="_blank"><img src="../assets/distribution_plots/uniform.png" alt="Uniform"></a></td>
+        </tr>
+        <tr>
+            <td><strong>Normal (Gaussian)</strong></td>
+            <td>μ (mean), σ (std dev)</td>
+            <td>Symmetric bell curve; most common distribution</td>
+            <td><code>stats.norm.pdf(x, mu, sigma)</code></td>
+            <td><a href="../assets/distribution_plots/normal.png" target="_blank"><img src="../assets/distribution_plots/normal.png" alt="Normal"></a></td>
+        </tr>
+        <tr>
+            <td><strong>Exponential</strong></td>
+            <td>λ (rate)</td>
+            <td>Time between events in Poisson process</td>
+            <td><code>stats.expon.pdf(x, scale=1/lambda)</code></td>
+            <td><a href="../assets/distribution_plots/exponential.png" target="_blank"><img src="../assets/distribution_plots/exponential.png" alt="Exponential"></a></td>
+        </tr>
+        <tr>
+            <td><strong>Gamma</strong></td>
+            <td>k (shape), θ (scale)</td>
+            <td>Generalizes exponential; sum of k exponential variables</td>
+            <td><code>stats.gamma.pdf(x, k, scale=theta)</code></td>
+            <td><a href="../assets/distribution_plots/gamma.png" target="_blank"><img src="../assets/distribution_plots/gamma.png" alt="Gamma"></a></td>
+        </tr>
+        <tr>
+            <td><strong>Beta</strong></td>
+            <td>α (alpha), β (beta)</td>
+            <td>Distribution on interval [0, 1]</td>
+            <td><code>stats.beta.pdf(x, alpha, beta)</code></td>
+            <td><a href="../assets/distribution_plots/beta.png" target="_blank"><img src="../assets/distribution_plots/beta.png" alt="Beta"></a></td>
+        </tr>
+        <tr>
+            <td><strong>Chi-square (χ²)</strong></td>
+            <td>df (degrees of freedom)</td>
+            <td>Sum of squared standard normal variables</td>
+            <td><code>stats.chi2.pdf(x, df)</code></td>
+            <td><a href="../assets/distribution_plots/chi_square.png" target="_blank"><img src="../assets/distribution_plots/chi_square.png" alt="Chi-square"></a></td>
+        </tr>
+        <tr>
+            <td><strong>Student's t</strong></td>
+            <td>df (degrees of freedom)</td>
+            <td>Similar to normal but with heavier tails</td>
+            <td><code>stats.t.pdf(x, df)</code></td>
+            <td><a href="../assets/distribution_plots/t_distribution.png" target="_blank"><img src="../assets/distribution_plots/t_distribution.png" alt="Student's t"></a></td>
+        </tr>
+        <tr>
+            <td><strong>F-distribution</strong></td>
+            <td>df1, df2 (degrees of freedom)</td>
+            <td>Ratio of two chi-square distributions</td>
+            <td><code>stats.f.pdf(x, df1, df2)</code></td>
+            <td><a href="../assets/distribution_plots/f_distribution.png" target="_blank"><img src="../assets/distribution_plots/f_distribution.png" alt="F-distribution"></a></td>
+        </tr>
+        <tr>
+            <td><strong>Pareto</strong></td>
+            <td>α (shape), xₘ (scale/minimum)</td>
+            <td>Power law distribution; models 80/20 rule phenomena</td>
+            <td><code>stats.pareto.pdf(x, alpha, scale=xm)</code></td>
+            <td><a href="../assets/distribution_plots/pareto.png" target="_blank"><img src="../assets/distribution_plots/pareto.png" alt="Pareto"></a></td>
+        </tr>
+    </tbody>
 </table>
-<h3 id="22-continuous-distributions">2.2. Continuous distributions</h3>
-<table>
-<thead>
-<tr>
-<th>Distribution</th>
-<th>Typical use</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Uniform</td>
-<td>Values are equally likely in an interval</td>
-</tr>
-<tr>
-<td>Normal</td>
-<td>Symmetric bell-shaped data</td>
-</tr>
-<tr>
-<td>Exponential</td>
-<td>Time between events in a Poisson process</td>
-</tr>
-<tr>
-<td>Gamma</td>
-<td>Generalized waiting-time model</td>
-</tr>
-<tr>
-<td>Beta</td>
-<td>Values constrained to the interval [0, 1]</td>
-</tr>
-<tr>
-<td>Chi-square</td>
-<td>Sum of squared standard normal variables</td>
-</tr>
-<tr>
-<td>Student's t</td>
-<td>Small-sample inference with heavier tails</td>
-</tr>
-<tr>
-<td>F</td>
-<td>Comparing variance ratios</td>
-</tr>
-<tr>
-<td>Pareto</td>
-<td>Heavy-tailed and power-law behavior</td>
-</tr>
-</tbody>
-</table>
+
 <h2 id="3-statistical-test-selection-guide">3. Statistical test selection guide</h2>
 <p>Before selecting a test, check the data type, distribution shape, and whether the samples are independent.</p>
 <p>The tests listed below cannot be used with nominal data as the dependent variable. Choosing the correct statistical test and plotting data effectively depends on the data's statistical type. See the Wikipedia article <a href="https://en.wikipedia.org/wiki/Statistical_data_type">Statistical data type</a> for more information.</p>
