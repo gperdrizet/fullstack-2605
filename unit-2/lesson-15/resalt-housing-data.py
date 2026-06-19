@@ -2,6 +2,7 @@
 
 from pathlib import Path
 import argparse
+import random
 
 import numpy as np
 import pandas as pd
@@ -43,8 +44,19 @@ def build_quartiles(population: pd.Series) -> pd.Series:
     labels = ['Q1_lowest', 'Q2', 'Q3', 'Q4_highest']
     return pd.qcut(population.rank(method='first'), q=4, labels=labels)
 
+def salt_features(df: pd.DataFrame, features: list[str], prob_range: tuple[float] = (0.01, 0.1)) -> pd.DataFrame:
+    '''Salts each feature in features with np.nan using a randomly selected
+    probability in prob_range.'''
 
-def salt_housing_data(
+    for feature in features:
+        prob = random.uniform(prob_range[0], prob_range[1])
+
+        mask = np.random.rand(len(df)) < prob
+        df.loc[mask, feature] = np.nan
+
+    return df
+
+def salt_house_age(
     df: pd.DataFrame,
     seed: int,
     q1_missing_prob: float,
@@ -55,13 +67,6 @@ def salt_housing_data(
     '''Add mild feature noise and quartile-dependent HouseAge missingness.'''
     rng = np.random.default_rng(seed)
     salted = df.copy()
-
-    for column, scale in [('AveRooms', 0.08), ('AveBedrms', 0.03), ('AveOccup', 0.06)]:
-        salted[column] = salted[column] + rng.normal(0, scale, size=len(salted))
-
-    salted['AveRooms'] = salted['AveRooms'].clip(lower=0.5)
-    salted['AveBedrms'] = salted['AveBedrms'].clip(lower=0.1)
-    salted['AveOccup'] = salted['AveOccup'].clip(lower=0.1)
 
     quartiles = build_quartiles(salted['Population'])
     probabilities = {
@@ -108,10 +113,10 @@ def parse_args() -> argparse.Namespace:
         default=None,
         help='Output CSV path. Defaults to data/salted_housing_data.csv.',
     )
-    parser.add_argument('--q1-missing-prob', type=float, default=0.24)
-    parser.add_argument('--q2-missing-prob', type=float, default=0.19)
-    parser.add_argument('--q3-missing-prob', type=float, default=0.14)
-    parser.add_argument('--q4-missing-prob', type=float, default=0.10)
+    parser.add_argument('--q1', type=float, default=0.053)
+    parser.add_argument('--q2', type=float, default=0.041)
+    parser.add_argument('--q3', type=float, default=0.037)
+    parser.add_argument('--q4', type=float, default=0.040)
     return parser.parse_args()
 
 
@@ -123,24 +128,26 @@ def main() -> None:
     output_path = args.output or (data_dir / 'salted_housing_data.csv')
 
     for probability in [
-        args.q1_missing_prob,
-        args.q2_missing_prob,
-        args.q3_missing_prob,
-        args.q4_missing_prob,
+        args.q1,
+        args.q2,
+        args.q3,
+        args.q4,
     ]:
         if probability < 0 or probability > 1:
             raise ValueError('All missing probabilities must be between 0 and 1.')
 
     source_df, source_name = load_source_data(data_dir)
-    salted_df = salt_housing_data(
+    salted_df = salt_house_age(
         source_df,
         seed=args.seed,
-        q1_missing_prob=args.q1_missing_prob,
-        q2_missing_prob=args.q2_missing_prob,
-        q3_missing_prob=args.q3_missing_prob,
-        q4_missing_prob=args.q4_missing_prob,
+        q1_missing_prob=args.q1,
+        q2_missing_prob=args.q2,
+        q3_missing_prob=args.q3,
+        q4_missing_prob=args.q4,
     )
 
+    features = ["MedInc", "AveRooms", "AveBedrms", "AveOccup", "Latitude", "Longitude", "MedHouseVal", "Population"]
+    salted_df = salt_features(salted_df, features)
     salted_df.to_csv(output_path, index=False)
 
     print(f'Source used: {source_name}')
