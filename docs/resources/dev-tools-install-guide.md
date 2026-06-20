@@ -19,16 +19,16 @@ You can run all verification commands in this window.
 3. Keep the default options unless your organization requires specific settings.
 4. Open PowerShell and run:
 
-**Official references**
-
-1. [Download page](https://git-scm.com/download/win)
-2. [Official Pro Git book (installation)](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-
 ```bash
 git --version
 ```
 
 You should see a version number.
+
+**Official references**
+
+1. [Download page](https://git-scm.com/download/win)
+2. [Official Pro Git book (installation)](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 ### 1.2. Install Docker
 
@@ -39,18 +39,18 @@ You should see a version number.
 5. Open Docker Desktop and wait for it to finish starting.
 6. In PowerShell, run:
 
-**Official references**
-
-1. [Docker Desktop download](https://www.docker.com/products/docker-desktop)
-2. [Install Docker Desktop on Windows](https://docs.docker.com/desktop/setup/install/windows-install)
-3. [Docker getting started](https://docs.docker.com/get-started)
-
 ```bash
 docker --version
 docker run hello-world
 ```
 
 If successful, Docker prints a welcome message.
+
+**Official references**
+
+1. [Docker Desktop download](https://www.docker.com/products/docker-desktop)
+2. [Install Docker Desktop on Windows](https://docs.docker.com/desktop/setup/install/windows-install)
+3. [Docker getting started](https://docs.docker.com/get-started)
 
 ### 1.3. Install VS Code
 
@@ -114,18 +114,19 @@ git --version
 5. Complete any permission prompts.
 6. In Terminal, run:
 
-**Official references**
-
-1. [Docker Desktop download](https://www.docker.com/products/docker-desktop/)
-2. [Install Docker Desktop on Mac](https://docs.docker.com/desktop/setup/install/mac-install/)
-3. [Docker getting started](https://docs.docker.com/get-started/)
-
 ```bash
 docker --version
 docker run hello-world
 ```
 
 If successful, Docker prints a welcome message.
+
+**Official references**
+
+1. [Docker Desktop download](https://www.docker.com/products/docker-desktop/)
+2. [Install Docker Desktop on Mac](https://docs.docker.com/desktop/setup/install/mac-install/)
+3. [Docker getting started](https://docs.docker.com/get-started/)
+
 
 ### 2.3. Install VS Code
 
@@ -137,17 +138,18 @@ If successful, Docker prints a welcome message.
 6. Run command: Shell Command: Install 'code' command in PATH.
 7. In Terminal, run:
 
+```bash
+code --version
+```
+
+You should see a version number.
+
 **Official references**
 
 1. [VS Code download](https://code.visualstudio.com/)
 2. [macOS setup guide](https://code.visualstudio.com/docs/setup/mac)
 3. [Command line usage](https://code.visualstudio.com/docs/editor/command-line)
 
-```bash
-code --version
-```
-
-You should see a version number.
 
 ### 2.4. Install the Dev Containers extension
 
@@ -160,7 +162,7 @@ You should see a version number.
 
 1. [Dev Containers documentation](https://code.visualstudio.com/docs/devcontainers/containers)
 
-## 3. Quick checks before class
+## 3. Final check
 
 Run these in Terminal (macOS) or PowerShell (Windows):
 
