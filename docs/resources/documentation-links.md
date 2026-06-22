@@ -9,8 +9,8 @@
 ## Data science
 1. [Official Numpy 1.23 docs](https://numpy.org/doc/1.23). **Note**: Vocareum has 1.23 installed, other environments may have newer versions.
 2. [Official Pandas 3.0 docs](https://pandas.pydata.org/docs/). **Note:** Vocareum has 1.5, most environments will/should have a newer version.
-3. [Official Matplotlib 3.6 docs](https://matplotlib.org/3.6.3/index.html). **Note**: Vocareum has 3.6, current stable version is 3.10.
-4. [Official SciPy 1.9.3 docs](https://docs.scipy.org/doc/scipy-1.9.3/index.html). **Note**: Vocareum has 1.9.3, current stable version is 1.17.
+3. [Official SciPy 1.9.3 docs](https://docs.scipy.org/doc/scipy-1.9.3/index.html). **Note**: Vocareum has 1.9.3, current stable version is 1.17.
+4. [Official Matplotlib 3.6 docs](https://matplotlib.org/3.6.3/index.html). **Note**: Vocareum has 3.6, current stable version is 3.10.
 5. [Official Seaborn docs](https://seaborn.pydata.org)
 6. [Official Plotly docs](https://plotly.com/python)
 7. [Official CuPy docs](https://docs.cupy.dev/en/stable)
