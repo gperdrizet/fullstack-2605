@@ -11,3 +11,9 @@
 2. [Official Pandas 3.0 docs](https://pandas.pydata.org/docs/). **Note:** Vocareum has 1.5, most environments will/should have a newer version.
 3. [Official Matplotlib 3.6 docs](https://matplotlib.org/3.6.3/index.html). **Note**: Vocareum has 3.6, current stable version is 3.10.
 4. [Official SciPy 1.9.3 docs](https://docs.scipy.org/doc/scipy-1.9.3/index.html). **Note**: Vocareum has 1.9.3, current stable version is 1.17.
+5. [Official Seaborn docs](https://seaborn.pydata.org)
+6. [Official Plotly docs](https://plotly.com/python)
+7. [Official CuPy docs](https://docs.cupy.dev/en/stable)
+
+## Machine learning
+1. [Scikit-learn 1.3 docs](https://scikit-learn.org/1.3). **Note**: Vocareum has 1.3.1, current stable version is 1.9.
