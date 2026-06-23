@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: read
+      deployments: read
 
     steps:
       - name: Notify Slack
@@ -90,6 +91,32 @@ jobs:
 
           body = pr_body or '_No details provided._'
           author = pr_author
+
+          # Poll until the GitHub Pages deployment is live before notifying
+          import time
+
+          print('Waiting for GitHub Pages deployment to go live...')
+          max_attempts = 40  # 40 × 15 s = 10 minutes max
+          for attempt in range(max_attempts):
+              deployments = gh_get(
+                  f'/repos/{repo}/deployments?environment=github-pages&per_page=1'
+              )
+              if deployments:
+                  statuses = gh_get(
+                      f'/repos/{repo}/deployments/{deployments[0]["id"]}/statuses'
+                  )
+                  state = (statuses or [{}])[0].get('state', 'unknown')
+                  print(f'  Attempt {attempt + 1}: pages deployment state = {state}')
+                  if state == 'success':
+                      break
+                  if state in ('failure', 'error'):
+                      print('Pages deployment failed - skipping Slack notification.')
+                      sys.exit(0)
+              if attempt < max_attempts - 1:
+                  time.sleep(15)
+          else:
+              print('Timed out waiting for Pages deployment - skipping Slack notification.')
+              sys.exit(0)
 
           # Truncate to Slack's 3000-char section limit
           if len(body) > 2900:
