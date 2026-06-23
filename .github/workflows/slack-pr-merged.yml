@@ -96,22 +96,38 @@ jobs:
           import time
 
           print('Waiting for GitHub Pages deployment to go live...')
+
+          # Snapshot the current latest deployment so we can detect when a new one starts
+          initial = gh_get(
+              f'/repos/{repo}/deployments?environment=github-pages&per_page=1'
+          ) or []
+          latest_known_id = initial[0]['id'] if initial else None
+          print(f'Latest known deployment ID: {latest_known_id}')
+
           max_attempts = 40  # 40 × 15 s = 10 minutes max
           for attempt in range(max_attempts):
               deployments = gh_get(
                   f'/repos/{repo}/deployments?environment=github-pages&per_page=1'
               )
               if deployments:
-                  statuses = gh_get(
-                      f'/repos/{repo}/deployments/{deployments[0]["id"]}/statuses'
-                  )
-                  state = (statuses or [{}])[0].get('state', 'unknown')
-                  print(f'  Attempt {attempt + 1}: pages deployment state = {state}')
-                  if state == 'success':
-                      break
-                  if state in ('failure', 'error'):
-                      print('Pages deployment failed - skipping Slack notification.')
-                      sys.exit(0)
+                  deployment_id = deployments[0]['id']
+
+                  if deployment_id == latest_known_id:
+                      print(f'  Attempt {attempt + 1}: waiting for new deployment to start...')
+                  else:
+                      statuses = gh_get(
+                          f'/repos/{repo}/deployments/{deployment_id}/statuses'
+                      )
+                      state = (statuses or [{}])[0].get('state', 'unknown')
+                      print(f'  Attempt {attempt + 1}: deployment {deployment_id} state = {state}')
+                      if state == 'success':
+                          break
+                      if state in ('failure', 'error'):
+                          print('Pages deployment failed - skipping Slack notification.')
+                          sys.exit(0)
+              else:
+                  print(f'  Attempt {attempt + 1}: no deployments found yet...')
+
               if attempt < max_attempts - 1:
                   time.sleep(15)
           else:
