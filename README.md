@@ -92,16 +92,21 @@ Once both workflows complete successfully, a Slack notification is sent to the c
 
 ## Slack notifications
 
-When a pull request is merged to `main` and the GitHub Pages deployment succeeds, the workflow at `.github/workflows/slack-pages-deployed.yml` sends a message to the configured Slack channel. The message includes the PR description, so students know what was updated.
+When a pull request is merged to `main` and the GitHub Pages deployment succeeds, the workflow at `.github/workflows/slack-pages-deployed.yml` posts a message to the course Slack channel. The message includes the PR description, so students know what was updated.
 
-1. Create a Slack incoming webhook:
-   - Go to <https://api.slack.com/apps>, create a new app (or use an existing one), and enable **Incoming Webhooks**.
-   - Add a new webhook and point it at the desired channel. Copy the webhook URL (it starts with `https://hooks.slack.com/services/...`).
+The workflow posts via a **Slack Workflow Builder webhook** — no bot or admin approval required, since Workflow Builder is available to all workspace members.
 
-2. Add the webhook URL as a repository secret:
+### Setup
+
+1. In Slack, open **Tools → Workflow Builder** and create a new workflow with a **Webhook** trigger.
+2. Define three text input variables: `author`, `details`, and `site_url`.
+3. Add a **Send a message** step to post to your channel using those variables.
+4. Publish the workflow and copy the webhook URL (it starts with `https://hooks.slack.com/workflows/...`).
+5. Add the URL as a repository secret:
    - Go to the repository on GitHub → **Settings** → **Secrets and variables** → **Actions** → **New repository secret**.
    - Name: `SLACK_WEBHOOK_URL`
    - Value: paste the webhook URL.
 
 The notification is skipped automatically if the deployment fails or if the push to `main` was not from a merged pull request (e.g. a direct push).
+
 
