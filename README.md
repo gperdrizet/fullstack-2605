@@ -1,6 +1,9 @@
 # fullstack-2605
 
-[![Publish to GitHub Pages](https://github.com/gperdrizet/fullstack-2605/actions/workflows/publish.yml/badge.svg)](https://github.com/gperdrizet/fullstack-2605/actions/workflows/publish.yml)
+[![Pages deployment](https://github.com/gperdrizet/fullstack-2605/actions/workflows/publish.yml/badge.svg)](https://github.com/gperdrizet/fullstack-2605/actions/workflows/publish.yml)
+[![Slack notifications](https://github.com/gperdrizet/fullstack-2605/actions/workflows/slack-pages-deployed.yml/badge.svg)](https://github.com/gperdrizet/fullstack-2605/actions/workflows/slack-pages-deployed.yml)
+[![Material for MkDocs](https://img.shields.io/badge/Material_for_MkDocs-526CFE?logo=materialformkdocs&logoColor=white)](https://squidfunk.github.io/mkdocs-material/)
+[![Fullstack Academy](https://img.shields.io/badge/Fullstack_Academy-AI%2FML_2605-CC0000?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB/ElEQVR42qVTS2tTQRg993oNlWhsmndMYpNqFLrVH+HChQtBFERcquB/EJS2lmqoGxUXoogWtWqRIlUJsSZVGkF/RjtjW/Umua8cF1NCe3OLC8/q43ucmfnOGY0kEYRuF9D1/tiH4KzrAboOd7kJp7Gkhl03sBX0w3FIknZjiXLkKGVhhHa1tq22FQgc/lilLJYphlIUsTRlvkRr/l0gCfzD1tt5ynyJq3siNG+MszVV4Wo4SpEpsPNyto9EETguSbLz/AVFpkCxL0ZzbKLX1KrcoRhMUCSybD9+opKuu0ngeSTJ9sNHFLE0RSTOVmVa8S43adcbqn7vAUU0RTGYYPvufUXieQS7XbZuT1NEk5S5IjubJzhfvlKWRymLZdq1T+qGs68oDx6i2J+gOXaT9DwqGUMhJZXnAYYBp97ArzPnwJUVcH0Dv8+eh1OtQTMM1aNpKgag0fMIXYf1bAZ/Ll8FjN3Q9obBtTUMXLkELRRC+1YFWiQCWhZgthCemsDAxQvKYNsUeDNHmStSxDNcP3Gyt8SNU6cp4lmKdJ6dpzPcuvh+GRc+qHfG0jSvXac5PkmRPECZHWbn9dwOMvqNtPiZsnSEYjBJMZSizBVpLbz/h5F8JE7zG3+WRymHD9NerO9oZS3wN7oeYOyC+/0HYNswjh/r5fzQ/vc7/wXommuoWg4yLwAAAABJRU5ErkJggg==&logoColor=white)](https://www.fullstackacademy.com/)
 
 Materials for Fullstack Academy AI/ML cohort 2605.
 
@@ -18,7 +21,7 @@ docs/
 ├── assets/
 │   └── logo.png                      # Fullstack Academy logo
 ├── stylesheets/
-│   └── extra.css                     # custom brand colours
+│   └── extra.css                     # custom brand colors
 └── resources/
     ├── documentation-links.md
     ├── linux-commands.md
@@ -26,6 +29,21 @@ docs/
     ├── dev-tools-install-guide.md
     └── dev-container-guide.md
 ```
+
+## Local development
+
+Install dependencies:
+
+```bash
+pip install mkdocs-material
+```
+
+Serve the site locally with live reload:
+
+```bash
+mkdocs serve
+```
+
 
 ## Datasets and Git LFS
 
@@ -44,22 +62,46 @@ git lfs install
 
 If you already cloned the repo without Git LFS, run `git lfs pull` to fetch the data files.
 
-## Local development
-
-Install dependencies:
-
-```bash
-pip install mkdocs-material
-```
-
-Serve the site locally with live reload:
-
-```bash
-mkdocs serve
-```
-
 Then open <http://127.0.0.1:8000> in your browser. Changes to any file in `docs/` or `mkdocs.yml` are reflected immediately.
+
 
 ## Deployment
 
-Pushing to `main` triggers the workflow at `.github/workflows/publish.yml`, which runs `mkdocs gh-deploy --force` to build and push the site to the `gh-pages` branch. GitHub Pages serves the site from that branch.
+All changes to the course site should go through a pull request rather than pushing directly to `main`. The recommended workflow is:
+
+1. Create or switch to a `dev` branch (or any feature branch):
+   ```bash
+   git checkout -b dev
+   ```
+2. Make your changes, commit, and push:
+   ```bash
+   git add .
+   git commit -m "describe your changes"
+   git push origin dev
+   ```
+3. Open a pull request from your branch into `main` on GitHub. Write a short description of what changed — this text is included in the Slack notification sent to students.
+4. Merge the pull request.
+
+Merging into `main` triggers two automated workflows in sequence:
+
+- **Publish to GitHub Pages** (`.github/workflows/publish.yml`): runs `mkdocs gh-deploy --force`, which builds the site and pushes it to the `gh-pages` branch.
+- **pages-build-deployment** (managed by GitHub Pages): picks up the new `gh-pages` content and deploys it to the live CDN. This step typically takes 5–6 minutes.
+
+Once both workflows complete successfully, a Slack notification is sent to the course channel (see below).
+
+
+## Slack notifications
+
+When a pull request is merged to `main` and the GitHub Pages deployment succeeds, the workflow at `.github/workflows/slack-pages-deployed.yml` sends a message to the configured Slack channel. The message includes the PR description, so students know what was updated.
+
+1. Create a Slack incoming webhook:
+   - Go to <https://api.slack.com/apps>, create a new app (or use an existing one), and enable **Incoming Webhooks**.
+   - Add a new webhook and point it at the desired channel. Copy the webhook URL (it starts with `https://hooks.slack.com/services/...`).
+
+2. Add the webhook URL as a repository secret:
+   - Go to the repository on GitHub → **Settings** → **Secrets and variables** → **Actions** → **New repository secret**.
+   - Name: `SLACK_WEBHOOK_URL`
+   - Value: paste the webhook URL.
+
+The notification is skipped automatically if the deployment fails or if the push to `main` was not from a merged pull request (e.g. a direct push).
+
