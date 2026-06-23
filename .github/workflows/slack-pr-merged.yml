@@ -1,60 +1,89 @@
 name: Slack notification on PR merge
 
 on:
-  pull_request:
-    types: [closed]
-    branches:
-      - main
+  workflow_run:
+    workflows: ["Publish to GitHub Pages"]
+    types: [completed]
 
 jobs:
   notify-slack:
-    # Only run when the PR was actually merged, not just closed
-    if: github.event.pull_request.merged == true
+    # Only run after a successful publish, not a failed one
+    if: github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: read
 
     steps:
-      - name: Build Slack payload
+      - name: Notify Slack
         env:
-          PR_BODY: ${{ github.event.pull_request.body }}
-          PR_AUTHOR: ${{ github.event.pull_request.merged_by.login }}
+          GH_TOKEN: ${{ github.token }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+          REPO: ${{ github.repository }}
         run: |
           python3 - <<'EOF'
-          import json, os
+          import json, os, sys, urllib.request, urllib.error
 
-          body = os.environ.get('PR_BODY', '').strip() or '_No details provided._'
-          author = os.environ['PR_AUTHOR']
+          token = os.environ['GH_TOKEN']
+          sha = os.environ['HEAD_SHA']
+          repo = os.environ['REPO']
+          webhook_url = os.environ['SLACK_WEBHOOK_URL']
+
+          # Look up any merged PR associated with this commit
+          url = f'https://api.github.com/repos/{repo}/commits/{sha}/pulls'
+          req = urllib.request.Request(url, headers={
+              'Authorization': f'Bearer {token}',
+              'Accept': 'application/vnd.github+json',
+              'X-GitHub-Api-Version': '2022-11-28'
+          })
+
+          try:
+              with urllib.request.urlopen(req) as resp:
+                  prs = json.loads(resp.read())
+          except urllib.error.HTTPError as e:
+              print(f'GitHub API error: {e}')
+              prs = []
+
+          # If this push was not from a merged PR (e.g. a direct push), skip silently
+          if not prs or not prs[0].get('merged'):
+              print('Not a merged PR - skipping Slack notification.')
+              sys.exit(0)
+
+          pr = prs[0]
+          body = (pr.get('body') or '').strip() or '_No details provided._'
+          author = (pr.get('merged_by') or {}).get('login') or pr['user']['login']
 
           # Truncate to Slack's 3000-char section limit
           if len(body) > 2900:
               body = body[:2900] + '\n_... (truncated)_'
 
+          site_url = 'https://gperdrizet.github.io/fullstack-2605/'
+
           payload = {
-              'text': f'The course repository was just updated by {author}.',
+              'text': f'The course materials site was just updated by {author}.',
               'blocks': [
                   {
                       'type': 'section',
                       'text': {
                           'type': 'mrkdwn',
-                          'text': f':books: *The course repository was just updated by {author}.*'
+                          'text': f'*The <{site_url}|course materials site> was just updated by {author}.*'
                       }
                   },
                   {
                       'type': 'section',
-                      'text': {
-                          'type': 'mrkdwn',
-                          'text': body
-                      }
+                      'text': {'type': 'mrkdwn', 'text': body}
                   }
               ]
           }
 
-          with open('slack_payload.json', 'w') as f:
-              json.dump(payload, f)
+          data = json.dumps(payload).encode()
+          req = urllib.request.Request(
+              webhook_url,
+              data=data,
+              headers={'Content-Type': 'application/json'},
+              method='POST'
+          )
+          with urllib.request.urlopen(req) as resp:
+              print(f'Slack webhook response: {resp.status}')
           EOF
 
-      - name: Send Slack notification
-        uses: slackapi/slack-github-action@v2
-        with:
-          webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
-          webhook-type: incoming-webhook
-          payload-file-path: slack_payload.json
