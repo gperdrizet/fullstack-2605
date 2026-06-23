@@ -134,27 +134,19 @@ jobs:
               print('Timed out waiting for Pages deployment - skipping Slack notification.')
               sys.exit(0)
 
-          # Truncate to Slack's 3000-char section limit
+          # Truncate so the details field stays readable in Slack
           if len(body) > 2900:
-              body = body[:2900] + '\n_... (truncated)_'
+              body = body[:2900] + '\n... (truncated)'
 
           site_url = 'https://gperdrizet.github.io/fullstack-2605/'
 
+          # Workflow Builder webhooks expect simple key-value variables,
+          # not Block Kit JSON. The variable names must match what you
+          # defined when creating the webhook trigger in Workflow Builder.
           payload = {
-              'text': f'The course materials site was just updated by {author}.',
-              'blocks': [
-                  {
-                      'type': 'section',
-                      'text': {
-                          'type': 'mrkdwn',
-                          'text': f'*The <{site_url}|course materials site> was just updated by {author}.*'
-                      }
-                  },
-                  {
-                      'type': 'section',
-                      'text': {'type': 'mrkdwn', 'text': body}
-                  }
-              ]
+              'author': author,
+              'details': body,
+              'site_url': site_url
           }
 
           data = json.dumps(payload).encode()
