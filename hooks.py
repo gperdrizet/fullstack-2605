@@ -19,12 +19,15 @@ def on_pre_build(config):
         if '|' not in line:
             continue
         date, message = line.split('|', 1)
+        message = message.strip()
+        if message.startswith('Merge pull request') or message.startswith('Merge branch'):
+            continue
         if date != current_date:
             if current_date is not None:
                 lines.append('')
             lines.append(f'## {date}')
             current_date = date
-        lines.append(f'- {message.strip()}')
+        lines.append(f'- {message}')
 
     content = '# Changelog\n\n' + '\n'.join(lines) + '\n'
     Path('docs/changelog.md').write_text(content)

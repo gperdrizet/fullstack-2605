@@ -1,8 +1,8 @@
-name: Slack notification on PR merge
+name: Slack notifications
 
 on:
   workflow_run:
-    workflows: ["Publish to GitHub Pages"]
+    workflows: ["Pages deployment"]
     types: [completed]
 
 jobs:
