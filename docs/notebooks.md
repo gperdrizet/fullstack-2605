@@ -185,7 +185,7 @@ Click **view** to open the notebook on GitHub first.
       <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-2/lesson-14/lesson-14-activity-solution.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-2/lesson-14/lesson-14-activity-solution.ipynb" class="download-link">download</a></td>
     </tr>
     <tr>
-      <td rowspan="2" style="vertical-align:top">Lesson 15</td>
+      <td rowspan="3" style="vertical-align:top">Lesson 15</td>
       <td>Data wrangling</td>
       <td>Demo</td>
       <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-2/lesson-15/lesson-15-demo.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-2/lesson-15/lesson-15-demo.ipynb" class="download-link">download</a></td>
@@ -196,10 +196,20 @@ Click **view** to open the notebook on GitHub first.
       <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-2/lesson-15/lesson-15-activity.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-2/lesson-15/lesson-15-activity.ipynb" class="download-link">download</a></td>
     </tr>
     <tr>
-      <td rowspan="3" style="vertical-align:top">Lesson 16</td>
+      <td>Data wrangling</td>
+      <td>Activity solution</td>
+      <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-2/lesson-15/lesson-15-activity-solution.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-2/lesson-15/lesson-15-activity-solution.ipynb" class="download-link">download</a></td>
+    </tr>
+    <tr>
+      <td rowspan="4" style="vertical-align:top">Lesson 16</td>
       <td>Feature engineering</td>
       <td>Demo</td>
       <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-2/lesson-16/lesson-16-demo.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-2/lesson-16/lesson-16-demo.ipynb" class="download-link">download</a></td>
+    </tr>
+    <tr>
+      <td>Dimensionality reduction</td>
+      <td>Demo</td>
+      <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-2/lesson-16/lesson-16-pca.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-2/lesson-16/lesson-16-pca.ipynb" class="download-link">download</a></td>
     </tr>
     <tr>
       <td>Explained variance</td>
