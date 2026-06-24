@@ -59,6 +59,9 @@ jobs:
 
           pr_body = None
           pr_author = None
+          pr_number = None
+          pr_title = None
+          pr_url = None
 
           # Strategy 1: standard merge commit - message contains "Merge pull request #N"
           match = re.search(r'Merge pull request #(\d+)', commit_message)
@@ -68,6 +71,8 @@ jobs:
               pr = gh_get(f'/repos/{repo}/pulls/{pr_number}')
               if pr:
                   pr_body = (pr.get('body') or '').strip()
+                  pr_title = pr.get('title', '')
+                  pr_url = pr.get('html_url', '')
                   pr_author = (
                       (pr.get('merged_by') or {}).get('login')
                       or pr['user']['login']
@@ -79,7 +84,10 @@ jobs:
               merged = [p for p in prs if p.get('merged_at')]
               if merged:
                   pr = merged[0]
+                  pr_number = pr.get('number')
                   pr_body = (pr.get('body') or '').strip()
+                  pr_title = pr.get('title', '')
+                  pr_url = pr.get('html_url', '')
                   pr_author = (
                       (pr.get('merged_by') or {}).get('login')
                       or pr['user']['login']
@@ -104,7 +112,10 @@ jobs:
           payload = {
               'author': author,
               'details': body,
-              'site_url': site_url
+              'site_url': site_url,
+              'pr_number': str(pr_number) if pr_number else '',
+              'pr_title': pr_title or '',
+              'pr_url': pr_url or ''
           }
 
           data = json.dumps(payload).encode()
