@@ -2,31 +2,29 @@ name: Slack notifications
 
 on:
   workflow_run:
-    workflows: ["Pages deployment"]
+    workflows: ["pages-build-deployment"]
     types: [completed]
 
 jobs:
   notify-slack:
-    # Only run after a successful publish, not a failed one
+    # workflow_run conclusion == 'success' means pages-build-deployment finished
+    # successfully, so the site is already live - no polling needed
     if: github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     permissions:
       pull-requests: read
-      deployments: read
 
     steps:
       - name: Notify Slack
         env:
           GH_TOKEN: ${{ github.token }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
           REPO: ${{ github.repository }}
         run: |
           python3 - <<'EOF'
           import json, os, re, sys, urllib.request, urllib.error
 
           token = os.environ['GH_TOKEN']
-          sha = os.environ['HEAD_SHA']
           repo = os.environ['REPO']
           webhook_url = os.environ['SLACK_WEBHOOK_URL']
 
@@ -47,13 +45,16 @@ jobs:
                   print(f'GitHub API error for {path}: {e}')
                   return None
 
-          # Fetch the commit to read its message
-          commit = gh_get(f'/repos/{repo}/commits/{sha}')
-          if commit is None:
-              print('Could not fetch commit - exiting.')
+          # pages-build-deployment runs against gh-pages, not main.
+          # Fetch the HEAD of main to find the PR that triggered this deployment.
+          main_head = gh_get(f'/repos/{repo}/commits/main')
+          if main_head is None:
+              print('Could not fetch main branch HEAD - exiting.')
               sys.exit(0)
 
-          commit_message = commit.get('commit', {}).get('message', '')
+          sha = main_head['sha']
+          commit_message = main_head.get('commit', {}).get('message', '')
+          print(f'Main HEAD SHA: {sha}')
           print(f'Commit message: {commit_message[:120]}')
 
           pr_body = None
@@ -75,7 +76,6 @@ jobs:
               # Strategy 2: squash/rebase merge - query the commits API
               print('No standard merge commit - querying commits API.')
               prs = gh_get(f'/repos/{repo}/commits/{sha}/pulls') or []
-              # A merged PR will have state=closed and a non-null merged_at
               merged = [p for p in prs if p.get('merged_at')]
               if merged:
                   pr = merged[0]
@@ -91,48 +91,6 @@ jobs:
 
           body = pr_body or '_No details provided._'
           author = pr_author
-
-          # Poll until the GitHub Pages deployment is live before notifying
-          import time
-
-          print('Waiting for GitHub Pages deployment to go live...')
-
-          # Snapshot the current latest deployment so we can detect when a new one starts
-          initial = gh_get(
-              f'/repos/{repo}/deployments?environment=github-pages&per_page=1'
-          ) or []
-          latest_known_id = initial[0]['id'] if initial else None
-          print(f'Latest known deployment ID: {latest_known_id}')
-
-          max_attempts = 40  # 40 × 15 s = 10 minutes max
-          for attempt in range(max_attempts):
-              deployments = gh_get(
-                  f'/repos/{repo}/deployments?environment=github-pages&per_page=1'
-              )
-              if deployments:
-                  deployment_id = deployments[0]['id']
-
-                  if deployment_id == latest_known_id:
-                      print(f'  Attempt {attempt + 1}: waiting for new deployment to start...')
-                  else:
-                      statuses = gh_get(
-                          f'/repos/{repo}/deployments/{deployment_id}/statuses'
-                      )
-                      state = (statuses or [{}])[0].get('state', 'unknown')
-                      print(f'  Attempt {attempt + 1}: deployment {deployment_id} state = {state}')
-                      if state == 'success':
-                          break
-                      if state in ('failure', 'error'):
-                          print('Pages deployment failed - skipping Slack notification.')
-                          sys.exit(0)
-              else:
-                  print(f'  Attempt {attempt + 1}: no deployments found yet...')
-
-              if attempt < max_attempts - 1:
-                  time.sleep(15)
-          else:
-              print('Timed out waiting for Pages deployment - skipping Slack notification.')
-              sys.exit(0)
 
           # Truncate so the details field stays readable in Slack
           if len(body) > 2900:
