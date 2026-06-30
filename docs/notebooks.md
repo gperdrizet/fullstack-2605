@@ -201,7 +201,7 @@ Click **view** to open the notebook on GitHub first.
       <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-2/lesson-15/lesson-15-activity-solution.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-2/lesson-15/lesson-15-activity-solution.ipynb" class="download-link">download</a></td>
     </tr>
     <tr>
-      <td rowspan="4" style="vertical-align:top">Lesson 16</td>
+      <td rowspan="6" style="vertical-align:top">Lesson 16</td>
       <td>Feature engineering</td>
       <td>Demo</td>
       <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-2/lesson-16/lesson-16-demo.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-2/lesson-16/lesson-16-demo.ipynb" class="download-link">download</a></td>
@@ -220,6 +220,37 @@ Click **view** to open the notebook on GitHub first.
       <td>Feature engineering</td>
       <td>Activity</td>
       <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-2/lesson-16/lesson-16-activity.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-2/lesson-16/lesson-16-activity.ipynb" class="download-link">download</a></td>
+    </tr>
+    <tr>
+      <td>Feature engineering</td>
+      <td>Data leakage 1</td>
+      <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-2/lesson-16/lesson-16-activity-solution-censoring-flag.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-2/lesson-16/lesson-16-activity-solution-censoring-flag.ipynb" class="download-link">download</a></td>
+    </tr>
+    <tr>
+      <td>Feature engineering</td>
+      <td>Data leakage 2</td>
+      <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-2/lesson-16/lesson-16-activity-solution-pca-leakage.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-2/lesson-16/lesson-16-activity-solution-pca-leakage.ipynb" class="download-link">download</a></td>
+    </tr>
+  </tbody>
+</table>
+
+## Unit 3: Machine learning
+
+<table>
+  <thead>
+    <tr><th>Lesson</th><th>Topic</th><th>Type</th><th>Notebook</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2" style="vertical-align:top">Lesson 19</td>
+      <td>Regression</td>
+      <td>Demo</td>
+      <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-3/lesson-19/lesson-19-demo.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-3/lesson-19/lesson-19-demo.ipynb" class="download-link">download</a></td>
+    </tr>
+    <tr>
+      <td>Regression</td>
+      <td>Activity</td>
+      <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-3/lesson-19/lesson-19-activity.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-3/lesson-19/lesson-19-activity.ipynb" class="download-link">download</a></td>
     </tr>
   </tbody>
 </table>
