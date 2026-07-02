@@ -201,7 +201,7 @@ Click **view** to open the notebook on GitHub first.
       <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-2/lesson-15/lesson-15-activity-solution.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-2/lesson-15/lesson-15-activity-solution.ipynb" class="download-link">download</a></td>
     </tr>
     <tr>
-      <td rowspan="6" style="vertical-align:top">Lesson 16</td>
+      <td rowspan="9" style="vertical-align:top">Lesson 16</td>
       <td>Feature engineering</td>
       <td>Demo</td>
       <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-2/lesson-16/lesson-16-demo.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-2/lesson-16/lesson-16-demo.ipynb" class="download-link">download</a></td>
@@ -231,6 +231,21 @@ Click **view** to open the notebook on GitHub first.
       <td>Data leakage 2</td>
       <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-2/lesson-16/lesson-16-activity-solution-pca-leakage.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-2/lesson-16/lesson-16-activity-solution-pca-leakage.ipynb" class="download-link">download</a></td>
     </tr>
+    <tr>
+      <td>Feature engineering</td>
+      <td>GPT 5.5 solution</td>
+      <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-2/lesson-16/lesson-16-solution-gpt-5.5.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-2/lesson-16/lesson-16-solution-gpt-5.5.ipynb" class="download-link">download</a></td>
+    </tr>
+    <tr>
+      <td>Feature engineering</td>
+      <td>Opus 4.8 solution</td>
+      <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-2/lesson-16/lesson-16-solution-opus-4.8.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-2/lesson-16/lesson-16-solution-opus-4.8.ipynb" class="download-link">download</a></td>
+    </tr>
+    <tr>
+      <td>Feature engineering</td>
+      <td>Gemini 3.1 Pro solution</td>
+      <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-2/lesson-16/lesson-16-solution-gemini-3.1-pro.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-2/lesson-16/lesson-16-solution-gemini-3.1-pro.ipynb" class="download-link">download</a></td>
+    </tr>
   </tbody>
 </table>
 
@@ -242,7 +257,7 @@ Click **view** to open the notebook on GitHub first.
   </thead>
   <tbody>
     <tr>
-      <td rowspan="2" style="vertical-align:top">Lesson 19</td>
+      <td rowspan="3" style="vertical-align:top">Lesson 19</td>
       <td>Regression</td>
       <td>Demo</td>
       <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-3/lesson-19/lesson-19-demo.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-3/lesson-19/lesson-19-demo.ipynb" class="download-link">download</a></td>
