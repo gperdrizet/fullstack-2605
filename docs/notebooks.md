@@ -274,23 +274,23 @@ Click **view** to open the notebook on GitHub first.
     <tr>
       <td rowspan="4" style="vertical-align:top">Lesson 19</td>
       <td>Regression</td>
-      <td>Demo</td>
+      <td>Supervised learning demo</td>
       <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-3/lesson-19/lesson-19-demo.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-3/lesson-19/lesson-19-demo.ipynb" class="download-link">download</a></td>
+    </tr>
+    <tr>
+      <td>Regression</td>
+      <td>Model comparison demo</td>
+      <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-3/lesson-19/lesson-19-demo-models.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-3/lesson-19/lesson-19-demo-models.ipynb" class="download-link">download</a></td>
+    </tr>
+    <tr>
+      <td>Regression</td>
+      <td>DIY 'model training'</td>
+      <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-3/lesson-19/lesson-19-optimization.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-3/lesson-19/lesson-19-optimization.ipynb" class="download-link">download</a></td>
     </tr>
     <tr>
       <td>Regression</td>
       <td>Activity</td>
       <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-3/lesson-19/lesson-19-activity.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-3/lesson-19/lesson-19-activity.ipynb" class="download-link">download</a></td>
-    </tr>
-    <tr>
-      <td>Regression</td>
-      <td>Model comparison</td>
-      <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-3/lesson-19/lesson-19-demo-models.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-3/lesson-19/lesson-19-demo-models.ipynb" class="download-link">download</a></td>
-    </tr>
-    <tr>
-      <td>Model training</td>
-      <td>Demo</td>
-      <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-3/lesson-19/lesson-19-optimization.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-3/lesson-19/lesson-19-optimization.ipynb" class="download-link">download</a></td>
     </tr>
   </tbody>
 </table>
