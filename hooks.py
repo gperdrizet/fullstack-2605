@@ -1,10 +1,18 @@
+'''
+Generates changelog from commit history for GitHub pages site.
+Registered to MKDocs via mkdocs.yml hooks section. Runs on each 
+build to ensure changelog is up to date.
+'''
+
 import subprocess
 from pathlib import Path
 
 
 def on_pre_build(config):
     '''Generate docs/changelog.md from git log before each build.'''
+
     repo_root = Path(__file__).parent
+
     result = subprocess.run(
         ['git', 'log', '--pretty=format:%ad|%s', '--date=short'],
         capture_output=True,
@@ -18,15 +26,20 @@ def on_pre_build(config):
     for line in result.stdout.strip().split('\n'):
         if '|' not in line:
             continue
+
         date, message = line.split('|', 1)
         message = message.strip()
+
         if message.startswith('Merge pull request') or message.startswith('Merge branch'):
             continue
+
         if date != current_date:
             if current_date is not None:
                 lines.append('')
+
             lines.append(f'## {date}')
             current_date = date
+
         lines.append(f'- {message}')
 
     content = '# Changelog\n\n' + '\n'.join(lines) + '\n'
