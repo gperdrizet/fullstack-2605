@@ -298,10 +298,15 @@ Click **view** to open the notebook on GitHub first.
       <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-3/lesson-19/lesson-19-activity-solution.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-3/lesson-19/lesson-19-activity-solution.ipynb" class="download-link">download</a></td>
     </tr>
     <tr>
-      <td rowspan="2" style="vertical-align:top">Lesson 20</td>
+      <td rowspan="3" style="vertical-align:top">Lesson 20</td>
       <td>Classification</td>
       <td>Demo</td>
       <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-3/lesson-20/lesson-20-demo.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-3/lesson-20/lesson-20-demo.ipynb" class="download-link">download</a></td>
+    </tr>
+    <tr>
+      <td>Classification</td>
+      <td>Naive Bayes Demo</td>
+      <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-3/lesson-20/lesson-20-naive-bayes.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-3/lesson-20/lesson-20-naive-bayes.ipynb" class="download-link">download</a></td>
     </tr>
     <tr>
       <td>Classification</td>
