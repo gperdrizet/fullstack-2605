@@ -313,5 +313,11 @@ Click **view** to open the notebook on GitHub first.
       <td>Activity (Kaggle)</td>
       <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-3/lesson-20/lesson-20-activity-kaggle.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-3/lesson-20/lesson-20-activity-kaggle.ipynb" class="download-link">download</a></td>
     </tr>
+    <tr>
+      <td rowspan="1" style="vertical-align:top">Lesson 21</td>
+      <td>Ensemble learning</td>
+      <td>Demo</td>
+      <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-3/lesson-21/lesson-21-demo.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-3/lesson-21/lesson-21-demo.ipynb" class="download-link">download</a></td>
+    </tr>
   </tbody>
 </table>
