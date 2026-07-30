@@ -319,5 +319,17 @@ Click **view** to open the notebook on GitHub first.
       <td>Demo</td>
       <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-3/lesson-21/lesson-21-demo.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-3/lesson-21/lesson-21-demo.ipynb" class="download-link">download</a></td>
     </tr>
+    <tr>
+      <td rowspan="1" style="vertical-align:top">Lesson 22</td>
+      <td>Unsupervised learning</td>
+      <td>Demo</td>
+      <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-3/lesson-22/lesson-22-demo.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-3/lesson-22/lesson-22-demo.ipynb" class="download-link">download</a></td>
+    </tr>
+    <tr>
+      <td rowspan="1" style="vertical-align:top">Lesson 23</td>
+      <td>Recommendation systems</td>
+      <td>Demo</td>
+      <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-3/lesson-23/lesson-23-demo.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-3/lesson-23/lesson-23-demo.ipynb" class="download-link">download</a></td>
+    </tr>
   </tbody>
 </table>
