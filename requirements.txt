@@ -1,6 +1,7 @@
 ipykernel
 matplotlib
 mkdocs-material
+mlxtend
 nbdime
 pandas
 plotly
