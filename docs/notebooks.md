@@ -329,6 +329,11 @@ Click **view** to open the notebook on GitHub first.
       <td>Activity</td>
       <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-3/lesson-22/lesson-22-activity.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-3/lesson-22/lesson-22-activity.ipynb" class="download-link">download</a></td>
     </tr>
+    </tr>
+      <td>Unsupervised learning</td>
+      <td>Activity solution</td>
+      <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-3/lesson-22/lesson-22-activity-solution.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-3/lesson-22/lesson-22-activity-solution.ipynb" class="download-link">download</a></td>
+    </tr>
     <tr>
       <td rowspan="1" style="vertical-align:top">Lesson 23</td>
       <td>Recommendation systems</td>
