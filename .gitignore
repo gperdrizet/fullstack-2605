@@ -2,6 +2,7 @@
 .vscode
 .ipynb_checkpoints
 recordings/
+*.pkl
 
 # MkDocs build output
 site/
