@@ -341,7 +341,6 @@ Click **view** to open the notebook on GitHub first.
       <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-3/lesson-23/lesson-23-anime-demo.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-3/lesson-23/lesson-23-anime-demo.ipynb" class="download-link">download</a></td>
     </tr>
     <tr>
-      <td rowspan="1" style="vertical-align:top">Lesson 23</td>
       <td>Recommendation systems</td>
       <td>MovieLens demo</td>
       <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-3/lesson-23/lesson-23-movie-demo.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-3/lesson-23/lesson-23-movie-demo.ipynb" class="download-link">download</a></td>
