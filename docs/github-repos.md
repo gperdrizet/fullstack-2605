@@ -1,35 +1,6 @@
 # GitHub repositories
 
-You can find all of my content on GitHub here: [gperdrizet](https://github.com/gperdrizet).
-
-## How to use GitHub repos
-
-First, make a fork of the repo: click the 'fork' button in the upper right on the repository main page. Set yourself as the owner and click create. This gives you a copy of the original repository that you can make changes to. Then, to run the code or make changes you can work in a GitHub codespace, or clone your fork to work locally.
-
-
-### GitHub codespaces
-
-From your fork's main page on GitHub, click the green 'Code' dropdown button at the upper right of the file list, switch to the 'Codespaces' tab of the menu and click 'Create codespace on main'. This will spin up a containerized development environment and show you a clone of the repo via VS code running on a GiHub server.
-
-Codespaces are best when the repo is configured with a `.devcontainer/devcontainer.json` file, meaning the developer set things to up to work well in VS Code via Microsoft's devcontainers extension (what codespaces use...), but it is possible to interact with any repo this way.
-
-
-### Clone
-
-You can also clone the repository locally or to another cloud development environment provider (like Vocareum). After you have made your fork, do the following:
-
-1. Click the green 'Code' button at the upper right above the file list on the repo's GitHub page
-2. Make sure you are on the 'Local' tab
-3. Copy the URL shown under 'Clone'
-4. Then clone the repo on whatever machine you are using with:
-
-```
-git clone git@github.com:USERNAME/REPONAME.git
-```
-
-Now you should have a local directory called 'REPONAME' with the repository's contents.
-
-It is possible to clone a public GitHub repository that you don't own, but you will not be able to push changes back to GitHub. It's best to use a fork - even if you want to contribute to a project by adding/editing code to the original repo. This is usually done via pull request, but check the specific project's documentation to see what their preferred collaboration workflow is.
+You can find all of my public GitHub content here: [gperdrizet](https://github.com/gperdrizet).
 
 
 ## Unit 2: Data science fundamentals
@@ -123,3 +94,33 @@ It is possible to clone a public GitHub repository that you don't own, but you w
     </tr>
   </tbody>
 </table>
+
+
+## How to use GitHub repos
+
+First, make a fork of the repo: click the 'fork' button in the upper right on the repository main page. Set yourself as the owner and click create. This gives you a copy of the original repository that you can make changes to. Then, to run the code or make changes you can work in a GitHub codespace, or clone your fork to work locally.
+
+
+### GitHub codespaces
+
+From your fork's main page on GitHub, click the green 'Code' dropdown button at the upper right of the file list, switch to the 'Codespaces' tab of the menu and click 'Create codespace on main'. This will spin up a containerized development environment and show you a clone of the repo via VS code running on a GiHub server.
+
+Codespaces are best when the repo is configured with a `.devcontainer/devcontainer.json` file, meaning the developer set things to up to work well in VS Code via Microsoft's devcontainers extension (what codespaces use...), but it is possible to interact with any repo this way.
+
+
+### Clone
+
+You can also clone the repository locally or to another cloud development environment provider (like Vocareum). After you have made your fork, do the following:
+
+1. Click the green 'Code' button at the upper right above the file list on the repo's GitHub page
+2. Make sure you are on the 'Local' tab
+3. Copy the URL shown under 'Clone'
+4. Then clone the repo on whatever machine you are using with:
+
+```
+git clone git@github.com:USERNAME/REPONAME.git
+```
+
+Now you should have a local directory called `REPONAME/` with the repository's contents.
+
+It is possible to clone a public GitHub repository that you don't own, but you will not be able to push changes back to GitHub. It's best to use a fork - even if you want to contribute to a project by adding/editing code to the original repo. This is usually done via pull request, but check the specific project's documentation to see what their preferred collaboration workflow is.
