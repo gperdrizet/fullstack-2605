@@ -41,6 +41,7 @@ nav:
     - Time management: resources/time-management-planning.md
     - Plotting overview: resources/plotting-overview.md
     - Statistics overview: resources/statistics-overview.md
+    - Data wrangling overview: resources/data-wrangling.md
     - Dev tools install guide: resources/dev-tools-install-guide.md
     - Dev container setup guide: resources/dev-container-guide.md
   - Changelog: changelog.md
