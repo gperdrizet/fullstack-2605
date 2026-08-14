@@ -39,10 +39,12 @@ nav:
   - GitHub repos: github-repos.md
   - Datasets: datasets.md
   - Resources:
+    - Time management: resources/time-management-planning.md
     - Linux commands: resources/linux-commands.md
     - Notebook shortcuts: resources/notebook-shortcuts.md
     - Documentation links: resources/documentation-links.md
-    - Time management: resources/time-management-planning.md
+    - Dev tools install guide: resources/dev-tools-install-guide.md
+    - Dev container setup guide: resources/dev-container-guide.md
     - Plotting: resources/plotting-overview.md
     - Statistics: resources/statistics-overview.md
     - Data wrangling: resources/data-wrangling.md
@@ -50,6 +52,5 @@ nav:
     - Regression: resources/regression.md
     - Classification: resources/classification.md
     - Ensemble methods: resources/ensemble-learning.md
-    - Dev tools install guide: resources/dev-tools-install-guide.md
-    - Dev container setup guide: resources/dev-container-guide.md
+    - Unsupervised learning: resources/unsupervised-learning.md
   - Changelog: changelog.md
