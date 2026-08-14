@@ -885,6 +885,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="3.1. Data Inspection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#access-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access Methods:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-visualizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Visualizations:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -926,6 +954,17 @@
     <span class="md-ellipsis">
       
         Detecting Missing data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note-on-hidden-missing-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Note on Hidden Missing Data:
       
     </span>
   </a>
@@ -1622,6 +1661,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="3.1. Data Inspection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#access-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access Methods:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-visualizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Visualizations:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1663,6 +1730,17 @@
     <span class="md-ellipsis">
       
         Detecting Missing data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note-on-hidden-missing-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Note on Hidden Missing Data:
       
     </span>
   </a>
@@ -2198,15 +2276,19 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Access Methods:</strong>
-- <strong>Row access</strong>: <code>df.iloc[0]</code> (integer position), <code>df.loc['label']</code> (label-based)
-- <strong>Column access</strong>: <code>df['col']</code> (single column), <code>df[['col1', 'col2']]</code> (multiple columns)
-- <strong>Boolean indexing</strong>: <code>df[df['age'] &gt; 30]</code> (filter rows)</p>
-<p><strong>Quick Visualizations:</strong>
-- <code>df.hist()</code>: Histograms for all numeric columns
-- <code>df.plot(kind='box')</code>: Box plots to identify outliers
-- <code>df['col'].plot(kind='bar')</code>: Bar plot for categorical data
-- <code>df.plot(x='col1', y='col2', kind='scatter')</code>: Scatter plot for relationships</p>
+<h4 id="access-methods"><strong>Access Methods:</strong></h4>
+<ul>
+<li><strong>Row access</strong>: <code>df.iloc[0]</code> (integer position), <code>df.loc['label']</code> (label-based)</li>
+<li><strong>Column access</strong>: <code>df['col']</code> (single column), <code>df[['col1', 'col2']]</code> (multiple columns)</li>
+<li><strong>Boolean indexing</strong>: <code>df[df['age'] &gt; 30]</code> (filter rows)</li>
+</ul>
+<h4 id="quick-visualizations"><strong>Quick Visualizations:</strong></h4>
+<ul>
+<li><code>df.hist()</code>: Histograms for all numeric columns</li>
+<li><code>df.plot(kind='box')</code>: Box plots to identify outliers</li>
+<li><code>df['col'].plot(kind='bar')</code>: Bar plot for categorical data</li>
+<li><code>df.plot(x='col1', y='col2', kind='scatter')</code>: Scatter plot for relationships</li>
+</ul>
 <h3 id="32-data-cleaning">3.2. Data Cleaning</h3>
 <p>Standardizing and correcting data formats:</p>
 <table>
@@ -2343,8 +2425,8 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Note on Hidden Missing Data:</strong>
-Missing data doesn't always appear as <code>NaN</code> or <code>None</code>. Look out for "missing data hiding in plain sight":
+<h4 id="note-on-hidden-missing-data"><strong>Note on Hidden Missing Data:</strong></h4>
+<p>Missing data doesn't always appear as <code>NaN</code> or <code>None</code>. Look out for "missing data hiding in plain sight":
 - <strong>Placeholder values</strong>: <code>-999</code>, <code>-1</code>, <code>0</code>, <code>999</code>, <code>9999</code>
 - <strong>String placeholders</strong>: <code>'N/A'</code>, <code>'NA'</code>, <code>'null'</code>, <code>'NULL'</code>, <code>'missing'</code>, <code>'unknown'</code>, <code>'?'</code>, <code>' '</code> (empty strings or whitespace)
 - <strong>Special codes</strong>: <code>99</code>, <code>-9</code>, or other domain-specific sentinel values

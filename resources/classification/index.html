@@ -997,6 +997,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="5.1. Cross-validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cross-validation-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-validation functions:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-validation-fold-generators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-validation fold generators:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1461,6 +1489,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="5.1. Cross-validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cross-validation-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-validation functions:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-validation-fold-generators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-validation fold generators:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1913,13 +1969,17 @@
 <p>These techniques are crucial for successful classification modeling with any algorithm. Proper application of cross-validation, imbalanced data handling, and hyperparameter tuning significantly improves model performance.</p>
 <h3 id="51-cross-validation">5.1. Cross-validation</h3>
 <p>Trains and evaluates model on multiple train-validation splits to estimate generalization performance.</p>
-<p><strong>Cross-validation functions:</strong>
-- <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html" target="_blank"><code>cross_val_score()</code></a>: Returns array of scores for each fold
-- <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_validate.html" target="_blank"><code>cross_validate()</code></a>: Returns dict with scores, folds, fit times, etc</p>
-<p><strong>Cross-validation fold generators:</strong>
-- <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedKFold.html" target="_blank"><strong>Stratified K-Fold</strong></a>: Maintains class proportions in each fold (recommended for classification)
-- <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html" target="_blank"><strong>K-Fold</strong></a>: Standard k equal folds
-- <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html" target="_blank"><strong>Repeated Stratified K-Fold</strong></a>: Multiple runs with different random splits</p>
+<h4 id="cross-validation-functions"><strong>Cross-validation functions:</strong></h4>
+<ul>
+<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html" target="_blank"><code>cross_val_score()</code></a>: Returns array of scores for each fold</li>
+<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_validate.html" target="_blank"><code>cross_validate()</code></a>: Returns dict with scores, folds, fit times, etc</li>
+</ul>
+<h4 id="cross-validation-fold-generators"><strong>Cross-validation fold generators:</strong></h4>
+<ul>
+<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedKFold.html" target="_blank"><strong>Stratified K-Fold</strong></a>: Maintains class proportions in each fold (recommended for classification)</li>
+<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html" target="_blank"><strong>K-Fold</strong></a>: Standard k equal folds</li>
+<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html" target="_blank"><strong>Repeated Stratified K-Fold</strong></a>: Multiple runs with different random splits</li>
+</ul>
 <h3 id="52-handling-imbalanced-data">5.2. Handling imbalanced data</h3>
 <p>Address class imbalance to prevent bias toward majority class.</p>
 <table>
