@@ -130,12 +130,12 @@ Essential functions and methods for understanding your data:
 | **Value counts** | `df['col'].value_counts()` | Frequency of each value | `df['category'].value_counts()` |
 | **Correlation** | `df.corr()` | Correlation matrix | `df.corr()` |
 
-**Access Methods:**
+#### **Access Methods:**
 - **Row access**: `df.iloc[0]` (integer position), `df.loc['label']` (label-based)
 - **Column access**: `df['col']` (single column), `df[['col1', 'col2']]` (multiple columns)
 - **Boolean indexing**: `df[df['age'] > 30]` (filter rows)
 
-**Quick Visualizations:**
+#### **Quick Visualizations:**
 - `df.hist()`: Histograms for all numeric columns
 - `df.plot(kind='box')`: Box plots to identify outliers
 - `df['col'].plot(kind='bar')`: Bar plot for categorical data
@@ -178,7 +178,8 @@ Standardizing and correcting data formats:
 | Visualize missing patterns | `missingno.matrix()` | Visualization | `msno.matrix(df)` |
 | Missing data heatmap | `missingno.heatmap()` | Correlation heatmap | `msno.heatmap(df)` |
 
-**Note on Hidden Missing Data:**
+####  **Note on Hidden Missing Data:**
+
 Missing data doesn't always appear as `NaN` or `None`. Look out for "missing data hiding in plain sight":
 - **Placeholder values**: `-999`, `-1`, `0`, `999`, `9999`
 - **String placeholders**: `'N/A'`, `'NA'`, `'null'`, `'NULL'`, `'missing'`, `'unknown'`, `'?'`, `' '` (empty strings or whitespace)
