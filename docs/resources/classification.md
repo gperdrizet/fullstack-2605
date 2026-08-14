@@ -103,8 +103,6 @@ Classification models predict categorical target variables by learning decision 
 11. Predictions on Test Set
 ```
 
----
-
 ## 3. Model selection guide
 
 | **Algorithm** | **Data Considerations** | **Regularization** | **Strengths** | **Weaknesses** |
@@ -140,7 +138,7 @@ The confusion matrix shows all combinations of predicted vs. actual class labels
 | **Actual Positive** | True Positive (TP)     | False Negative (FN)    |
 | **Actual Negative** | False Positive (FP)    | True Negative (TN)     |
 
-**Key terms**:
+#### **Key terms**:
 - **TP**: Correctly predicted positive cases
 - **TN**: Correctly predicted negative cases
 - **FP**: Type I error (false alarm)
@@ -216,7 +214,7 @@ Address class imbalance to prevent bias toward majority class.
   </tbody>
 </table>
 
-**Key considerations:**
+#### **Key considerations:**
 - Apply balancing **after** train-test split to avoid data leakage
 - Use Stratified K-Fold for cross-validation
 - Evaluate with precision, recall, F1, and AUCPR

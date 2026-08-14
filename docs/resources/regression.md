@@ -141,7 +141,7 @@ Add penalty terms to prevent overfitting and handle multicollinearity.
 | **Ridge (L2)** | $\alpha \sum \beta_j^2$ | No (shrinks but keeps all) | Multicollinearity, all features relevant | [`Ridge(alpha=1.0)`](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Ridge.html) |
 | **ElasticNet** | $\lambda_1 \sum\|\beta_j\| + \lambda_2 \sum \beta_j^2$ | Partial (some set to 0) | Both multicollinearity and sparse features | [`ElasticNet(alpha=1.0, l1_ratio=0.5)`](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNet.html) |
 
-**Key parameter**:
+#### **Key parameter**:
 - **alpha (α)**: Controls regularization strength
   - Higher α → stronger penalty → simpler model
   - Lower α → weaker penalty → more complex model
