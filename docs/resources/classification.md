@@ -262,7 +262,6 @@ Systematically searches for optimal model parameters.
 | **Decision Tree** | `max_depth`, `min_samples_split`, `min_samples_leaf`, `criterion` (gini, entropy) |
 | **SVM** | `C` (regularization), `gamma` (kernel coefficient), `kernel` (linear, rbf, poly) |
 
----
 
 ## Additional resources
 
