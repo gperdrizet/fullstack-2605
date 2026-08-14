@@ -6,55 +6,55 @@ Data wrangling is the process of cleaning, structuring, and transforming raw dat
 
 ### 1.1. General Guidelines
 
-1. **Always Inspect First**
+#### **Always Inspect First**
    - Use `head()`, `info()`, `describe()` before any operations
    - Visualize data distributions and relationships
    - Understand data types and missing patterns
 
-2. **Document Your Steps**
+#### **Document Your Steps**
    - Keep track of all transformations applied
    - Use comments to explain non-obvious decisions
    - Maintain a data dictionary
 
-3. **Preserve Original Data**
+#### **Preserve Original Data**
    - Work on copies for destructive operations: `df_clean = df.copy()`
    - Keep raw data intact for reproducibility
    - Version control your data processing scripts
 
-4. **Validate Assumptions**
+#### **Validate Assumptions**
    - Check data distributions before transformations
    - Verify join results (check shapes, duplicate keys)
    - Test on sample data first
 
-5. **Handle Missing Data Thoughtfully**
+#### **Handle Missing Data Thoughtfully**
    - Understand why data is missing before choosing strategy
    - Document imputation methods used
    - Consider creating indicator variables for imputed values
 
-6. **Be Consistent**
+#### **Be Consistent**
    - Apply same transformations across training and test sets
    - Use same encoding for categorical variables
    - Maintain consistent data types
 
-7. **Watch for Data Leakage**
+#### **Watch for Data Leakage**
    - Don't use future information to transform past data
    - Fit imputers/scalers on training data only
    - Be careful with time series data
 
-8. **Test Your Joins**
+#### **Test Your Joins**
    - Verify join results match expectations
    - Check for unexpected duplicates
    - Ensure key columns don't have nulls
 
-9. **Consider Memory**
+#### **Consider Memory**
    - Use appropriate data types (`int8` vs `int64`)
    - Drop unnecessary columns early
    - Process large datasets in chunks
 
-10. **Automate When Possible**
-    - Create reusable functions for repetitive tasks
-    - Build data cleaning pipelines
-    - Use configuration files for parameters
+#### **Automate When Possible**
+   - Create reusable functions for repetitive tasks
+   - Build data cleaning pipelines
+   - Use configuration files for parameters
 
 ### 1.2. Common Pitfalls
 
