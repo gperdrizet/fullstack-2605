@@ -11,11 +11,15 @@ extra_css:
 
 extra_javascript:
   - javascripts/download.js
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
 markdown_extensions:
   - attr_list
   - pymdownx.snippets:
       base_path: [docs]
+  - pymdownx.arithmatex:
+      generic: true
 
 theme:
   name: material
@@ -39,10 +43,11 @@ nav:
     - Notebook shortcuts: resources/notebook-shortcuts.md
     - Documentation links: resources/documentation-links.md
     - Time management: resources/time-management-planning.md
-    - Plotting overview: resources/plotting-overview.md
-    - Statistics overview: resources/statistics-overview.md
-    - Data wrangling overview: resources/data-wrangling.md
-    - Feature engineering overview: resources/feature-engineering.md
+    - Plotting: resources/plotting-overview.md
+    - Statistics: resources/statistics-overview.md
+    - Data wrangling: resources/data-wrangling.md
+    - Feature engineering: resources/feature-engineering.md
+    - Regression: resources/regression.md
     - Dev tools install guide: resources/dev-tools-install-guide.md
     - Dev container setup guide: resources/dev-container-guide.md
   - Changelog: changelog.md
