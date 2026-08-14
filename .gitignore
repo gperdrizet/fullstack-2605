@@ -1,15 +1,17 @@
+__pycache__/
 .venv
 .vscode
 .ipynb_checkpoints
-recordings/
-*.pkl
 
 # MkDocs build output
 site/
+changelog.md
 
-# Unit 1
-student_data.json
-student_data.pkl
+# Data artifacts
+*.json
+*.pkl
+*.csv
+!data/
 
 # Unit 2
 unit-2/lesson-16/data
