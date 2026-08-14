@@ -1,0 +1,2357 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://gperdrizet.github.io/fullstack-2605/resources/ensemble-learning/">
+      
+      
+        <link rel="prev" href="../classification/">
+      
+      
+        <link rel="next" href="../unsupervised-learning/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Ensemble methods - Fullstack Academy AI/ML cohort 2605</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ensemble-methods-overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Fullstack Academy AI/ML cohort 2605" class="md-header__button md-logo" aria-label="Fullstack Academy AI/ML cohort 2605" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Fullstack Academy AI/ML cohort 2605
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ensemble methods
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/gperdrizet/fullstack-2605" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gperdrizet/fullstack-2605
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Fullstack Academy AI/ML cohort 2605" class="md-nav__button md-logo" aria-label="Fullstack Academy AI/ML cohort 2605" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Fullstack Academy AI/ML cohort 2605
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/gperdrizet/fullstack-2605" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gperdrizet/fullstack-2605
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notebooks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../github-repos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub repos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datasets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Datasets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../time-management-planning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Time management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebook-shortcuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notebook shortcuts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation-links/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation links
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev-tools-install-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dev tools install guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev-container-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dev container setup guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plotting-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plotting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../statistics-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-wrangling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data wrangling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature engineering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../regression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regression
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../classification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ensemble methods
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ensemble methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Best practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Best practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-design-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. Design guidelines
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1. Design guidelines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-simple" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start Simple
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ensure-model-diversity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ensure Model Diversity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-cross-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Cross-Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leverage-oob-scores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Leverage OOB Scores
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitor-training-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitor Training Time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tune-systematically" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tune Systematically
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prevent-overfitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prevent Overfitting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choose-appropriate-base-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choose Appropriate Base Models
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-common-pitfalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. Common pitfalls
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-ensemble-selection-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Ensemble selection guide
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-core-ensemble-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Core ensemble techniques
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Core ensemble techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-voting-and-averaging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Voting and averaging
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1. Voting and averaging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hard-voting-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hard voting (classification):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#soft-voting-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Soft voting (classification):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#averaging-regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Averaging (regression):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to use:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-bagging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Bagging
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2. Bagging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key advantages:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#random-forest-bagging-with-decision-trees-plus-random-feature-selection-at-each-split" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Random Forest: Bagging with decision trees plus random feature selection at each split
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to use:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-boosting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Boosting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3. Boosting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to use:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-stacking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4. Stacking
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4. Stacking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-meta-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common meta-models:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key considerations:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to use:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-ensemble-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Ensemble comparison
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Ensemble comparison">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-strengths-and-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. Strengths and limitations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-when-to-use-each" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. When to use each
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-basic-ensemble-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Basic ensemble workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional resources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Additional resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python libraries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended reading
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unsupervised-learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unsupervised learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Best practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Best practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-design-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. Design guidelines
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1. Design guidelines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-simple" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start Simple
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ensure-model-diversity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ensure Model Diversity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-cross-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Cross-Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leverage-oob-scores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Leverage OOB Scores
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitor-training-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitor Training Time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tune-systematically" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tune Systematically
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prevent-overfitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prevent Overfitting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choose-appropriate-base-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choose Appropriate Base Models
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-common-pitfalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. Common pitfalls
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-ensemble-selection-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Ensemble selection guide
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-core-ensemble-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Core ensemble techniques
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Core ensemble techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-voting-and-averaging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Voting and averaging
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1. Voting and averaging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hard-voting-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hard voting (classification):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#soft-voting-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Soft voting (classification):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#averaging-regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Averaging (regression):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to use:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-bagging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Bagging
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2. Bagging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key advantages:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#random-forest-bagging-with-decision-trees-plus-random-feature-selection-at-each-split" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Random Forest: Bagging with decision trees plus random feature selection at each split
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to use:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-boosting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Boosting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3. Boosting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to use:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-stacking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4. Stacking
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4. Stacking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-meta-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common meta-models:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key considerations:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to use:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-ensemble-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Ensemble comparison
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Ensemble comparison">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-strengths-and-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. Strengths and limitations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-when-to-use-each" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. When to use each
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-basic-ensemble-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Basic ensemble workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional resources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Additional resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python libraries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended reading
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="ensemble-methods-overview">Ensemble methods overview</h1>
+<p>Ensemble learning combines multiple models to achieve better predictive performance than any single model. By leveraging the collective wisdom of diverse models, ensembles reduce variance, bias, and improve robustness across classification and regression tasks.</p>
+<h2 id="1-best-practices">1. Best practices</h2>
+<h3 id="11-design-guidelines">1.1. Design guidelines</h3>
+<h4 id="start-simple"><strong>Start Simple</strong></h4>
+<ul>
+<li>Begin with voting or averaging ensembles</li>
+<li>Add complexity only when justified</li>
+<li>Compare ensemble to best individual model</li>
+</ul>
+<h4 id="ensure-model-diversity"><strong>Ensure Model Diversity</strong></h4>
+<ul>
+<li>Use different algorithms (voting, stacking)</li>
+<li>Use different hyperparameters (bagging, boosting)</li>
+<li>Train on different data subsets (bagging)</li>
+<li>Different models should make different errors</li>
+</ul>
+<h4 id="use-cross-validation"><strong>Use Cross-Validation</strong></h4>
+<ul>
+<li>Essential for robust performance estimates</li>
+<li>Use Stratified K-Fold for classification</li>
+<li>Prevents overfitting to validation set</li>
+</ul>
+<h4 id="leverage-oob-scores"><strong>Leverage OOB Scores</strong></h4>
+<ul>
+<li>Use out-of-bag estimates for bagging</li>
+<li>Free validation without separate holdout</li>
+<li>Reliable performance indicator</li>
+</ul>
+<h4 id="monitor-training-time"><strong>Monitor Training Time</strong></h4>
+<ul>
+<li>Parallel ensembles (bagging) train faster</li>
+<li>Sequential ensembles (boosting) take longer</li>
+<li>Balance accuracy gains with computational cost</li>
+</ul>
+<h4 id="tune-systematically"><strong>Tune Systematically</strong></h4>
+<ul>
+<li>Start with number of estimators</li>
+<li>Then tune base model parameters</li>
+<li>Use grid or random search</li>
+<li>More estimators ≠ always better</li>
+</ul>
+<h4 id="prevent-overfitting"><strong>Prevent Overfitting</strong></h4>
+<ul>
+<li>Use regularization in boosting</li>
+<li>Limit tree depth in bagging</li>
+<li>Monitor training vs validation performance</li>
+<li>Stop early if performance plateaus</li>
+</ul>
+<h4 id="choose-appropriate-base-models"><strong>Choose Appropriate Base Models</strong></h4>
+<ul>
+<li>Weak learners for boosting (shallow trees)</li>
+<li>Stronger learners for bagging</li>
+<li>Diverse algorithms for voting/stacking</li>
+<li>Match complexity to data size</li>
+</ul>
+<h3 id="12-common-pitfalls">1.2. Common pitfalls</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Pitfall</strong></th>
+<th><strong>Problem</strong></th>
+<th><strong>Solution</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Identical base models</strong></td>
+<td>No diversity, limited improvement</td>
+<td>Use different algorithms or hyperparameters</td>
+</tr>
+<tr>
+<td><strong>Too many estimators</strong></td>
+<td>Diminishing returns, overfitting</td>
+<td>Find plateau in learning curves</td>
+</tr>
+<tr>
+<td><strong>Wrong ensemble for data</strong></td>
+<td>Suboptimal performance</td>
+<td>Bagging for high variance, boosting for high bias</td>
+</tr>
+<tr>
+<td><strong>Not using diverse models</strong></td>
+<td>Weak ensemble in voting/stacking</td>
+<td>Combine different algorithm types</td>
+</tr>
+<tr>
+<td><strong>Ignoring computation cost</strong></td>
+<td>Impractical for deployment</td>
+<td>Consider parallel options (bagging)</td>
+</tr>
+<tr>
+<td><strong>Overfitting with boosting</strong></td>
+<td>Poor generalization</td>
+<td>Use regularization, limit iterations</td>
+</tr>
+<tr>
+<td><strong>Data leakage in stacking</strong></td>
+<td>Overly optimistic results</td>
+<td>Use out-of-fold predictions for meta-model</td>
+</tr>
+<tr>
+<td><strong>Skipping hyperparameter tuning</strong></td>
+<td>Suboptimal ensemble</td>
+<td>Tune n_estimators, learning_rate, max_depth</td>
+</tr>
+<tr>
+<td><strong>Using soft voting without probabilities</strong></td>
+<td>Runtime error</td>
+<td>Ensure base models have predict_proba</td>
+</tr>
+<tr>
+<td><strong>Complex ensemble for simple problem</strong></td>
+<td>Unnecessary overhead</td>
+<td>Start with simpler models first</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-ensemble-selection-guide">2. Ensemble selection guide</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Technique</strong></th>
+<th><strong>Training</strong></th>
+<th><strong>Best For</strong></th>
+<th><strong>Primary Benefit</strong></th>
+<th><strong>Computational Cost</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.VotingClassifier.html" target="_blank"><strong>Voting</strong></a></td>
+<td>Parallel</td>
+<td>Combining diverse models quickly</td>
+<td>Simple, robust predictions</td>
+<td>Low (trains models once)</td>
+</tr>
+<tr>
+<td><a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.BaggingClassifier.html" target="_blank"><strong>Bagging</strong></a></td>
+<td>Parallel</td>
+<td>Reducing variance, stabilizing predictions</td>
+<td>Variance reduction</td>
+<td>Medium (parallelizable)</td>
+</tr>
+<tr>
+<td><a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html" target="_blank"><strong>Random Forest</strong></a></td>
+<td>Parallel</td>
+<td>General-purpose, out-of-the-box performance</td>
+<td>Balanced performance</td>
+<td>Medium (parallelizable)</td>
+</tr>
+<tr>
+<td><a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.AdaBoostClassifier.html" target="_blank"><strong>AdaBoost</strong></a></td>
+<td>Sequential</td>
+<td>Reducing bias, simple implementation</td>
+<td>Bias reduction</td>
+<td>Medium (sequential)</td>
+</tr>
+<tr>
+<td><a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html" target="_blank"><strong>Gradient Boosting</strong></a></td>
+<td>Sequential</td>
+<td>High accuracy, flexible loss functions</td>
+<td>Bias + variance reduction</td>
+<td>High (sequential)</td>
+</tr>
+<tr>
+<td><a href="https://xgboost.readthedocs.io/" target="_blank"><strong>XGBoost</strong></a></td>
+<td>Sequential</td>
+<td>Large datasets, competitions</td>
+<td>Speed + accuracy</td>
+<td>Medium (optimized)</td>
+</tr>
+<tr>
+<td><a href="https://catboost.ai/" target="_blank"><strong>CatBoost</strong></a></td>
+<td>Sequential</td>
+<td>Categorical features, minimal tuning</td>
+<td>Automatic categorical handling</td>
+<td>Medium (optimized)</td>
+</tr>
+<tr>
+<td><a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.StackingClassifier.html" target="_blank"><strong>Stacking</strong></a></td>
+<td>Parallel + Meta</td>
+<td>Maximum accuracy from diverse models</td>
+<td>Leverages algorithm strengths</td>
+<td>High (multiple layers)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-core-ensemble-techniques">3. Core ensemble techniques</h2>
+<h3 id="31-voting-and-averaging">3.1. Voting and averaging</h3>
+<p>Combines predictions from multiple independent models through voting (classification) or averaging (regression).</p>
+<h4 id="hard-voting-classification"><strong>Hard voting (classification)</strong>:</h4>
+<ul>
+<li>Each model votes for a class</li>
+<li>Final prediction: majority vote</li>
+<li>Simple and interpretable</li>
+</ul>
+<h4 id="soft-voting-classification"><strong>Soft voting (classification)</strong>:</h4>
+<ul>
+<li>Uses probability estimates from each model</li>
+<li>Averages probabilities across models</li>
+<li>Often more accurate than hard voting</li>
+<li>Requires models with <code>predict_proba()</code></li>
+</ul>
+<h4 id="averaging-regression"><strong>Averaging (regression)</strong>:</h4>
+<ul>
+<li>Mean of all model predictions</li>
+<li>Reduces variance</li>
+<li>Simple weighted average optional</li>
+</ul>
+<h4 id="when-to-use"><strong>When to use</strong>:</h4>
+<ul>
+<li>Quick ensemble from existing diverse models</li>
+<li>Combining models with different strengths</li>
+<li>Need for interpretable ensemble</li>
+<li>Balanced datasets</li>
+</ul>
+<h3 id="32-bagging">3.2. Bagging</h3>
+<p>Bootstrap Aggregating trains multiple models on random subsets (with replacement) and aggregates predictions.</p>
+<h4 id="how-it-works"><strong>How it works</strong>:</h4>
+<ol>
+<li>Create bootstrap samples (random sampling with replacement)</li>
+<li>Train separate model on each sample</li>
+<li>Aggregate via voting (classification) or averaging (regression)</li>
+<li>Each model sees ~63% of training data</li>
+</ol>
+<h4 id="key-advantages"><strong>Key advantages</strong>:</h4>
+<ul>
+<li>Reduces variance</li>
+<li>Prevents overfitting</li>
+<li>Parallelizable (fast training)</li>
+<li>Out-of-bag (OOB) error estimation</li>
+</ul>
+<h4 id="random-forest-bagging-with-decision-trees-plus-random-feature-selection-at-each-split"><strong>Random Forest</strong>: Bagging with decision trees plus random feature selection at each split</h4>
+<h4 id="when-to-use_1"><strong>When to use</strong>:</h4>
+<ul>
+<li>High-variance models (deep decision trees)</li>
+<li>Overfitting issues</li>
+<li>Need for parallelization</li>
+<li>Want built-in validation (OOB)</li>
+</ul>
+<h3 id="33-boosting">3.3. Boosting</h3>
+<p>Sequential ensemble where each model corrects errors of previous models by focusing on difficult instances.</p>
+<p><strong>Common boosting algorithms</strong>:</p>
+<table>
+  <thead>
+    <tr>
+      <th><strong>Algorithm</strong></th>
+      <th><strong>Key Features</strong></th>
+      <th><strong>Best For</strong></th>
+      <th><strong>Key Hyperparameters</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.AdaBoostClassifier.html" target="_blank"><strong>AdaBoost</strong></a></td>
+      <td>Adjusts instance weights based on errors</td>
+      <td>Simple boosting, binary classification</td>
+      <td><code>n_estimators</code>, <code>learning_rate</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html" target="_blank"><strong>Gradient Boosting</strong></a></td>
+      <td>Fits to residual errors, flexible loss functions</td>
+      <td>High accuracy, small to medium data</td>
+      <td><code>n_estimators</code>, <code>learning_rate</code>, <code>max_depth</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://xgboost.readthedocs.io/" target="_blank"><strong>XGBoost</strong></a></td>
+      <td>Optimized gradient boosting, regularization, handles missing data</td>
+      <td>Large datasets, competitions, production</td>
+      <td><code>n_estimators</code>, <code>learning_rate</code>, <code>max_depth</code>, <code>reg_alpha</code>, <code>reg_lambda</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://catboost.ai/" target="_blank"><strong>CatBoost</strong></a></td>
+      <td>Native categorical feature handling, automatic preprocessing</td>
+      <td>Categorical-heavy data, minimal tuning</td>
+      <td><code>n_estimators</code>, <code>learning_rate</code>, <code>depth</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="when-to-use_2"><strong>When to use</strong>:</h4>
+<ul>
+<li>Have sufficient training time</li>
+<li>High-bias problems</li>
+<li>Structured/tabular data</li>
+<li>Production systems (XGBoost, CatBoost)</li>
+</ul>
+<h3 id="34-stacking">3.4. Stacking</h3>
+<p>Multi-level ensemble where base models (level 0) make predictions used as features for meta-model (level 1).</p>
+<h4 id="how-it-works_1"><strong>How it works</strong>:</h4>
+<ol>
+<li>Train diverse base models on training data</li>
+<li>Generate out-of-fold predictions for training set</li>
+<li>Train meta-model on base model predictions</li>
+<li>Final prediction from meta-model</li>
+</ol>
+<h4 id="common-meta-models"><strong>Common meta-models</strong>:</h4>
+<ul>
+<li>Logistic Regression (most common for classification)</li>
+<li>Linear Regression (for regression)</li>
+<li>Ridge/Lasso (with regularization)</li>
+<li>Simple models often work best</li>
+</ul>
+<h4 id="key-considerations"><strong>Key considerations</strong>:</h4>
+<ul>
+<li>Use <code>cv</code> parameter to generate out-of-fold predictions</li>
+<li>Prevents data leakage and overfitting</li>
+<li>Base models should be diverse</li>
+<li>More complex but often highest accuracy</li>
+</ul>
+<h4 id="when-to-use_3"><strong>When to use</strong>:</h4>
+<ul>
+<li>Maximum accuracy needed</li>
+<li>Have computational resources</li>
+<li>Diverse algorithms available</li>
+<li>Competition or high-stakes applications</li>
+</ul>
+<h2 id="4-ensemble-comparison">4. Ensemble comparison</h2>
+<h3 id="41-strengths-and-limitations">4.1. Strengths and limitations</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Technique</strong></th>
+<th><strong>Strengths</strong></th>
+<th><strong>Limitations</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Voting</strong></td>
+<td>Simple, interpretable, fast</td>
+<td>Limited improvement if models too similar</td>
+</tr>
+<tr>
+<td><strong>Bagging</strong></td>
+<td>Reduces variance, parallelizable, OOB validation</td>
+<td>Limited on high-bias models, memory intensive</td>
+</tr>
+<tr>
+<td><strong>Random Forest</strong></td>
+<td>Out-of-the-box performance, handles high dimensions</td>
+<td>Less interpretable, memory intensive</td>
+</tr>
+<tr>
+<td><strong>Boosting</strong></td>
+<td>High accuracy, reduces bias and variance</td>
+<td>Prone to overfitting, sequential (slower), sensitive to noise</td>
+</tr>
+<tr>
+<td><strong>Stacking</strong></td>
+<td>Highest accuracy potential, leverages diversity</td>
+<td>Complex, computationally expensive, harder to interpret</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-when-to-use-each">4.2. When to use each</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Scenario</strong></th>
+<th><strong>Recommended Technique</strong></th>
+<th><strong>Why</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>High variance problem</strong></td>
+<td>Bagging, Random Forest</td>
+<td>Averages out fluctuations</td>
+</tr>
+<tr>
+<td><strong>High bias problem</strong></td>
+<td>Boosting</td>
+<td>Sequential error correction</td>
+</tr>
+<tr>
+<td><strong>Need speed</strong></td>
+<td>Bagging, Random Forest</td>
+<td>Parallelizable</td>
+</tr>
+<tr>
+<td><strong>Maximum accuracy</strong></td>
+<td>XGBoost, Stacking</td>
+<td>State-of-the-art performance</td>
+</tr>
+<tr>
+<td><strong>Interpretability important</strong></td>
+<td>Voting, Bagging with shallow trees</td>
+<td>Simpler structure</td>
+</tr>
+<tr>
+<td><strong>Large dataset</strong></td>
+<td>XGBoost, CatBoost</td>
+<td>Optimized implementations</td>
+</tr>
+<tr>
+<td><strong>Categorical features</strong></td>
+<td>CatBoost</td>
+<td>Native categorical handling</td>
+</tr>
+<tr>
+<td><strong>Limited tuning time</strong></td>
+<td>Random Forest, CatBoost</td>
+<td>Good defaults</td>
+</tr>
+<tr>
+<td><strong>Noisy data</strong></td>
+<td>Bagging</td>
+<td>More robust than boosting</td>
+</tr>
+<tr>
+<td><strong>Imbalanced classes</strong></td>
+<td>Boosting</td>
+<td>Focuses on difficult instances</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-basic-ensemble-workflow">5. Basic ensemble workflow</h2>
+<pre><code>1. Start with Individual Models
+   - Train several models
+   - Evaluate baseline performance
+   ↓
+2. Choose Ensemble Strategy
+   - Voting: Quick combination
+   - Bagging: High variance
+   - Boosting: Need accuracy
+   - Stacking: Maximum performance
+   ↓
+3. Train Ensemble
+   - Use cross-validation
+   - Monitor OOB scores (bagging)
+   - Track learning curves (boosting)
+   ↓
+4. Tune Hyperparameters
+   - n_estimators (all)
+   - learning_rate (boosting)
+   - max_depth (trees)
+   ↓
+5. Evaluate and Compare
+   - Compare to best individual model
+   - Check training vs test performance
+   - Consider computational cost
+   ↓
+6. Select Final Model
+   - Balance accuracy, speed, interpretability
+</code></pre>
+<h2 id="additional-resources">Additional resources</h2>
+<h3 id="python-libraries">Python libraries</h3>
+<ul>
+<li><strong><a href="https://scikit-learn.org">scikit-learn</a></strong>: Core ensemble modules</li>
+<li><a href="https://scikit-learn.org/stable/modules/ensemble.html"><code>ensemble</code></a>: VotingClassifier, BaggingClassifier, RandomForestClassifier, AdaBoostClassifier, GradientBoostingClassifier, StackingClassifier</li>
+<li><a href="https://scikit-learn.org/stable/modules/classes.html#module-sklearn.model_selection"><code>model_selection</code></a>: cross_val_score, GridSearchCV, RandomizedSearchCV</li>
+<li><a href="https://scikit-learn.org/stable/modules/compose.html"><code>sklearn.pipeline</code></a>: Preprocessing+estimator pipelines</li>
+<li><strong><a href="https://xgboost.readthedocs.io/">xgboost</a></strong>: Optimized gradient boosting</li>
+<li><strong><a href="https://catboost.ai/">catboost</a></strong>: Gradient boosting for categorical features</li>
+<li><strong><a href="https://lightgbm.readthedocs.io/">lightgbm</a></strong>: Fast gradient boosting framework</li>
+<li><strong><a href="https://github.com/vecxoz/vecstack">vecstack</a></strong>: Stacking with cross-validation support</li>
+</ul>
+<h3 id="recommended-reading">Recommended reading</h3>
+<ul>
+<li><a href="https://scikit-learn.org/stable/modules/ensemble.html" target="_blank"><strong>Scikit-learn Ensemble Guide</strong></a>: Comprehensive ensemble documentation</li>
+<li><a href="https://xgboost.readthedocs.io/en/stable/tutorials/model.html" target="_blank"><strong>XGBoost Tutorial</strong></a>: Introduction to XGBoost</li>
+<li><a href="https://www.statlearning.com/" target="_blank"><strong>"Introduction to Statistical Learning"</strong></a>: Chapter 8 on Tree-Based Methods</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/download.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

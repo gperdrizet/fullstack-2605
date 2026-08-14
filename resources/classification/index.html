@@ -1,0 +1,2121 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://gperdrizet.github.io/fullstack-2605/resources/classification/">
+      
+      
+        <link rel="prev" href="../regression/">
+      
+      
+        <link rel="next" href="../ensemble-learning/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Classification - Fullstack Academy AI/ML cohort 2605</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#classification-overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Fullstack Academy AI/ML cohort 2605" class="md-header__button md-logo" aria-label="Fullstack Academy AI/ML cohort 2605" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Fullstack Academy AI/ML cohort 2605
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Classification
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/gperdrizet/fullstack-2605" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gperdrizet/fullstack-2605
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Fullstack Academy AI/ML cohort 2605" class="md-nav__button md-logo" aria-label="Fullstack Academy AI/ML cohort 2605" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Fullstack Academy AI/ML cohort 2605
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/gperdrizet/fullstack-2605" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gperdrizet/fullstack-2605
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notebooks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../github-repos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub repos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datasets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Datasets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../time-management-planning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Time management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebook-shortcuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notebook shortcuts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation-links/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation links
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev-tools-install-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dev tools install guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev-container-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dev container setup guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plotting-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plotting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../statistics-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-wrangling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data wrangling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature engineering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../regression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regression
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classification
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Best practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Best practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-general-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. General guidelines
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1. General guidelines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-simple" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start Simple
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#always-split-your-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Always Split Your Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-class-balance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check Class Balance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scale-your-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scale Your Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-cross-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Cross-Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choose-appropriate-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choose Appropriate Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualize-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visualize Results
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#document-everything" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Document Everything
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-common-pitfalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. Common pitfalls
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-classification-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Classification workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-model-selection-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Model selection guide
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-performance-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Performance metrics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Performance metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-metric-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. Metric comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-confusion-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. Confusion matrix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2. Confusion matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key terms:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-when-to-use-each-metric" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3. When to use each metric
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-core-classification-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Core classification techniques
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Core classification techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-cross-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1. Cross-validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-handling-imbalanced-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2. Handling imbalanced data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2. Handling imbalanced data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key considerations:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-hyperparameter-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3. Hyperparameter tuning
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional resources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Additional resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python libraries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-sklearn-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key sklearn modules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended reading
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ensemble-learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ensemble methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unsupervised-learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unsupervised learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Best practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Best practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-general-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. General guidelines
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1. General guidelines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-simple" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start Simple
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#always-split-your-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Always Split Your Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-class-balance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check Class Balance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scale-your-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scale Your Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-cross-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Cross-Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choose-appropriate-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choose Appropriate Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualize-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visualize Results
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#document-everything" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Document Everything
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-common-pitfalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. Common pitfalls
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-classification-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Classification workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-model-selection-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Model selection guide
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-performance-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Performance metrics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Performance metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-metric-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. Metric comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-confusion-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. Confusion matrix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2. Confusion matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key terms:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-when-to-use-each-metric" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3. When to use each metric
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-core-classification-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Core classification techniques
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Core classification techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-cross-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1. Cross-validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-handling-imbalanced-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2. Handling imbalanced data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2. Handling imbalanced data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key considerations:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-hyperparameter-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3. Hyperparameter tuning
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional resources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Additional resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python libraries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-sklearn-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key sklearn modules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended reading
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="classification-overview">Classification overview</h1>
+<p>Classification models predict categorical target variables by learning decision boundaries that separate different classes. This guide covers essential classification techniques, evaluation metrics, and best practices for building effective classifiers.</p>
+<h2 id="1-best-practices">1. Best practices</h2>
+<h3 id="11-general-guidelines">1.1. General guidelines</h3>
+<h4 id="start-simple"><strong>Start Simple</strong></h4>
+<ul>
+<li>Begin with logistic regression or Naive Bayes</li>
+<li>Add complexity only when justified</li>
+<li>Compare models systematically</li>
+</ul>
+<h4 id="always-split-your-data"><strong>Always Split Your Data</strong></h4>
+<ul>
+<li>Use train-test split (70-30 or 80-20)</li>
+<li>Set <code>random_state</code> for reproducibility</li>
+<li>Never fit scalers/transformers on test data</li>
+</ul>
+<h4 id="check-class-balance"><strong>Check Class Balance</strong></h4>
+<ul>
+<li>Examine class distribution before training</li>
+<li>Apply balancing techniques if needed</li>
+<li>Use stratified splits for imbalanced data</li>
+</ul>
+<h4 id="scale-your-features"><strong>Scale Your Features</strong></h4>
+<ul>
+<li>Essential for KNN and SVM</li>
+<li>Beneficial for logistic regression</li>
+<li>Not needed for decision trees</li>
+<li>Use <code>StandardScaler</code> after train-test split</li>
+</ul>
+<h4 id="use-cross-validation"><strong>Use Cross-Validation</strong></h4>
+<ul>
+<li>Provides robust performance estimates</li>
+<li>Use Stratified K-Fold for imbalanced data</li>
+<li>Use <code>cross_val_score()</code> for quick evaluation</li>
+</ul>
+<h4 id="choose-appropriate-metrics"><strong>Choose Appropriate Metrics</strong></h4>
+<ul>
+<li>Don't rely solely on accuracy</li>
+<li>Use precision, recall, F1 for imbalanced data</li>
+<li>Consider business context (FP vs FN costs)</li>
+</ul>
+<h4 id="visualize-results"><strong>Visualize Results</strong></h4>
+<ul>
+<li>Plot confusion matrix</li>
+<li>Examine ROC curves</li>
+<li>Use Precision-Recall curves for imbalanced data</li>
+</ul>
+<h4 id="document-everything"><strong>Document Everything</strong></h4>
+<ul>
+<li>Track preprocessing steps</li>
+<li>Record hyperparameters</li>
+<li>Note performance metrics</li>
+</ul>
+<h3 id="12-common-pitfalls">1.2. Common pitfalls</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Pitfall</strong></th>
+<th><strong>Problem</strong></th>
+<th><strong>Solution</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Using accuracy for imbalanced data</strong></td>
+<td>Misleading performance</td>
+<td>Use precision, recall, F1-score</td>
+</tr>
+<tr>
+<td><strong>Not scaling features</strong></td>
+<td>Poor KNN/SVM performance</td>
+<td>Standardize features</td>
+</tr>
+<tr>
+<td><strong>Ignoring class imbalance</strong></td>
+<td>Biased toward majority class</td>
+<td>Use SMOTE, undersampling, or class weights</td>
+</tr>
+<tr>
+<td><strong>Overfitting decision trees</strong></td>
+<td>Poor generalization</td>
+<td>Use pruning (max_depth, min_samples_split)</td>
+</tr>
+<tr>
+<td><strong>Wrong metric choice</strong></td>
+<td>Misaligned with business goals</td>
+<td>Consider cost of FP vs FN</td>
+</tr>
+<tr>
+<td><strong>Not using cross-validation</strong></td>
+<td>Unreliable estimates</td>
+<td>Use Stratified K-Fold</td>
+</tr>
+<tr>
+<td><strong>Applying balancing before split</strong></td>
+<td>Data leakage</td>
+<td>Balance after train-test split</td>
+</tr>
+<tr>
+<td><strong>Using ROC for imbalanced data</strong></td>
+<td>Overly optimistic</td>
+<td>Use Precision-Recall curve</td>
+</tr>
+<tr>
+<td><strong>Not tuning hyperparameters</strong></td>
+<td>Suboptimal performance</td>
+<td>Use GridSearchCV or RandomizedSearchCV</td>
+</tr>
+<tr>
+<td><strong>Ignoring probability calibration</strong></td>
+<td>Poor probability estimates</td>
+<td>Consider threshold tuning</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-classification-workflow">2. Classification workflow</h2>
+<pre><code>1. Data Loading &amp; Exploration
+   ↓
+2. Check Class Balance
+   ↓
+3. Train-Test Split (stratified if imbalanced)
+   ↓
+4. Data Preprocessing
+   - Handle missing values
+   - Encode categorical variables
+   - Scale numerical features (if needed)
+   ↓
+5. Apply Balancing Techniques (if needed)
+   - SMOTE
+   - Undersampling
+   ↓
+6. Model Selection &amp; Training
+   - Logistic Regression
+   - Naive Bayes
+   - KNN
+   - Decision Tree
+   - SVM
+   ↓
+7. Cross-Validation (Stratified K-Fold)
+   ↓
+8. Model Evaluation
+   - Confusion matrix
+   - Accuracy, precision, recall, F1
+   - ROC curve and AUC
+   - Precision-Recall curve (for imbalanced data)
+   ↓
+9. Hyperparameter Tuning
+   ↓
+10. Final Model Selection
+   ↓
+11. Predictions on Test Set
+</code></pre>
+<h2 id="3-model-selection-guide">3. Model selection guide</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Algorithm</strong></th>
+<th><strong>Data Considerations</strong></th>
+<th><strong>Regularization</strong></th>
+<th><strong>Strengths</strong></th>
+<th><strong>Weaknesses</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html" target="_blank"><strong>Logistic Regression</strong></a></td>
+<td>Feature scaling beneficial; handles binary and multiclass; check for multicollinearity</td>
+<td>L1 (Lasso), L2 (Ridge), ElasticNet</td>
+<td>Fast, interpretable, provides probabilities; linear decision boundary; good baseline</td>
+<td>Assumes linearity; poor with non-linear relationships; may need feature engineering</td>
+</tr>
+<tr>
+<td><a href="https://scikit-learn.org/stable/modules/naive_bayes.html" target="_blank"><strong>Naive Bayes</strong></a></td>
+<td>No scaling needed; works well with small datasets; handles high dimensions</td>
+<td>None (probabilistic)</td>
+<td>Very fast training/prediction; good baseline; handles missing data; works with small datasets</td>
+<td>Assumes feature independence (often violated); can be outperformed by other models</td>
+</tr>
+<tr>
+<td><a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html" target="_blank"><strong>K-Nearest Neighbors</strong></a></td>
+<td>Feature scaling critical; remove irrelevant features; handle missing values</td>
+<td>None (instance-based)</td>
+<td>Simple concept; no training phase; non-parametric; naturally handles multiclass</td>
+<td>Slow predictions; memory intensive; sensitive to feature scaling; curse of dimensionality</td>
+</tr>
+<tr>
+<td><a href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html" target="_blank"><strong>Decision Trees</strong></a></td>
+<td>Minimal preprocessing; no scaling required; handles mixed data types; can handle missing values</td>
+<td>Pruning (max_depth, min_samples_split, min_samples_leaf)</td>
+<td>Highly interpretable; handles non-linear relationships; no scaling needed; visualizable</td>
+<td>Prone to overfitting; unstable; biased toward features with more levels</td>
+</tr>
+<tr>
+<td><a href="https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html" target="_blank"><strong>Support Vector Machines</strong></a></td>
+<td>Feature scaling critical; works well in high dimensions; effective with clear margins</td>
+<td>C parameter (regularization), kernel parameters</td>
+<td>Effective in high dimensions; memory efficient; versatile kernels; good with clear margins</td>
+<td>Slow with large datasets; difficult to interpret; sensitive to kernel choice; requires scaling</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-performance-metrics">4. Performance metrics</h2>
+<p>Performance metrics evaluate how well a classifier distinguishes between classes and the types of errors it makes.</p>
+<h3 id="41-metric-comparison">4.1. Metric comparison</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Metric</strong></th>
+<th><strong>Formula</strong></th>
+<th><strong>Range</strong></th>
+<th><strong>Best For</strong></th>
+<th><strong>Limitations</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html" target="_blank"><strong>Accuracy</strong></a></td>
+<td><span class="arithmatex">\((TP + TN) / \text{Total}\)</span></td>
+<td>0-1</td>
+<td>Balanced datasets</td>
+<td>Misleading for imbalanced data</td>
+</tr>
+<tr>
+<td><a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_score.html" target="_blank"><strong>Precision</strong></a></td>
+<td><span class="arithmatex">\(TP / (TP + FP)\)</span></td>
+<td>0-1</td>
+<td>Minimizing false positives</td>
+<td>Ignores false negatives</td>
+</tr>
+<tr>
+<td><a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.recall_score.html" target="_blank"><strong>Recall</strong></a></td>
+<td><span class="arithmatex">\(TP / (TP + FN)\)</span></td>
+<td>0-1</td>
+<td>Minimizing false negatives</td>
+<td>Ignores false positives</td>
+</tr>
+<tr>
+<td><a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html" target="_blank"><strong>F1-Score</strong></a></td>
+<td><span class="arithmatex">\(2 \times \frac{P \times R}{P + R}\)</span></td>
+<td>0-1</td>
+<td>Balancing precision and recall</td>
+<td>Equal weight to both metrics</td>
+</tr>
+<tr>
+<td><a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_auc_score.html" target="_blank"><strong>AUC-ROC</strong></a></td>
+<td>Area under ROC curve</td>
+<td>0-1</td>
+<td>Balanced datasets</td>
+<td>Optimistic for imbalanced data</td>
+</tr>
+<tr>
+<td><a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.average_precision_score.html" target="_blank"><strong>AUCPR</strong></a></td>
+<td>Area under PR curve</td>
+<td>0-1</td>
+<td>Imbalanced datasets</td>
+<td>More conservative than AUC</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-confusion-matrix">4.2. Confusion matrix</h3>
+<p>The confusion matrix shows all combinations of predicted vs. actual class labels:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Predicted Positive</strong></th>
+<th><strong>Predicted Negative</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Actual Positive</strong></td>
+<td>True Positive (TP)</td>
+<td>False Negative (FN)</td>
+</tr>
+<tr>
+<td><strong>Actual Negative</strong></td>
+<td>False Positive (FP)</td>
+<td>True Negative (TN)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="key-terms"><strong>Key terms</strong>:</h4>
+<ul>
+<li><strong>TP</strong>: Correctly predicted positive cases</li>
+<li><strong>TN</strong>: Correctly predicted negative cases</li>
+<li><strong>FP</strong>: Type I error (false alarm)</li>
+<li><strong>FN</strong>: Type II error (missed detection)</li>
+</ul>
+<p><strong>Best practice</strong>: Use <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.confusion_matrix.html" target="_blank"><code>confusion_matrix()</code></a> and visualize with heatmap</p>
+<h3 id="43-when-to-use-each-metric">4.3. When to use each metric</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Scenario</strong></th>
+<th><strong>Recommended Metrics</strong></th>
+<th><strong>Rationale</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Balanced classes</strong></td>
+<td>Accuracy, F1, AUC-ROC</td>
+<td>All metrics reliable</td>
+</tr>
+<tr>
+<td><strong>Imbalanced classes</strong></td>
+<td>Precision, Recall, F1, AUCPR</td>
+<td>Accuracy misleading</td>
+</tr>
+<tr>
+<td><strong>False positives costly</strong></td>
+<td>Precision</td>
+<td>Minimize FP (e.g., spam detection)</td>
+</tr>
+<tr>
+<td><strong>False negatives costly</strong></td>
+<td>Recall</td>
+<td>Minimize FN (e.g., disease detection)</td>
+</tr>
+<tr>
+<td><strong>Both FP and FN important</strong></td>
+<td>F1-Score</td>
+<td>Balances precision and recall</td>
+</tr>
+<tr>
+<td><strong>Threshold-independent evaluation</strong></td>
+<td>AUC-ROC, AUCPR</td>
+<td>Evaluates across all thresholds</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-core-classification-techniques">5. Core classification techniques</h2>
+<p>These techniques are crucial for successful classification modeling with any algorithm. Proper application of cross-validation, imbalanced data handling, and hyperparameter tuning significantly improves model performance.</p>
+<h3 id="51-cross-validation">5.1. Cross-validation</h3>
+<p>Trains and evaluates model on multiple train-validation splits to estimate generalization performance.</p>
+<p><strong>Cross-validation functions:</strong>
+- <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html" target="_blank"><code>cross_val_score()</code></a>: Returns array of scores for each fold
+- <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_validate.html" target="_blank"><code>cross_validate()</code></a>: Returns dict with scores, folds, fit times, etc</p>
+<p><strong>Cross-validation fold generators:</strong>
+- <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedKFold.html" target="_blank"><strong>Stratified K-Fold</strong></a>: Maintains class proportions in each fold (recommended for classification)
+- <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html" target="_blank"><strong>K-Fold</strong></a>: Standard k equal folds
+- <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html" target="_blank"><strong>Repeated Stratified K-Fold</strong></a>: Multiple runs with different random splits</p>
+<h3 id="52-handling-imbalanced-data">5.2. Handling imbalanced data</h3>
+<p>Address class imbalance to prevent bias toward majority class.</p>
+<table>
+  <thead>
+    <tr>
+      <th><strong>Technique</strong></th>
+      <th><strong>Type</strong></th>
+      <th><strong>How It Works</strong></th>
+      <th><strong>Best For</strong></th>
+      <th><strong>Implementation</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>SMOTE</strong></td>
+      <td>Oversampling</td>
+      <td>Generates synthetic minority samples</td>
+      <td>Moderate imbalance</td>
+      <td><a href="https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTE.html" target="_blank"><code>SMOTE()</code></a> from imblearn</td>
+    </tr>
+    <tr>
+      <td><strong>Random Undersampling</strong></td>
+      <td>Undersampling</td>
+      <td>Randomly removes majority class samples</td>
+      <td>Large datasets</td>
+      <td><a href="https://imbalanced-learn.org/stable/references/generated/imblearn.under_sampling.RandomUnderSampler.html" target="_blank"><code>RandomUnderSampler()</code></a> from imblearn</td>
+    </tr>
+    <tr>
+      <td><strong>Class Weights</strong></td>
+      <td>Algorithm parameter</td>
+      <td>Penalizes misclassification of minority class</td>
+      <td>Slight imbalance</td>
+      <td><code>class_weight='balanced'</code> in most sklearn classifiers</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="key-considerations"><strong>Key considerations:</strong></h4>
+<ul>
+<li>Apply balancing <strong>after</strong> train-test split to avoid data leakage</li>
+<li>Use Stratified K-Fold for cross-validation</li>
+<li>Evaluate with precision, recall, F1, and AUCPR</li>
+</ul>
+<h3 id="53-hyperparameter-tuning">5.3. Hyperparameter tuning</h3>
+<p>Systematically searches for optimal model parameters.</p>
+<table>
+  <thead>
+    <tr>
+      <th><strong>Method</strong></th>
+      <th><strong>Strategy</strong></th>
+      <th><strong>Pros</strong></th>
+      <th><strong>Cons</strong></th>
+      <th><strong>Implementation</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Grid Search</strong></td>
+      <td>Exhaustive search of parameter grid</td>
+      <td>Guaranteed to find best in grid</td>
+      <td>Computationally expensive</td>
+      <td><a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html" target="_blank"><code>GridSearchCV</code></a></td>
+    </tr>
+    <tr>
+      <td><strong>Random Search</strong></td>
+      <td>Random sampling from distributions</td>
+      <td>More efficient, explores wider space</td>
+      <td>May miss optimal combination</td>
+      <td><a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RandomizedSearchCV.html" target="_blank"><code>RandomizedSearchCV</code></a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Common hyperparameters to tune:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Algorithm</strong></th>
+<th><strong>Key Hyperparameters</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Logistic Regression</strong></td>
+<td><code>C</code> (regularization strength), <code>penalty</code> (L1, L2, ElasticNet)</td>
+</tr>
+<tr>
+<td><strong>KNN</strong></td>
+<td><code>n_neighbors</code> (k), <code>weights</code> (uniform, distance), <code>metric</code> (euclidean, manhattan)</td>
+</tr>
+<tr>
+<td><strong>Decision Tree</strong></td>
+<td><code>max_depth</code>, <code>min_samples_split</code>, <code>min_samples_leaf</code>, <code>criterion</code> (gini, entropy)</td>
+</tr>
+<tr>
+<td><strong>SVM</strong></td>
+<td><code>C</code> (regularization), <code>gamma</code> (kernel coefficient), <code>kernel</code> (linear, rbf, poly)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="additional-resources">Additional resources</h2>
+<h3 id="python-libraries">Python libraries</h3>
+<ul>
+<li><strong><a href="https://scikit-learn.org">scikit-learn</a></strong>: Comprehensive ML library</li>
+<li><a href="https://scikit-learn.org/stable/modules/linear_model.html"><code>linear_model</code></a>: LogisticRegression</li>
+<li><a href="https://scikit-learn.org/stable/modules/naive_bayes.html"><code>naive_bayes</code></a>: GaussianNB, MultinomialNB, BernoulliNB</li>
+<li><a href="https://scikit-learn.org/stable/modules/neighbors.html"><code>neighbors</code></a>: KNeighborsClassifier</li>
+<li><a href="https://scikit-learn.org/stable/modules/tree.html"><code>tree</code></a>: DecisionTreeClassifier</li>
+<li><a href="https://scikit-learn.org/stable/modules/svm.html"><code>svm</code></a>: SVC</li>
+<li><a href="https://scikit-learn.org/stable/modules/classes.html#module-sklearn.model_selection"><code>model_selection</code></a>: train_test_split, cross_val_score, GridSearchCV, StratifiedKFold</li>
+<li><a href="https://scikit-learn.org/stable/modules/model_evaluation.html"><code>metrics</code></a>: confusion_matrix, classification_report, roc_curve, precision_recall_curve</li>
+<li><strong><a href="https://imbalanced-learn.org/">imbalanced-learn</a></strong>: Handling imbalanced datasets</li>
+<li><a href="https://imbalanced-learn.org/stable/references/over_sampling.html"><code>over_sampling</code></a>: SMOTE</li>
+<li><a href="https://imbalanced-learn.org/stable/references/under_sampling.html"><code>under_sampling</code></a>: RandomUnderSampler</li>
+<li><a href="https://imbalanced-learn.org/stable/references/pipeline.html"><code>pipeline</code></a>: Pipeline (imbalanced-aware)</li>
+</ul>
+<h3 id="key-sklearn-modules">Key sklearn modules</h3>
+<ul>
+<li><strong><a href="https://scikit-learn.org/stable/modules/linear_model.html">sklearn.linear_model</a></strong>: Logistic regression and variants</li>
+<li><strong><a href="https://scikit-learn.org/stable/modules/classes.html#module-sklearn.model_selection">sklearn.model_selection</a></strong>: Train-test split, CV, tuning</li>
+<li><strong><a href="https://scikit-learn.org/stable/modules/model_evaluation.html">sklearn.metrics</a></strong>: Classification metrics</li>
+<li><strong><a href="https://scikit-learn.org/stable/modules/preprocessing.html">sklearn.preprocessing</a></strong>: Feature scaling and encoding</li>
+</ul>
+<h3 id="recommended-reading">Recommended reading</h3>
+<ul>
+<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html" target="_blank"><strong>Scikit-learn Classification Guide</strong></a>: Comprehensive classification documentation</li>
+<li><a href="https://www.statlearning.com/" target="_blank"><strong>"Introduction to Statistical Learning"</strong></a> by James, Witten, Hastie, Tibshirani</li>
+<li><a href="https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/" target="_blank"><strong>"Hands-On Machine Learning"</strong></a> by Aurélien Géron</li>
+<li><a href="https://imbalanced-learn.org/stable/" target="_blank"><strong>Imbalanced-learn Documentation</strong></a>: Guide to handling imbalanced datasets</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/download.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
