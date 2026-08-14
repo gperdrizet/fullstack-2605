@@ -49,6 +49,7 @@ nav:
     - Feature engineering: resources/feature-engineering.md
     - Regression: resources/regression.md
     - Classification: resources/classification.md
+    - Ensemble methods: resources/ensemble-learning.md
     - Dev tools install guide: resources/dev-tools-install-guide.md
     - Dev container setup guide: resources/dev-container-guide.md
   - Changelog: changelog.md
