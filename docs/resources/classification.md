@@ -166,11 +166,11 @@ These techniques are crucial for successful classification modeling with any alg
 
 Trains and evaluates model on multiple train-validation splits to estimate generalization performance.
 
-**Cross-validation functions:**
+#### **Cross-validation functions:**
 - <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html" target="_blank">`cross_val_score()`</a>: Returns array of scores for each fold
 - <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_validate.html" target="_blank">`cross_validate()`</a>: Returns dict with scores, folds, fit times, etc
 
-**Cross-validation fold generators:**
+#### **Cross-validation fold generators:**
 - <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedKFold.html" target="_blank">**Stratified K-Fold**</a>: Maintains class proportions in each fold (recommended for classification)
 - <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html" target="_blank">**K-Fold**</a>: Standard k equal folds
 - <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html" target="_blank">**Repeated Stratified K-Fold**</a>: Multiple runs with different random splits
