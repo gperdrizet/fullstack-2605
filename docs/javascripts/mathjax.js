@@ -10,3 +10,10 @@ window.MathJax = {
     processHtmlClass: "arithmatex"
   }
 };
+
+// Trigger MathJax when changing pages via instant loading
+document$.subscribe(() => {
+  if (typeof MathJax !== "undefined" && typeof MathJax.typesetPromise === "function") {
+    MathJax.typesetPromise();
+  }
+});
