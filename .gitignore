@@ -11,7 +11,7 @@ changelog.md
 *.json
 *.pkl
 *.csv
-!data/
+!data/*
 
 # Unit 2
 unit-2/lesson-16/data
