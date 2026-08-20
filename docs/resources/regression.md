@@ -121,11 +121,11 @@ These techniques are crucial for successful regression modeling with any algorit
 
 Trains and evaluates model on multiple train-validation splits called 'folds' to estimate generalization performance without overusing the test set.
 
-**Cross-validation functions:**
+#### **Cross-validation functions:**
 - <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html" target="_blank">`cross_val_score()`</a>: Returns array of scores for each fold
 - <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_validate.html" target="_blank">`cross_validate()`</a>: Returns dict with scores, folds, fit times, etc for each fold
 
-**Cross-validation fold generators**:
+#### **Cross-validation fold generators**:
 - <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html" target="_blank">**K-Fold**</a>: k equal folds, each used once for validation
 - <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.LeaveOneOut.html" target="_blank">**Leave-One-Out (LOOCV)**</a>: k = n (very computationally expensive)
 - <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedKFold.html" target="_blank">**Repeated K-Fold**</a>: Multiple K-Fold runs with different splits
