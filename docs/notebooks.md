@@ -320,7 +320,7 @@ Click **view** to open the notebook on GitHub first.
       <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-3/lesson-21/lesson-21-demo.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-3/lesson-21/lesson-21-demo.ipynb" class="download-link">download</a></td>
     </tr>
     <tr>
-      <td rowspan="3" style="vertical-align:top">Lesson 22</td>
+      <td rowspan="4" style="vertical-align:top">Lesson 22</td>
       <td>Unsupervised learning</td>
       <td>Demo</td>
       <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-3/lesson-22/lesson-22-demo.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-3/lesson-22/lesson-22-demo.ipynb" class="download-link">download</a></td>
@@ -333,6 +333,11 @@ Click **view** to open the notebook on GitHub first.
       <td>Unsupervised learning</td>
       <td>Activity solution</td>
       <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-3/lesson-22/lesson-22-activity-solution.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-3/lesson-22/lesson-22-activity-solution.ipynb" class="download-link">download</a></td>
+    </tr>
+    </tr>
+      <td>Unsupervised learning</td>
+      <td>Full intrusion detection solution</td>
+      <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-3/lesson-22/lesson-22-intrusion-detection.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-3/lesson-22/lesson-22-intrusion-detection.ipynb" class="download-link">download</a></td>
     </tr>
     <tr>
       <td rowspan="2" style="vertical-align:top">Lesson 23</td>
