@@ -8,6 +8,12 @@ window.MathJax = {
   options: {
     ignoreHtmlClass: ".*",
     processHtmlClass: "arithmatex"
+  },
+  // Force mathjax to wait for config to be loaded before processing math
+  startup: {
+    ready: () => {
+      MathJax.startup.defaultReady();
+    }
   }
 };
 

@@ -902,6 +902,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="5.1. Cross-validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cross-validation-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-validation functions:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-validation-fold-generators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-validation fold generators:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1327,6 +1355,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="5.1. Cross-validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cross-validation-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-validation functions:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-validation-fold-generators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-validation fold generators:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1678,14 +1734,18 @@
 <p>These techniques are crucial for successful regression modeling with any algorithm. Proper application of cross-validation, regularization, and hyperparameter tuning significantly improves model performance and generalization across all regression methods.</p>
 <h3 id="51-cross-validation">5.1. Cross-validation</h3>
 <p>Trains and evaluates model on multiple train-validation splits called 'folds' to estimate generalization performance without overusing the test set.</p>
-<p><strong>Cross-validation functions:</strong>
-- <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html" target="_blank"><code>cross_val_score()</code></a>: Returns array of scores for each fold
-- <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_validate.html" target="_blank"><code>cross_validate()</code></a>: Returns dict with scores, folds, fit times, etc for each fold</p>
-<p><strong>Cross-validation fold generators</strong>:
-- <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html" target="_blank"><strong>K-Fold</strong></a>: k equal folds, each used once for validation
-- <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.LeaveOneOut.html" target="_blank"><strong>Leave-One-Out (LOOCV)</strong></a>: k = n (very computationally expensive)
-- <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedKFold.html" target="_blank"><strong>Repeated K-Fold</strong></a>: Multiple K-Fold runs with different splits
-- <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html" target="_blank"><strong>Time Series Split</strong></a>: Preserves temporal order</p>
+<h4 id="cross-validation-functions"><strong>Cross-validation functions:</strong></h4>
+<ul>
+<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html" target="_blank"><code>cross_val_score()</code></a>: Returns array of scores for each fold</li>
+<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_validate.html" target="_blank"><code>cross_validate()</code></a>: Returns dict with scores, folds, fit times, etc for each fold</li>
+</ul>
+<h4 id="cross-validation-fold-generators"><strong>Cross-validation fold generators</strong>:</h4>
+<ul>
+<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html" target="_blank"><strong>K-Fold</strong></a>: k equal folds, each used once for validation</li>
+<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.LeaveOneOut.html" target="_blank"><strong>Leave-One-Out (LOOCV)</strong></a>: k = n (very computationally expensive)</li>
+<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedKFold.html" target="_blank"><strong>Repeated K-Fold</strong></a>: Multiple K-Fold runs with different splits</li>
+<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html" target="_blank"><strong>Time Series Split</strong></a>: Preserves temporal order</li>
+</ul>
 <h3 id="52-regularization-methods">5.2. Regularization methods</h3>
 <p>Add penalty terms to prevent overfitting and handle multicollinearity.</p>
 <table>
