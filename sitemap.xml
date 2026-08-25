@@ -2,78 +2,82 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://gperdrizet.github.io/fullstack-2605/</loc>
-         <lastmod>2026-08-21</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://gperdrizet.github.io/fullstack-2605/changelog/</loc>
-         <lastmod>2026-08-21</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://gperdrizet.github.io/fullstack-2605/datasets/</loc>
-         <lastmod>2026-08-21</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://gperdrizet.github.io/fullstack-2605/github-repos/</loc>
-         <lastmod>2026-08-21</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://gperdrizet.github.io/fullstack-2605/notebooks/</loc>
-         <lastmod>2026-08-21</lastmod>
+         <lastmod>2026-08-25</lastmod>
+    </url>
+    <url>
+         <loc>https://gperdrizet.github.io/fullstack-2605/resources/capstone-overview/</loc>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://gperdrizet.github.io/fullstack-2605/resources/classification/</loc>
-         <lastmod>2026-08-21</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://gperdrizet.github.io/fullstack-2605/resources/data-wrangling/</loc>
-         <lastmod>2026-08-21</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://gperdrizet.github.io/fullstack-2605/resources/dev-container-guide/</loc>
-         <lastmod>2026-08-21</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://gperdrizet.github.io/fullstack-2605/resources/dev-tools-install-guide/</loc>
-         <lastmod>2026-08-21</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://gperdrizet.github.io/fullstack-2605/resources/documentation-links/</loc>
-         <lastmod>2026-08-21</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://gperdrizet.github.io/fullstack-2605/resources/ensemble-learning/</loc>
-         <lastmod>2026-08-21</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://gperdrizet.github.io/fullstack-2605/resources/feature-engineering/</loc>
-         <lastmod>2026-08-21</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://gperdrizet.github.io/fullstack-2605/resources/linux-commands/</loc>
-         <lastmod>2026-08-21</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://gperdrizet.github.io/fullstack-2605/resources/notebook-shortcuts/</loc>
-         <lastmod>2026-08-21</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://gperdrizet.github.io/fullstack-2605/resources/plotting-overview/</loc>
-         <lastmod>2026-08-21</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://gperdrizet.github.io/fullstack-2605/resources/regression/</loc>
-         <lastmod>2026-08-21</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://gperdrizet.github.io/fullstack-2605/resources/statistics-overview/</loc>
-         <lastmod>2026-08-21</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://gperdrizet.github.io/fullstack-2605/resources/time-management-planning/</loc>
-         <lastmod>2026-08-21</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://gperdrizet.github.io/fullstack-2605/resources/unsupervised-learning/</loc>
-         <lastmod>2026-08-21</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
 </urlset>
