@@ -361,7 +361,7 @@ Click **view** to open the notebook on GitHub first.
   </thead>
   <tbody>
     <tr>
-      <td rowspan="2" style="vertical-align:top">Lesson 26</td>
+      <td rowspan="3" style="vertical-align:top">Lesson 26</td>
       <td>Artificial neural networks</td>
       <td>Demo</td>
       <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-4/lesson-26/lesson-26-demo.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-4/lesson-26/lesson-26-demo.ipynb" class="download-link">download</a></td>
