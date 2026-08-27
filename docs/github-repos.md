@@ -48,6 +48,21 @@ You can find all of my public GitHub content here: [gperdrizet](https://github.c
   </tbody>
 </table>
 
+## Unit 4: Deeplearning
+
+<table>
+  <thead>
+    <tr><th>Lesson</th><th>Topic</th><th>Description</th><th>Repo</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="1" style="vertical-align:top">Lesson 28</td>
+      <td>PyTorch</td>
+      <td>Demo & activity notebooks for PyTorch regression and image classification using DNNs</td>
+      <td><a href="https://github.com/gperdrizet/pytorch-demo" target="_blank">gperdrizet/pytorch-demo</a></td>
+    </tr>
+  </tbody>
+</table>
 
 ## DevOps/other
 
