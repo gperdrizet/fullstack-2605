@@ -377,7 +377,7 @@ Click **view** to open the notebook on GitHub first.
       <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-4/lesson-26/lesson-26-activity-solution.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-4/lesson-26/lesson-26-activity-solution.ipynb" class="download-link">download</a></td>
     </tr>
     <tr>
-      <td rowspan="3" style="vertical-align:top">Lesson 28</td>
+      <td rowspan="4" style="vertical-align:top">Lesson 28</td>
       <td>Tensorflow regression</td>
       <td>Demo part 1</td>
       <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-4/lesson-28/lesson-28-demo-part1.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-4/lesson-28/lesson-28-demo-part1.ipynb" class="download-link">download</a></td>
