@@ -58,8 +58,14 @@ You can find all of my public GitHub content here: [gperdrizet](https://github.c
     <tr>
       <td rowspan="1" style="vertical-align:top">Lesson 28</td>
       <td>PyTorch</td>
-      <td>Demo & activity notebooks for PyTorch regression and image classification using DNNs</td>
+      <td>Demo & activity notebooks for PyTorch regression and image classification</td>
       <td><a href="https://github.com/gperdrizet/pytorch-demo" target="_blank">gperdrizet/pytorch-demo</a></td>
+    </tr>
+    <tr>
+      <td rowspan="1" style="vertical-align:top">Lesson 29-33</td>
+      <td>Image classification</td>
+      <td>RSNA knee abnormality Kaggle competition solution: multiclass image classification</td>
+      <td><a href="https://github.com/gperdrizet/RSNA-knee-abnormality" target="_blank">gperdrizet/RSNA-knee-abnormality</a></td>
     </tr>
   </tbody>
 </table>
