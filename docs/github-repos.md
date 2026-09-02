@@ -70,7 +70,7 @@ You can find all of my public GitHub content here: [gperdrizet](https://github.c
     <tr>
       <td rowspan="1" style="vertical-align:top">Lesson 29-33</td>
       <td>Image classification</td>
-      <td>CIFAR10 model training and optimzation</td>
+      <td>CIFAR10 model training and optimization, image classification tools package</td>
       <td><a href="https://github.com/gperdrizet/CIFAR10" target="_blank">gperdrizet/CIFAR10</a></td>
     </tr>
   </tbody>
