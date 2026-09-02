@@ -67,6 +67,12 @@ You can find all of my public GitHub content here: [gperdrizet](https://github.c
       <td>RSNA knee abnormality Kaggle competition solution: multiclass image classification</td>
       <td><a href="https://github.com/gperdrizet/RSNA-knee-abnormality" target="_blank">gperdrizet/RSNA-knee-abnormality</a></td>
     </tr>
+    <tr>
+      <td rowspan="1" style="vertical-align:top">Lesson 29-33</td>
+      <td>Image classification</td>
+      <td>CIFAR10 model training and optimzation</td>
+      <td><a href="https://github.com/gperdrizet/CIFAR10" target="_blank">gperdrizet/CIFAR10</a></td>
+    </tr>
   </tbody>
 </table>
 
