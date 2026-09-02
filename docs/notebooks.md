@@ -423,7 +423,7 @@ Click **view** to open the notebook on GitHub first.
       <td>Activity part 2 solution</td>
       <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-4/lesson-29/lesson-29-activity-part2-solution.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-4/lesson-29/lesson-29-activity-part2-solution.ipynb" class="download-link">download</a></td>
     </tr>
-<tr>
+    <tr>
       <td rowspan="3" style="vertical-align:top">Lesson 32</td>
       <td>PyTorch CNN</td>
       <td>Demo</td>
@@ -438,6 +438,18 @@ Click **view** to open the notebook on GitHub first.
       <td>PyTorch CNN</td>
       <td>Activity solution</td>
       <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-4/lesson-32/lesson-32-activity-solution.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-4/lesson-32/lesson-32-activity-solution.ipynb" class="download-link">download</a></td>
+    </tr>
+    <tr>
+      <td rowspan="1" style="vertical-align:top">Lesson 30</td>
+      <td>Neural net optimizers</td>
+      <td>Demo</td>
+      <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-4/lesson-30/lesson-30-demo.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-4/lesson-30/lesson-30-demo.ipynb" class="download-link">download</a></td>
+    </tr>
+    <tr>
+      <td rowspan="1" style="vertical-align:top">Lesson 30</td>
+      <td>Neural net hyperparameter tuning</td>
+      <td>Demo</td>
+      <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-4/lesson-31/lesson-31-demo.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-4/lesson-31/lesson-31-demo.ipynb" class="download-link">download</a></td>
     </tr>
   </tbody>
 </table>
