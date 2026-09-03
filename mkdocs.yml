@@ -53,5 +53,6 @@ nav:
     - Classification: resources/classification.md
     - Ensemble methods: resources/ensemble-learning.md
     - Unsupervised learning: resources/unsupervised-learning.md
+    - Optimizers: resources/optimizers-overview.md
     - Capstone overview: resources/capstone-overview.md
   - Changelog: changelog.md
