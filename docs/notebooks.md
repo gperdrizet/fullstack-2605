@@ -446,10 +446,15 @@ Click **view** to open the notebook on GitHub first.
       <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-4/lesson-30/lesson-30-demo.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-4/lesson-30/lesson-30-demo.ipynb" class="download-link">download</a></td>
     </tr>
     <tr>
-      <td rowspan="1" style="vertical-align:top">Lesson 30</td>
+      <td rowspan="2" style="vertical-align:top">Lesson 31</td>
       <td>Neural net hyperparameter tuning</td>
       <td>Demo</td>
       <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-4/lesson-31/lesson-31-demo.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-4/lesson-31/lesson-31-demo.ipynb" class="download-link">download</a></td>
+    </tr>
+    <tr>
+      <td>Neural net hyperparameter tuning</td>
+      <td>Activity</td>
+      <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-4/lesson-31/lesson-31-activity.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-4/lesson-31/lesson-31-activity.ipynb" class="download-link">download</a></td>
     </tr>
   </tbody>
 </table>
