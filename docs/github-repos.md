@@ -56,7 +56,7 @@ You can find all of my public GitHub content here: [gperdrizet](https://github.c
   </thead>
   <tbody>
     <tr>
-      <td rowspan="1" style="vertical-align:top">Lesson 28</td>
+      <td rowspan="1" style="vertical-align:top">Lesson 28-33</td>
       <td>PyTorch</td>
       <td>Demo & activity notebooks for PyTorch regression and image classification</td>
       <td><a href="https://github.com/gperdrizet/pytorch-demo" target="_blank">gperdrizet/pytorch-demo</a></td>
