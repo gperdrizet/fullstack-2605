@@ -56,7 +56,7 @@ You can find all of my public GitHub content here: [gperdrizet](https://github.c
   </thead>
   <tbody>
     <tr>
-      <td rowspan="1" style="vertical-align:top">Lesson 28</td>
+      <td rowspan="1" style="vertical-align:top">Lesson 28-33</td>
       <td>PyTorch</td>
       <td>Demo & activity notebooks for PyTorch regression and image classification</td>
       <td><a href="https://github.com/gperdrizet/pytorch-demo" target="_blank">gperdrizet/pytorch-demo</a></td>
@@ -72,6 +72,12 @@ You can find all of my public GitHub content here: [gperdrizet](https://github.c
       <td>Image classification</td>
       <td>CIFAR10 model training and optimization, image classification tools package</td>
       <td><a href="https://github.com/gperdrizet/CIFAR10" target="_blank">gperdrizet/CIFAR10</a></td>
+    </tr>
+    <tr>
+      <td rowspan="1" style="vertical-align:top">Lesson 34</td>
+      <td>Object detection</td>
+      <td>Live object detection with YOLO26 and streamlit</td>
+      <td><a href="hhttps://github.com/gperdrizet/YOLO26" target="_blank">gperdrizet/YOLO26</a></td>
     </tr>
   </tbody>
 </table>
