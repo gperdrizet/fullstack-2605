@@ -73,6 +73,12 @@ You can find all of my public GitHub content here: [gperdrizet](https://github.c
       <td>CIFAR10 model training and optimization, image classification tools package</td>
       <td><a href="https://github.com/gperdrizet/CIFAR10" target="_blank">gperdrizet/CIFAR10</a></td>
     </tr>
+    <tr>
+      <td rowspan="1" style="vertical-align:top">Lesson 34</td>
+      <td>Object detection</td>
+      <td>Live object detection with YOLO26 and streamlit</td>
+      <td><a href="hhttps://github.com/gperdrizet/YOLO26" target="_blank">gperdrizet/YOLO26</a></td>
+    </tr>
   </tbody>
 </table>
 
