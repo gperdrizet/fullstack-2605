@@ -79,6 +79,12 @@ You can find all of my public GitHub content here: [gperdrizet](https://github.c
       <td>Live object detection with YOLO26 and streamlit</td>
       <td><a href="hhttps://github.com/gperdrizet/YOLO26" target="_blank">gperdrizet/YOLO26</a></td>
     </tr>
+    <tr>
+      <td rowspan="1" style="vertical-align:top">Lesson 34</td>
+      <td>Sequence learning with RNNs</td>
+      <td>Simple RNN models for sequence learning and NLP sentiment analysis</td>
+      <td><a href="https://github.com/gperdrizet/RNNs" target="_blank">gperdrizet/RNNs</a></td>
+    </tr>
   </tbody>
 </table>
 
