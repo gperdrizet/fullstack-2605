@@ -85,6 +85,12 @@ You can find all of my public GitHub content here: [gperdrizet](https://github.c
       <td>Simple RNN models for sequence learning and NLP sentiment analysis</td>
       <td><a href="https://github.com/gperdrizet/RNNs" target="_blank">gperdrizet/RNNs</a></td>
     </tr>
+    <tr>
+      <td rowspan="1" style="vertical-align:top">Lesson 36</td>
+      <td>Autoencoders</td>
+      <td>Demos for image compression, denoising and anomaly detection with convolutional autoencoders</td>
+      <td><a href="https://github.com/gperdrizet/autoencoders/tree/dev" target="_blank">gperdrizet/autoencoders</a></td>
+    </tr>
   </tbody>
 </table>
 
