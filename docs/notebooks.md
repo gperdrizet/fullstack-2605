@@ -500,3 +500,47 @@ Click **view** to open the notebook on GitHub first.
     </tr>
   </tbody>
 </table>
+
+
+## Unit 6: NLP
+
+<table>
+  <thead>
+    <tr><th>Lesson</th><th>Topic</th><th>Type</th><th>Notebook</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2" style="vertical-align:top">Lesson 43</td>
+      <td>Text data analysis</td>
+      <td>Demo</td>
+      <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-6/lesson-43/lesson-43-demo.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-6/lesson-43/lesson-43-demo.ipynb" class="download-link">download</a></td>
+    </tr>
+    <tr>
+      <td>Text data analysis</td>
+      <td>Activity</td>
+      <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-6/lesson-43/lesson-43-activity.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-6/lesson-43/lesson-43-activity.ipynb" class="download-link">download</a></td>
+    </tr>
+    <tr>
+      <td rowspan="2" style="vertical-align:top">Lesson 44</td>
+      <td>Text vectorization</td>
+      <td>Demo</td>
+      <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-6/lesson-44/lesson-44-demo.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-6/lesson-44/lesson-44-demo.ipynb" class="download-link">download</a></td>
+    </tr>
+    <tr>
+      <td>Text vectorization</td>
+      <td>Activity</td>
+      <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-6/lesson-44/lesson-44-activity.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-6/lesson-44/lesson-44-activity.ipynb" class="download-link">download</a></td>
+    </tr>
+      <tr>
+      <td rowspan="2" style="vertical-align:top">Lesson 45</td>
+      <td>Distributed representation</td>
+      <td>Demo</td>
+      <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-6/lesson-45/lesson-45-demo.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-6/lesson-45/lesson-45-demo.ipynb" class="download-link">download</a></td>
+    </tr>
+    <tr>
+      <td>Distributed representation</td>
+      <td>Activity</td>
+      <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-6/lesson-45/lesson-45-activity.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-6/lesson-45/lesson-45-activity.ipynb" class="download-link">download</a></td>
+    </tr>
+  </tbody>
+</table>
