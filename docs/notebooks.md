@@ -542,7 +542,7 @@ Click **view** to open the notebook on GitHub first.
       <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-6/lesson-44/lesson-44-activity-solution.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-6/lesson-44/lesson-44-activity-solution.ipynb" class="download-link">download</a></td>
     </tr>
       <tr>
-      <td rowspan="2" style="vertical-align:top">Lesson 45</td>
+      <td rowspan="3" style="vertical-align:top">Lesson 45</td>
       <td>Distributed representation</td>
       <td>Demo</td>
       <td><a href="https://github.com/gperdrizet/fullstack-2605/blob/main/unit-6/lesson-45/lesson-45-demo.ipynb" target="_blank">view</a> · <a href="https://raw.githubusercontent.com/gperdrizet/fullstack-2605/main/unit-6/lesson-45/lesson-45-demo.ipynb" class="download-link">download</a></td>
