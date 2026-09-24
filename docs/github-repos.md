@@ -94,6 +94,22 @@ You can find all of my public GitHub content here: [gperdrizet](https://github.c
   </tbody>
 </table>
 
+## Unit 6: Natural language processing
+
+<table>
+  <thead>
+    <tr><th>Lesson</th><th>Topic</th><th>Description</th><th>Repo</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="1" style="vertical-align:top">Lesson 46,47,48</td>
+      <td>NLP with sequence models</td>
+      <td>Machine translation, encoder decoder architecture, recurrent models, attention and transformers</td>
+      <td><a href="https://github.com/gperdrizet/language-models" target="_blank">gperdrizet/language-models/a></td>
+    </tr>
+  </tbody>
+</table>
+
 ## DevOps/other
 
 <table>
