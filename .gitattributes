@@ -7,3 +7,4 @@ data/*.webp filter=lfs diff=lfs merge=lfs -text
 data/*.parquet filter=lfs diff=lfs merge=lfs -text
 data/unit-4/*.NPZ filter=lfs diff=lfs merge=lfs -text
 data/unit-4/*.csv filter=lfs diff=lfs merge=lfs -text
+data/unit-6/*.csv filter=lfs diff=lfs merge=lfs -text
