@@ -124,6 +124,12 @@ You can find all of my public GitHub content here: [gperdrizet](https://github.c
       <td><a href="https://github.com/gperdrizet/llms-demo" target="_blank">gperdrizet/llms-demo</td>
     </tr>
     <tr>
+      <td rowspan="1" style="vertical-align:top">Image generation</td>
+      <td>Open weight image generation model hardware benchmark</td>
+      <td>Stable diffusion, FLUX, Kandinsky, PixArt</td>
+      <td><a href="https://github.com/gperdrizet/open-weight-image-generation" target="_blank">gperdrizet/open-weight-image-generation</td>
+    </tr>
+    <tr>
       <td rowspan="1" style="vertical-align:top">Unit end project(s)</td>
       <td>OpenAI compatible inference APIs, Gradio UI</td>
       <td>OpenAI Python client, LangChain ChatOpenAI module, credential management, Gradio</td>
