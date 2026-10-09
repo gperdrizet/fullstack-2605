@@ -105,12 +105,12 @@ You can find all of my public GitHub content here: [gperdrizet](https://github.c
       <td rowspan="1" style="vertical-align:top">Lesson 46,47,48</td>
       <td>NLP with sequence models</td>
       <td>Machine translation, encoder decoder architecture, recurrent models, attention and transformers</td>
-      <td><a href="https://github.com/gperdrizet/language-models" target="_blank">gperdrizet/language-models></td>
+      <td><a href="https://github.com/gperdrizet/language-models" target="_blank">gperdrizet/language-models</td>
     </tr>
   </tbody>
 </table>
 
-## Unit 7: Natural language processing
+## Unit 7: Essentials and applications of generative AI
 
 <table>
   <thead>
@@ -121,7 +121,19 @@ You can find all of my public GitHub content here: [gperdrizet](https://github.c
       <td rowspan="1" style="vertical-align:top">Lesson 50-56</td>
       <td>LLM applications</td>
       <td>Prompting, LangChain, Agents, Fine-tuning and evaluation</td>
-      <td><a href="https://github.com/gperdrizet/llms-demo" target="_blank">gperdrizet/llms-demo></td>
+      <td><a href="https://github.com/gperdrizet/llms-demo" target="_blank">gperdrizet/llms-demo</td>
+    </tr>
+    <tr>
+      <td rowspan="1" style="vertical-align:top">Image generation</td>
+      <td>Open weight image generation model hardware benchmark</td>
+      <td>Stable diffusion, FLUX, Kandinsky, PixArt</td>
+      <td><a href="https://github.com/gperdrizet/open-weight-image-generation" target="_blank">gperdrizet/open-weight-image-generation</td>
+    </tr>
+    <tr>
+      <td rowspan="1" style="vertical-align:top">Unit end project(s)</td>
+      <td>OpenAI compatible inference APIs, Gradio UI</td>
+      <td>OpenAI Python client, LangChain ChatOpenAI module, credential management, Gradio</td>
+      <td><a href="https://github.com/gperdrizet/unit7-cep" target="_blank">gperdrizet/unit7-cep</td>
     </tr>
   </tbody>
 </table>
