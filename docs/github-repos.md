@@ -138,7 +138,7 @@ You can find all of my public GitHub content here: [gperdrizet](https://github.c
   </tbody>
 </table>
 
-## Unit 8: NAgentic AI frameworks with model context and tooling protocols
+## Unit 8: Agentic AI frameworks with model context and tooling protocols
 
 <table>
   <thead>
