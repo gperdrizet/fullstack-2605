@@ -138,6 +138,22 @@ You can find all of my public GitHub content here: [gperdrizet](https://github.c
   </tbody>
 </table>
 
+## Unit 8: Agentic AI frameworks with model context and tooling protocols
+
+<table>
+  <thead>
+    <tr><th>Lesson</th><th>Topic</th><th>Description</th><th>Repo</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="1" style="vertical-align:top">Lesson 59</td>
+      <td>Intro to LangGraph</td>
+      <td>Nodes, edges, sequential and parallel edges, decision making</td>
+      <td><a href="https://github.com/gperdrizet/fsa-agentic-ai" target="_blank">gperdrizet/fsa-agentic-ai</td>
+    </tr>
+  </tbody>
+</table>
+
 ## DevOps/other
 
 <table>
