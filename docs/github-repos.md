@@ -94,6 +94,22 @@ You can find all of my public GitHub content here: [gperdrizet](https://github.c
   </tbody>
 </table>
 
+## Unit 5: MLOps
+
+<table>
+  <thead>
+    <tr><th>Lesson</th><th>Topic</th><th>Description</th><th>Repo</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="1" style="vertical-align:top">Lesson 38</td>
+      <td>Introduction to MLOps</td>
+      <td>CI/CD with GitHub actions, training experiment tracking and model versioning with MLFlow</td>
+      <td><a href="https://github.com/gperdrizet/fsa-mlops" target="_blank">gperdrizet/fsa-mlops</td>
+    </tr>
+  </tbody>
+</table>
+
 ## Unit 6: Natural language processing
 
 <table>
@@ -196,6 +212,10 @@ You can find all of my public GitHub content here: [gperdrizet](https://github.c
     <tr>
       <td>Kaggle style leaderboard for feature engineering competition</td>
       <td><a href="https://github.com/gperdrizet/leaderboard" target="_blank">gperdrizet/leaderboard</a></td>
+    </tr>
+    <tr>
+      <td>PostgreSQL + PGvector server setup</td>
+      <td><a href="https://github.com/gperdrizet/postgreSQL-server" target="_blank">gperdrizet/postgreSQL-server</a></td>
     </tr>
   </tbody>
 </table>
