@@ -104,8 +104,14 @@ You can find all of my public GitHub content here: [gperdrizet](https://github.c
     <tr>
       <td rowspan="1" style="vertical-align:top">Lesson 38</td>
       <td>Introduction to MLOps</td>
-      <td>CI/CD with GitHub actions, training experiment tracking and model versioning with MLFlow</td>
+      <td>Collection of demos for API deployment, CI/CD with GitHub actions, Docker, versioning with MLFlow and monitoring with Evidently AI</td>
       <td><a href="https://github.com/gperdrizet/fsa-mlops" target="_blank">gperdrizet/fsa-mlops</td>
+    </tr>
+    <tr>
+      <td rowspan="1" style="vertical-align:top">Course end project</td>
+      <td>Project template</td>
+      <td>Boilerplate repo with project template for data/model training experimentation, CI/CD, deployment and monitoring</td>
+      <td><a href="https://github.com/gperdrizet/unit-5-project" target="_blank">gperdrizet/unit-5-project</td>
     </tr>
   </tbody>
 </table>
