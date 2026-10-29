@@ -207,8 +207,8 @@ You can find all of my public GitHub content here: [gperdrizet](https://github.c
   </tbody>
   <tbody>
     <tr>
-      <td rowspan="3" style="vertical-align:top">Learning tools & course resources</td>
-      <td>This GitHub pages site source</td>
+      <td rowspan="4" style="vertical-align:top">Learning tools & course resources</td>
+      <td>This GitHub page's site source</td>
       <td><a href="https://github.com/gperdrizet/fullstack-2605" target="_blank">gperdrizet/fullstack-2605</a></td>
     </tr>
     <tr>
